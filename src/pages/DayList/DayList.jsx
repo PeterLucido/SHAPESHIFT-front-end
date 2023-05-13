@@ -4,9 +4,9 @@ const DayList = (props) => {
   return (
     <main>
       this is the index page
-      {/* {props.days.map(day => (
+      {props.days.map(day => (
         <DayCard key={day._id} day={day} />
-      ))} */}
+      ))}
     </main>
   )
 }
