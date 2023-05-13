@@ -21,14 +21,11 @@ import * as dayService from './services/dayService'
 
 // styles
 import './App.css'
-import DayList from './pages/DayList/DayList'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const [days, setDays] = useState([])
   const navigate = useNavigate()
-
-  const [days, setDays] = useState([])
 
   useEffect(() => {
     const fetchAllDays = async () => {
