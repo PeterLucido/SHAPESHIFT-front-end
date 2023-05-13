@@ -1,6 +1,6 @@
 const NoteCard = () => {
   return (
-    <p>Sleep Card Component</p>
+    <p>Note Card Component</p>
   )
 }
 
