@@ -21,7 +21,6 @@ import * as dayService from './services/dayService'
 
 // styles
 import './App.css'
-import DayList from './pages/DayList/DayList'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
