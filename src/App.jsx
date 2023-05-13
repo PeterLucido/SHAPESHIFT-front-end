@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -21,11 +21,22 @@ import * as dayService from './services/dayService'
 
 // styles
 import './App.css'
+import DayList from './pages/DayList/DayList'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const [days, setDays] = useState([])
   const navigate = useNavigate()
+
+  const [days, setDays] = useState([])
+
+  useEffect(() => {
+    const fetchAllDays = async () => {
+      const data = await dayService.index()
+      setDays(data)
+    }
+    if (user) fetchAllDays()
+  }, [user])
 
   const handleLogout = () => {
     authService.logout()
@@ -99,6 +110,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <ChangePassword handleAuthEvt={handleAuthEvt} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/days"
+          element={
+            <ProtectedRoute user={user}>
+              <DayList />
             </ProtectedRoute>
           }
         />
