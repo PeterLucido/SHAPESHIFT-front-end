@@ -8,6 +8,8 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import DayList from './pages/DayList/DayList'
+import NewDay from './pages/NewDay/NewDay'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -23,6 +25,7 @@ import DayList from './pages/DayList/DayList'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
+  const [days, setDays] = useState([])
   const navigate = useNavigate()
 
   const [days, setDays] = useState([])
@@ -45,11 +48,47 @@ function App() {
     setUser(authService.getUser())
   }
 
+  const handleAddDay = async (dayFormData) => {
+    const newDay = await dayService.create(dayFormData)
+    setDays([newDay,...days])
+    navigate('/days')
+  }
+
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      <NavBar
+        user={user}
+        handleLogout={handleLogout}
+      />
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route
+          path="/"
+          element={
+            <Landing 
+              user={user}
+            />
+          }
+        />
+        <Route
+          path='/days'
+          element={
+            <ProtectedRoute user={user}>
+              <DayList 
+                days={days}
+              />
+            </ProtectedRoute>
+          }
+        />
+          <Route
+            path="/days/new"
+            element={
+              <ProtectedRoute user={user}>
+                <NewDay
+                  handleAddDay={handleAddDay}
+                />
+              </ProtectedRoute>
+            }
+          />
         <Route
           path="/profiles"
           element={
