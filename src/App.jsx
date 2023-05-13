@@ -83,6 +83,7 @@ function App() {
             <ProtectedRoute user={user}>
               <NewDay
                 handleAddDay={handleAddDay}
+                user={user}
               />
             </ProtectedRoute>
           }

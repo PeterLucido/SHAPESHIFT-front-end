@@ -13,6 +13,12 @@ const DayCard = ({ day }) => {
           <h4>{day.date.slice(0,10)}</h4>
         </Link>
         <h4>Rating: {day.rating}/5</h4>
+        {/* {console.log(day.owner.name)} */}
+        <ul>
+          <li>
+            {day.owner.name}
+          </li>
+        </ul>
       </div>
     </>
   )
