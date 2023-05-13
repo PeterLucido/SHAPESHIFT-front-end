@@ -5,7 +5,8 @@ import { useState } from "react"
 const NewDay = (props) => {
   const [dayFormData, setDayFormData]= useState({
     date: new Date().toISOString().slice(0,10),
-    rating: 1,
+    rating: 2,
+    owner: props.user._id
   })
 
   const handleDayChange = (evt) => {
@@ -16,7 +17,6 @@ const NewDay = (props) => {
     evt.preventDefault()
     props.handleAddDay(dayFormData)
   }
-
 
   return (
     <main>
@@ -33,6 +33,7 @@ const NewDay = (props) => {
         />
         <button type='submit'>SUBMIT</button>
       </form>
+      {console.log(dayFormData)}
     </main>
   )
 }
