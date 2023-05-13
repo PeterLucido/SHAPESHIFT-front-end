@@ -31,6 +31,19 @@ const NewDay = (props) => {
           value={dayFormData.date}
           onChange={handleDayChange}
         />
+        <label htmlFor='rating-input'>Rating</label>
+        <select
+          name='rating'
+          id='rating-input'
+          value={dayFormData.rating}
+          onChange={handleDayChange}
+        >
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+          <option value={4}>4</option>
+          <option value={5}>5</option>
+        </select>
         <button type='submit'>SUBMIT</button>
       </form>
       {console.log(dayFormData)}

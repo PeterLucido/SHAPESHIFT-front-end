@@ -1,8 +1,10 @@
 import DayCard from "../../components/DayCard/DayCard"
 
 const DayList = (props) => {
-  const sortedDays = [...props.days].sort((a,b) => new Date(b.date) - new Date(a.date))
+  const sortedDays = [...props.days]
+  .sort((a,b) => new Date(b.date) - new Date(a.date))
 
+  
   return (
     <>
       <h1>Index of days</h1>
