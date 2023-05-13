@@ -21,6 +21,7 @@ import * as dayService from './services/dayService'
 
 // styles
 import './App.css'
+import DayDetails from './pages/DayDetails/DayDetails'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
@@ -76,16 +77,24 @@ function App() {
             </ProtectedRoute>
           }
         />
-          <Route
-            path="/days/new"
-            element={
-              <ProtectedRoute user={user}>
-                <NewDay
-                  handleAddDay={handleAddDay}
-                />
-              </ProtectedRoute>
-            }
-          />
+        <Route
+          path="/days/new"
+          element={
+            <ProtectedRoute user={user}>
+              <NewDay
+                handleAddDay={handleAddDay}
+              />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/days/:dayId'
+          element={
+            <ProtectedRoute user={user}>
+              <DayDetails />
+            </ProtectedRoute>
+          }
+        />
         <Route
           path="/profiles"
           element={
