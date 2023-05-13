@@ -45,13 +45,23 @@ function App() {
 
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      <NavBar
+        user={user}
+        handleLogout={handleLogout}
+      />
       <Routes>
-        <Route path="/" element={<Landing user={user} />} />
+        <Route
+          path="/"
+          element={
+            <Landing 
+              user={user}
+            />
+          }
+        />
         <Route
           path='/days'
           element={
-            <ProtectedRoute>
+            <ProtectedRoute user={user}>
               <DayList 
                 days={days}
               />
@@ -59,7 +69,7 @@ function App() {
           }
         />
           <Route
-            path="days/new"
+            path="/days/new"
             element={
               <ProtectedRoute user={user}>
                 <NewDay
