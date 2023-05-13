@@ -1,5 +1,4 @@
 import DayCard from "../../components/DayCard/DayCard"
-
 const DayList = (props) => {
   const sortedDays = [...props.days]
   .sort((a,b) => new Date(b.date) - new Date(a.date))
@@ -9,12 +8,14 @@ const DayList = (props) => {
     <>
       <h1>Index of days</h1>
       <main>
-        {sortedDays.map(day => (
-          <DayCard
-            key={day._id}
-            day={day}
-          />
-        ))}
+        <div className="container">
+          {sortedDays.map(day => (
+            <DayCard
+              key={day._id}
+              day={day}
+            />
+            ))}
+        </div>
       </main>
     </>
   )
