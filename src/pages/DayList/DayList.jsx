@@ -2,8 +2,8 @@ import DayCard from "../../components/DayCard/DayCard"
 
 const DayList = (props) => {
   return (
+    <h1>Index of days</h1>
     <main>
-      this is the index page
       {props.days.map(day => (
         <DayCard key={day._id} day={day} />
       ))}
