@@ -27,8 +27,6 @@ function App() {
   const [days, setDays] = useState([])
   const navigate = useNavigate()
 
-  const [days, setDays] = useState([])
-
   useEffect(() => {
     const fetchAllDays = async () => {
       const data = await dayService.index()
