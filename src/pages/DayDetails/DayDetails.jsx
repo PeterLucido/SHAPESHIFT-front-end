@@ -26,12 +26,14 @@ const DayDetails = (props) => {
 
   return (
     <>
-      <SleepCard day={day}/>
-      <MealCard />
-      <ExerciseCard />
-      <NoteCard />
-      <button onClick={() => props.handleDeleteDay(dayId)}>Delete</button>
-      <h1>{day.rating}</h1>
+      <div className='details-container'>
+        <SleepCard day={day}/>
+        <MealCard />
+        <ExerciseCard />
+        <NoteCard />
+        <button onClick={() => props.handleDeleteDay(dayId)}>Delete</button>
+        <h1>{day.rating}</h1>
+      </div>
     </>
   )
 }
