@@ -51,6 +51,7 @@ async function deleteDay(dayId) {
     console.log(err)
   }
 }
+
 async function update(dayFormData) {
   try {
     const res = await fetch(`${BASE_URL}/${dayFormData._id}`, {
