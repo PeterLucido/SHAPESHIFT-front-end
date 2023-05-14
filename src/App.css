@@ -79,3 +79,14 @@ nav > ul {
   display: flex;
   flex-direction: column;
 }
+
+.details-container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  max-width: 800px;
+  border: 5px solid black;
+  background-color: white;
+  margin: 0 auto;
+  color: black;
+}
