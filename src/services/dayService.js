@@ -40,11 +40,21 @@ async function create(dayFormData) {
   }
 }
 
-// async function deleteDay()
+async function deleteDay(dayId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${dayId}`, {
+      method: 'DELETE',
+      headers: {'Authorization': `Bearer ${tokenService.getToken()}`}
+    })
+    return res.json()
+  } catch (err) {
+    console.log(err)
+  }
+}
 
 export {
   index,
   create,
   show,
-  // deleteDay,
+  deleteDay,
 }
