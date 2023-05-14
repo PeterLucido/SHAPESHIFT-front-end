@@ -59,6 +59,12 @@ function App() {
     navigate('/days')
   }
 
+  const handleUpdateDay = async (dayFormData) => {
+    const updatedDay = await dayService.update(dayFormData)
+    setDays(days.map((d) => dayFormData._id === d._id ? updatedDay: d))
+    navigate('/days')
+  }
+
   return (
     <>
       <NavBar
@@ -100,6 +106,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <DayDetails user={user} handleDeleteDay={handleDeleteDay}/>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/days/:dayId/edit'
+          element={
+            <ProtectedRoute user={user}>
+              <DayDetails user={user} handleUpdateDay={handleUpdateDay}/>
             </ProtectedRoute>
           }
         />
