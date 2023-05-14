@@ -25,9 +25,8 @@ const DayDetails = (props) => {
   if (!day ) return <h1>loading</h1>
 
   return (
-
     <>
-      <SleepCard />
+      <SleepCard day={day}/>
       <MealCard />
       <ExerciseCard />
       <NoteCard />
