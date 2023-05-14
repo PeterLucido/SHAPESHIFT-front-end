@@ -34,12 +34,8 @@ const NewDay = (props) => {
   const handleMealChange = (evt) => {
     setDayFormData({
       ...dayFormData,
-      meal: { 
-        waterIntake: evt.target.value,
-        breakfast: evt.target.value,
-        lunch: evt.target.value,
-        dinner: evt.target.value,
-        snacks: evt.target.value
+      meal: {
+        ...dayFormData.meal, [evt.target.name]: evt.target.value,
       },
     })
   }
@@ -90,43 +86,43 @@ const NewDay = (props) => {
           />
         </div>
         <div>
-          <label className="meal-input" htmlFor='meal-input'>Water Intake:</label>
+          <label className="meal-input" htmlFor='water-input'>Water Intake:</label>
           <input
             type='text'
             name='waterIntake'
-            id='meal-input'
+            id='water-input'
             value={dayFormData.meal.waterIntake}
             onChange={handleMealChange}
           />
-          <label className="meal-input" htmlFor='meal-input'>Breakfast:</label>
+          <label className="meal-input" htmlFor='breakfast-input'>Breakfast:</label>
           <input
             type='text'
             name='breakfast'
-            id='meal-input'
+            id='breakfast-input'
             value={dayFormData.meal.breakfast}
             onChange={handleMealChange}
           />
-          <label className="meal-input" htmlFor='meal-input'>Lunch:</label>
+          <label className="meal-input" htmlFor='lunch-input'>Lunch:</label>
           <input
             type='text'
             name='lunch'
-            id='meal-input'
+            id='lunch-input'
             value={dayFormData.meal.lunch}
             onChange={handleMealChange}
           />
-          <label className="meal-input" htmlFor='meal-input'>Dinner:</label>
+          <label className="meal-input" htmlFor='dinner-input'>Dinner:</label>
           <input
             type='text'
             name='dinner'
-            id='meal-input'
+            id='dinner-input'
             value={dayFormData.meal.dinner}
             onChange={handleMealChange}
           />
-          <label className="meal-input" htmlFor='meal-input'>Snacks:</label>
+          <label className="meal-input" htmlFor='snacks-input'>Snacks:</label>
           <input
             type='text'
             name='snacks'
-            id='meal-input'
+            id='snacks-input'
             value={dayFormData.meal.snacks}
             onChange={handleMealChange}
           />
