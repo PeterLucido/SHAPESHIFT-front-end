@@ -15,7 +15,7 @@ async function index() {
 
 async function show(dayId) {
   try {
-    const res = await fetch(`{BASE_URL/${dayId}`, {
+    const res = await fetch(`${BASE_URL}/${dayId}`, {
       headers: {'Authorization': `Bearer ${tokenService.getToken()}`}
     })
     return res.json()
@@ -40,9 +40,11 @@ async function create(dayFormData) {
   }
 }
 
+// async function deleteDay()
 
 export {
   index,
   create,
-  show
+  show,
+  // deleteDay,
 }

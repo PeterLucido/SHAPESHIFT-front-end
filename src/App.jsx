@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import DayList from './pages/DayList/DayList'
+import DayDetails from './pages/DayDetails/DayDetails'
 import NewDay from './pages/NewDay/NewDay'
 
 // components
@@ -21,7 +22,6 @@ import * as dayService from './services/dayService'
 
 // styles
 import './App.css'
-import DayDetails from './pages/DayDetails/DayDetails'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
@@ -32,6 +32,7 @@ function App() {
     const fetchAllDays = async () => {
       const data = await dayService.index()
       setDays(data)
+      console.log('Day Data', data)
     }
     if (user) fetchAllDays()
   }, [user])
@@ -49,6 +50,12 @@ function App() {
   const handleAddDay = async (dayFormData) => {
     const newDay = await dayService.create(dayFormData)
     setDays([newDay,...days])
+    navigate('/days')
+  }
+
+  const handleDeleteDay = async (dayId) => {
+    const deletedDay = await dayService.deleteDay(dayId)
+    setDays(days.filter(d => d._id !== deletedDay._id))
     navigate('/days')
   }
 
@@ -92,7 +99,7 @@ function App() {
           path='/days/:dayId'
           element={
             <ProtectedRoute user={user}>
-              <DayDetails />
+              <DayDetails user={user} handleDeleteDay={handleDeleteDay}/>
             </ProtectedRoute>
           }
         />

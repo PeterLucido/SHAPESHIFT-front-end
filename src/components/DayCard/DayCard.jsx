@@ -3,9 +3,10 @@
 import { Link } from "react-router-dom"
 
 
-const DayCard = ({ day }) => {
+const DayCard = ({day}) => {
 
-  
+    console.log('day card')
+
   return (
     <>
       <div className="day-container">
