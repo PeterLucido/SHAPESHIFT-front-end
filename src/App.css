@@ -49,3 +49,18 @@ nav > ul {
   padding: 30px;
   background-color: blueviolet;
 }
+
+.add-day-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.day-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.meal-input {
+  display: flex;
+  flex-direction: column;
+}

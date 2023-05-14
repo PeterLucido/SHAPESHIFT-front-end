@@ -54,45 +54,83 @@ const NewDay = (props) => {
     <main>
       <h1>Create Day</h1>
       
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='date-input'>Date</label>
-        <input
-          required
-          type='date'
-          name='date'
-          id='date-input'
-          value={dayFormData.date}
-          onChange={handleDayChange}
-        />
-        <label htmlFor='rating-input'>Rating</label>
-        <select
-          name='rating'
-          id='rating-input'
-          value={dayFormData.rating}
-          onChange={handleDayChange}
-        >
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
-        </select>
-        <label htmlFor='sleep-input'>Hours of Sleep:</label>
-        <input
-          type='number'
-          name='totalSleep'
-          id='sleep-input'
-          value={dayFormData.sleep.totalSleep}
-          onChange={handleSleepChange}
-        />
-        <label htmlFor='meal-input'>Water Intake:</label>
-        <input
-          type='text'
-          name='waterIntake'
-          id='meal-input'
-          value={dayFormData.meal.waterIntake}
-          onChange={handleMealChange}
-        />
+      <form className='add-day-form' onSubmit={handleSubmit}>
+        <div>
+          <label className="day-input" htmlFor='date-input'>Date</label>
+          <input
+            required
+            type='date'
+            name='date'
+            id='date-input'
+            value={dayFormData.date}
+            onChange={handleDayChange}
+          />
+          <label className="day-input" htmlFor='rating-input'>Rating</label>
+          <select
+            name='rating'
+            id='rating-input'
+            value={dayFormData.rating}
+            onChange={handleDayChange}
+          >
+            <option value={1}>1</option>
+            <option value={2}>2</option>
+            <option value={3}>3</option>
+            <option value={4}>4</option>
+            <option value={5}>5</option>
+          </select>
+        </div>
+        <div>
+          <label className="sleep-input" htmlFor='sleep-input'>Hours of Sleep:</label>
+          <input
+            type='number'
+            name='totalSleep'
+            id='sleep-input'
+            value={dayFormData.sleep.totalSleep}
+            onChange={handleSleepChange}
+          />
+        </div>
+        <div>
+          <label className="meal-input" htmlFor='meal-input'>Water Intake:</label>
+          <input
+            type='text'
+            name='waterIntake'
+            id='meal-input'
+            value={dayFormData.meal.waterIntake}
+            onChange={handleMealChange}
+          />
+          <label className="meal-input" htmlFor='meal-input'>Breakfast:</label>
+          <input
+            type='text'
+            name='breakfast'
+            id='meal-input'
+            value={dayFormData.meal.breakfast}
+            onChange={handleMealChange}
+          />
+          <label className="meal-input" htmlFor='meal-input'>Lunch:</label>
+          <input
+            type='text'
+            name='lunch'
+            id='meal-input'
+            value={dayFormData.meal.lunch}
+            onChange={handleMealChange}
+          />
+          <label className="meal-input" htmlFor='meal-input'>Dinner:</label>
+          <input
+            type='text'
+            name='dinner'
+            id='meal-input'
+            value={dayFormData.meal.dinner}
+            onChange={handleMealChange}
+          />
+          <label className="meal-input" htmlFor='meal-input'>Snacks:</label>
+          <input
+            type='text'
+            name='snacks'
+            id='meal-input'
+            value={dayFormData.meal.snacks}
+            onChange={handleMealChange}
+          />
+        </div>
         <button type='submit'>Submit</button>
       </form>
       {console.log(dayFormData)}
