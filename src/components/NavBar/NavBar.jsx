@@ -3,23 +3,33 @@ import { NavLink } from 'react-router-dom'
 
 const NavBar = ({ user, handleLogout }) => {
   return (
-    <nav>
-      {user ?
-        <ul>
-          <li>Welcome, {user.name}</li>
-          <li><NavLink to="/profiles">Profiles</NavLink></li>
-          <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
-          <li><NavLink to="/auth/change-password">Change Password</NavLink></li>
-          <li><NavLink to='/days'>All Days</NavLink></li>
-          <li><NavLink to='/days/new'>Add Day</NavLink></li>
-        </ul>
+    <>
+    <nav className="nav-container">
+    {user ?
+      <div className="nav-right">
+        <p>{user.name}</p>
+        <p><NavLink to='/days'>All Days</NavLink></p>
+        <p><NavLink to='/days/new'>Add Day</NavLink></p>
+      </div>
       :
-        <ul>
-          <li><NavLink to="/auth/login">Log In</NavLink></li>
-          <li><NavLink to="/auth/signup">Sign Up</NavLink></li>
-        </ul>
-      }
-    </nav>
+      <div className="nav-right">
+        <p><NavLink to="/auth/login">Log In</NavLink></p>
+        <p><NavLink to="/auth/signup">Sign Up</NavLink></p>
+      </div>
+    }
+    {user &&
+      <div className="nav-right">
+        <div className="dropdown">
+          <button className="dropdown-button">▼</button>
+          <div className="dropdown-content">
+            <p><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></p>
+            <p><NavLink to="/auth/change-password">Change Password</NavLink></p>
+          </div>
+        </div>
+      </div>
+    }
+  </nav>
+  </>
   )
 }
 
