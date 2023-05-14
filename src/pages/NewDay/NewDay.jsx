@@ -18,6 +18,9 @@ const NewDay = (props) => {
     exercise: {
       timeSpent: 0,
       typeOfExercise: ''
+    },
+    notes: {
+      content: ''
     }
   })
 
@@ -49,6 +52,15 @@ const NewDay = (props) => {
       ...dayFormData,
       exercise: {
         ...dayFormData.exercise, [evt.target.name]: evt.target.value,
+      }
+    })
+  }
+
+  const handleNotesChange = (evt) => {
+    setDayFormData({
+      ...dayFormData,
+      notes: {
+        ...dayFormData.notes, [evt.target.name]: evt.target.value,
       }
     })
   }
@@ -156,6 +168,16 @@ const NewDay = (props) => {
             id='timeSpent-input'
             value={dayFormData.exercise.timeSpent}
             onChange={handleExerciseChange}
+          />
+        </div>
+        <div>
+        <label className="notes-input" htmlFor='content-input'>Notes:</label>
+          <input
+            type='text'
+            name='content'
+            id='content-input'
+            value={dayFormData.notes.content}
+            onChange={handleNotesChange}
           />
         </div>
         <button type='submit'>Submit</button>

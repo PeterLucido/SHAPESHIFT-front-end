@@ -60,12 +60,22 @@ nav > ul {
   flex-direction: column;
 }
 
+.sleep-input {
+  display: flex;
+  flex-direction: column;
+}
+
 .meal-input {
   display: flex;
   flex-direction: column;
 }
 
 .exercise-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.notes-input {
   display: flex;
   flex-direction: column;
 }
