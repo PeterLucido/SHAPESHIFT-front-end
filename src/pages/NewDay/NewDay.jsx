@@ -1,5 +1,5 @@
 import { useState } from "react"
-import * as dayService from '../../services/dayService'
+// import * as dayService from '../../services/dayService'
 
 
 const NewDay = (props) => {
@@ -18,22 +18,30 @@ const NewDay = (props) => {
   })
 
   const handleDayChange = (evt) => {
-    if (evt.target.name === "totalSleep") {
-      setDayFormData({
-        ...dayFormData,
-        sleep: { totalSleep: parseInt(evt.target.value) },
-      })
-    } else if (evt.target.name === "waterIntake") {
-      setDayFormData({
-        ...dayFormData,
-        meal: { waterIntake: evt.target.value },
-      })
-    } else {
-      setDayFormData({
-        ...dayFormData,
-        [evt.target.name]: evt.target.value,
-      })
-    }
+    setDayFormData({
+      ...dayFormData,
+      [evt.target.name]: evt.target.value,
+    })
+  }
+
+  const handleSleepChange = (evt) => {
+    setDayFormData({
+      ...dayFormData,
+      sleep: { totalSleep: parseInt(evt.target.value) },
+    })
+  }
+
+  const handleMealChange = (evt) => {
+    setDayFormData({
+      ...dayFormData,
+      meal: { 
+        waterIntake: evt.target.value,
+        breakfast: evt.target.value,
+        lunch: evt.target.value,
+        dinner: evt.target.value,
+        snacks: evt.target.value
+      },
+    })
   }
 
   const handleSubmit = (evt) => {
@@ -75,15 +83,15 @@ const NewDay = (props) => {
           name='totalSleep'
           id='sleep-input'
           value={dayFormData.sleep.totalSleep}
-          onChange={handleDayChange}
+          onChange={handleSleepChange}
         />
-        <label htmlFor='meal-input'>Hours of Sleep:</label>
+        <label htmlFor='meal-input'>Water Intake:</label>
         <input
           type='text'
           name='waterIntake'
           id='meal-input'
           value={dayFormData.meal.waterIntake}
-          onChange={handleDayChange}
+          onChange={handleMealChange}
         />
         <button type='submit'>Submit</button>
       </form>
