@@ -64,3 +64,8 @@ nav > ul {
   display: flex;
   flex-direction: column;
 }
+
+.exercise-input {
+  display: flex;
+  flex-direction: column;
+}

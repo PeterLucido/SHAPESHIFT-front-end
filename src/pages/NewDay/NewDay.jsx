@@ -14,6 +14,10 @@ const NewDay = (props) => {
       lunch: '',
       dinner: '',
       snacks: ''
+    },
+    exercise: {
+      timeSpent: 0,
+      typeOfExercise: ''
     }
   })
 
@@ -37,6 +41,15 @@ const NewDay = (props) => {
       meal: {
         ...dayFormData.meal, [evt.target.name]: evt.target.value,
       },
+    })
+  }
+
+  const handleExerciseChange = (evt) => {
+    setDayFormData({
+      ...dayFormData,
+      exercise: {
+        ...dayFormData.exercise, [evt.target.name]: evt.target.value,
+      }
     })
   }
 
@@ -125,6 +138,24 @@ const NewDay = (props) => {
             id='snacks-input'
             value={dayFormData.meal.snacks}
             onChange={handleMealChange}
+          />
+        </div>
+        <div>
+          <label className="exercise-input" htmlFor='typeOfExercise-input'>Exercise:</label>
+          <input
+            type='text'
+            name='typeOfExercise'
+            id='typeOfExercise-input'
+            value={dayFormData.exercise.typeOfExercise}
+            onChange={handleExerciseChange}
+          />
+          <label className="exercise-input" htmlFor='timeSpent-input'>Time Spent:</label>
+          <input
+            type='number'
+            name='timeSpent'
+            id='timeSpent-input'
+            value={dayFormData.exercise.timeSpent}
+            onChange={handleExerciseChange}
           />
         </div>
         <button type='submit'>Submit</button>
