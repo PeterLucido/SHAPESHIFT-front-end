@@ -5,26 +5,36 @@ import * as dayService from '../../services/dayService'
 const NewDay = (props) => {
   const [dayFormData, setDayFormData]= useState({
     date: new Date().toISOString().slice(0,10),
-    rating: 2,
+    rating: 3,
     owner: props.user._id,
-    sleep: {totalSleep: 0}
+    sleep: {totalSleep: 0},
+    meal: {
+      waterIntake: '',
+      breakfast: '',
+      lunch: '',
+      dinner: '',
+      snacks: ''
+    }
   })
 
-const handleDayChange = (evt) => {
-  if (evt.target.name === "totalSleep") {
-    setDayFormData({
-      ...dayFormData,
-      sleep: { totalSleep: parseInt(evt.target.value) }, // Parse the input value as an integer
-    })
-  } else {
-    setDayFormData({
-      ...dayFormData,
-      [evt.target.name]: evt.target.value,
-    })
+  const handleDayChange = (evt) => {
+    if (evt.target.name === "totalSleep") {
+      setDayFormData({
+        ...dayFormData,
+        sleep: { totalSleep: parseInt(evt.target.value) },
+      })
+    } else if (evt.target.name === "waterIntake") {
+      setDayFormData({
+        ...dayFormData,
+        meal: { waterIntake: evt.target.value },
+      })
+    } else {
+      setDayFormData({
+        ...dayFormData,
+        [evt.target.name]: evt.target.value,
+      })
+    }
   }
-}
-
-
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
@@ -59,7 +69,7 @@ const handleDayChange = (evt) => {
           <option value={4}>4</option>
           <option value={5}>5</option>
         </select>
-        <label htmlFor='sleep-input'>Sleep</label>
+        <label htmlFor='sleep-input'>Hours of Sleep:</label>
         <input
           type='number'
           name='totalSleep'
@@ -67,7 +77,15 @@ const handleDayChange = (evt) => {
           value={dayFormData.sleep.totalSleep}
           onChange={handleDayChange}
         />
-        <button type='submit'>SUBMIT</button>
+        <label htmlFor='meal-input'>Hours of Sleep:</label>
+        <input
+          type='text'
+          name='waterIntake'
+          id='meal-input'
+          value={dayFormData.meal.waterIntake}
+          onChange={handleDayChange}
+        />
+        <button type='submit'>Submit</button>
       </form>
       {console.log(dayFormData)}
     </main>
