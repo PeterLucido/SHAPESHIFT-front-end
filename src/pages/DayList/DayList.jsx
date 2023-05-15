@@ -2,16 +2,27 @@ import DayCard from "../../components/DayCard/DayCard"
 import QuoteCard from '../../components/QuoteCard/QuoteCard'
 import DropdownMenu from "../../components/DropdownMenu/DropdownMenu"
 import { useState } from "react"
+import { useEffect } from "react"
+import * as dayService from '../../services/dayService'
 
-
-const DayList = (props) => {
-  const sortedDays = [...props.days]
-  .sort((a,b) => new Date(b.date) - new Date(a.date))
-
-
+const DayList = ({days, user}) => {
+  
+  const [daysInList, setDaysInList] = useState([])
   const [displayCount, setDisplayCount] = useState(7)
   const [currIdx, setCurrIdx] = useState(0)
+  
+  useEffect(() => {
+    const fetchAllDays = async () => {
+      const data = await dayService.index()
+      setDaysInList(data)
+      console.log('Day Data', data)
+    } 
+    if (user) fetchAllDays()
+  }, [user])
 
+  const sortedDays = [...daysInList]
+  .sort((a,b) => new Date(b.date) - new Date(a.date))
+  
   const filteredDays = sortedDays
     .slice(currIdx, currIdx + displayCount)
     .map((day) => <DayCard key={day._id} day={day} />);
@@ -20,20 +31,12 @@ const DayList = (props) => {
     setDisplayCount(newDisplayCount)
   }
 
-  function filterDayData (newIdx, newDisplayCount) {
-    const filteredData = sortedDays.filter((days, idx) => {
-      return  idx >= newIdx && idx < newIdx + displayCount
-    })
-    return filteredData
-  }
-
-  
   return (
     <>
       <QuoteCard />
       <h1 className="all-days">Days</h1>
       <div className="dropdown-container">
-        <DropdownMenu onDisplayCountChange={handleDisplayCountChange} days={props.days} />
+        <DropdownMenu onDisplayCountChange={handleDisplayCountChange} days={days} />
       </div>
       <main>
         <div className="container">
