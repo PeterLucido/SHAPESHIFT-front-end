@@ -1,4 +1,7 @@
 import DayCard from "../../components/DayCard/DayCard"
+import QuoteCard from '../../components/QuoteCard/QuoteCard'
+
+
 const DayList = (props) => {
   const sortedDays = [...props.days]
   .sort((a,b) => new Date(b.date) - new Date(a.date))
@@ -6,6 +9,7 @@ const DayList = (props) => {
   
   return (
     <>
+      <QuoteCard />
       <h1 className="all-days">All Days</h1>
       <main>
         <div className="container">
