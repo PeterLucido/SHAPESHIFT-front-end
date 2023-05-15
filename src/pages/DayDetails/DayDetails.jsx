@@ -27,6 +27,7 @@ const DayDetails = (props) => {
   return (
     <>
       <div className='details-container'>
+        {day.date.slice(0,10)}
         <SleepCard day={day}/>
         <MealCard />
         <ExerciseCard />
