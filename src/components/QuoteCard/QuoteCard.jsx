@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { fetchQuoteFromAPI } from '../../services/quoteService'
 
 function QuoteCard() {
-  const [quote, setQuote] = useState(null)
+  const [quote, setQuote] = useState()
 
   useEffect(() => {
     const fetchQuote = async () => {
@@ -15,9 +15,9 @@ function QuoteCard() {
   }, [])
 
   return (
-    <div>
+    <div className="quote-container">
       {!quote ? (
-        <p>Loading...</p>
+        <p>Inspiration coming in hot...</p>
       ) : (
         <div>
           <p>{quote.text}</p>
