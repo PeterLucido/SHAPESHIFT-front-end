@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 const DayCard = ({day}) => {
   const formatDate = (dateStr) => {
     const date = new Date(dateStr)
+    date.setDate(date.getDate() + 1)
     const options = { year: 'numeric', month: 'long', day: 'numeric' }
     return date.toLocaleDateString(undefined, options)
   }

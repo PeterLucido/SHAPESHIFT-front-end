@@ -10,9 +10,7 @@ const SleepCard = ({day}) => {
     setSleepData(updatedSleep)
     console.log(updatedSleep)
     console.log(day)
-    
   }
-
   const handleEdit = () => {
     setEditMode(true)
     setSleepData(day.sleep[0].totalSleep)
@@ -33,22 +31,21 @@ const SleepCard = ({day}) => {
   
   const editView = (
     <>
-      <h1>Edit Card View</h1>
-      <input
+      <h2>Hours of sleep
+        <input
             type='number'
             name='totalSleep'
             id='sleep-input'
             value={sleepData}
             onChange={handleChange}
-      />
+      /></h2>
       <button onClick={() => handleSave()}>Save</button>
     </>
   )
   const saveView = (
     <>
-      <h1>Sleep Card Info<button onClick={() => handleEdit()}>Edit</button></h1>
       <h2>Hours of sleep {day.sleep[0].totalSleep}</h2>
-      
+      <button onClick={() => handleEdit()}>Edit</button>
     </>
   )
 
