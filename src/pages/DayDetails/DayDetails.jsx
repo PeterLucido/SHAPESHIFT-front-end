@@ -11,6 +11,7 @@ import * as dayService from '../../services/dayService'
 const DayDetails = (props) => {
   const {dayId} = useParams()
   const [day, setDay] = useState(null)
+  const [editMode, setEditMode] = useState(false)
 
   useEffect(() => {
     const fetchDay = async () => {
@@ -20,20 +21,68 @@ const DayDetails = (props) => {
     fetchDay()
   }, [dayId])
 
-  console.log(day)
+  const formatDate = (dateStr) => {
+    const date = new Date(dateStr)
+    date.setDate(date.getDate() + 1)
+    const options = { year: 'numeric', month: 'long', day: 'numeric' }
+    return date.toLocaleDateString(undefined, options)
+  }
 
   if (!day ) return <h1>loading</h1>
+  
+  const handleEdit = (evt) => {
+    const {name, value} = evt.target
+    setDay({
+      ...day,
+      [name]: value
+    })
+    setEditMode(true)
+    console.log(day.rating, day.date)
+  }
+  const handleSave = async() => {
+    await dayService.update(day)
+    setEditMode(false)
+  }
+
+  const editView = (
+    <>
+      <input
+        type='date'
+        name='date'
+        id='date-input'
+        value={day.date}
+        onChange={handleEdit}
+        placeholder='dick'
+      />
+      <h2><input 
+          type="number" 
+          name="rating"
+          min={1}
+          max={5}
+          value={day.rating}
+          onChange={handleEdit}
+          /> 
+      </h2>
+      <button onClick={handleSave}>save</button>
+    </>
+  )
+  const saveView = (
+    <>
+      <h1>{formatDate(day.date)}</h1>
+      <h2>Day Rating: {day.rating}</h2>
+      <button onClick={handleEdit}>edit</button>
+    </>
+  )
 
   return (
     <>
       <div className='details-container'>
-        {day.date.slice(0,10)}
+        {editMode ?  editView : saveView}
         <SleepCard day={day}/>
-        <MealCard />
-        <ExerciseCard />
-        <NoteCard />
+        <MealCard day={day}/>
+        <ExerciseCard day={day}/>
+        <NoteCard day={day}/>
         <button onClick={() => props.handleDeleteDay(dayId)}>Delete</button>
-        <h1>{day.rating}</h1>
       </div>
     </>
   )
