@@ -68,6 +68,7 @@ async function update(dayFormData) {
   }
 }
 
+
 async function createSleep(dayId, sleepFormData) {
   try{
     const res = await fetch(`${BASE_URL}/${dayId}/sleep`, {
