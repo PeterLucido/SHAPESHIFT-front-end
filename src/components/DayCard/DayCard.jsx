@@ -4,16 +4,23 @@ import { Link } from "react-router-dom"
 
 
 const DayCard = ({day}) => {
-
-    console.log('day card')
+  console.log('day card')
+  
+  const getCardColor = (rating) => {
+    if (rating <= 1) return { backgroundColor: "red" }
+    if (rating <= 2) return { backgroundColor: "orange" }
+    if (rating <= 3) return { backgroundColor: "yellow" }
+    if (rating <= 4) return { backgroundColor: "lightgreen" }
+    return { backgroundColor: "green" }
+  }
 
   return (
     <>
-      <div className="day-container">
+      <div className="day-container" style={getCardColor(day.rating)}>
         <Link to={`/days/${day._id}`}>
           <h4>{day.date.slice(0,10)}</h4>
         </Link>
-        <h4>Rating: {day.rating}/5</h4>
+        <h2>Rating: {day.rating}/5</h2>
       </div>
     </>
   )

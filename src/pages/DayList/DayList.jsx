@@ -6,7 +6,7 @@ const DayList = (props) => {
   
   return (
     <>
-      <h1>Index of days</h1>
+      <h1 className="all-days">All Days</h1>
       <main>
         <div className="container">
           {sortedDays.map(day => (
