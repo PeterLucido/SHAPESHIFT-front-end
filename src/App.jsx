@@ -28,15 +28,6 @@ function App() {
   const [days, setDays] = useState([])
   const navigate = useNavigate()
 
-  useEffect(() => {
-    const fetchAllDays = async () => {
-      const data = await dayService.index()
-      setDays(data)
-      console.log('Day Data', data)
-    }
-    if (user) fetchAllDays()
-  }, [user])
-
   const handleLogout = () => {
     authService.logout()
     setUser(null)
@@ -86,6 +77,7 @@ function App() {
             <ProtectedRoute user={user}>
               <DayList 
                 days={days}
+                user={user}
               />
             </ProtectedRoute>
           }

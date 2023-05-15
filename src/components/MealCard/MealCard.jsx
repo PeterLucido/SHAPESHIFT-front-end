@@ -76,6 +76,16 @@ const MealCard = ({day}) => {
         >
         </textarea>
       </h2>
+      <h2>
+        <label htmlFor="snacks-input">Dinner</label>
+        <textarea 
+        name="snacks" 
+        id="snacks-input" 
+        value={mealData.snacks}
+        onChange={handleChange}
+        >
+        </textarea>
+      </h2>
       <button onClick={() => handleSave()}>Save</button>
     </>
   )
@@ -90,11 +100,21 @@ const MealCard = ({day}) => {
         </ul>
         <h2>Lunch</h2>
         <ul>
-          <li>{lunch}</li>
+          {lunch.split(',').map((item, index) => (
+            <li key={index}>{item.trim()}</li>
+          ))}
         </ul>
         <h2>Dinner</h2>
         <ul>
-          <li>{dinner}</li>
+          {dinner.split(',').map((item, index) => (
+            <li key={index}>{item.trim()}</li>
+          ))}
+        </ul>
+        <h2>Snack</h2>
+        <ul>
+          {snacks.split(',').map((item, index) => (
+            <li key={index}>{item.trim()}</li>
+          ))}
         </ul>
       <button onClick={() => handleEdit()}>Edit</button>
     </>
