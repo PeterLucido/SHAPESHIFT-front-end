@@ -31,9 +31,11 @@ const NoteCard = ({day}) => {
 
   const editView = (
     <>
+    <div className="form-headings">
+        <h2>Notes</h2>
+          <button className="button-save" onClick={() => handleSave()}></button>
+      </div>
       <h4>
-        Notes:
-        <button onClick={()=>handleSave()}>Save</button>
         <input
           type='text'
           name='content'
@@ -46,10 +48,12 @@ const NoteCard = ({day}) => {
 
   const saveView = (
     <>
+    <div className="form-headings">
+        <h2>Notes</h2>
+          <button className="button-edit" onClick={() => handleEdit()}></button>
+      </div>
       <h4>
-        Additional Notes:
         <p>{day.notes[0].content}</p>
-        <button onClick={()=>handleEdit()}>Edit</button>
       </h4>
     </>
   )

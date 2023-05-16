@@ -31,9 +31,12 @@ const SleepCard = ({day}) => {
   
   const editView = (
     <>
-      <h4>
-        Hours Slept:
-        <button onClick={() => handleSave()}>Save</button>
+      <div className="form-headings">
+        <h2>Sleep</h2>
+          <button className="button-save" onClick={handleSave}></button>
+      </div>
+      <div className="sleep-container">
+        <h4>Hours Slept:</h4>
         <input
           type='number'
           name='totalSleep'
@@ -41,17 +44,24 @@ const SleepCard = ({day}) => {
           value={sleepData}
           onChange={handleChange}
         />
-      </h4>
+      </div>
     </>
   )
+
   const saveView = (
     <>
-      <h4>
-        Hours Slept: {day.sleep[0].totalSleep}
-        <button onClick={() => handleEdit()}>Edit</button>
-      </h4>
+      <div className="form-headings">
+        <h2>Sleep</h2>
+          <button className="button-edit" onClick={handleEdit}></button>
+      </div>
+      <div className="sleep-container">
+        <h4>Hours Slept:</h4>
+        <p>{day.sleep[0].totalSleep}</p>
+      </div>
     </>
   )
+
+
 
   return (
     <>

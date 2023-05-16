@@ -10,6 +10,8 @@ const DayCard = ({day}) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' }
     return date.toLocaleDateString(undefined, options)
   }
+
+  console.log('day card')
   
   const getCardColor = (rating) => {
     if (rating <= 1) return { backgroundColor: "red" }

@@ -40,7 +40,10 @@ const ExerciseCard = ({day}) => {
 
   const editView = (
     <>
-      <h1>Edit Exercise</h1>
+      <div className="form-headings">
+        <h2>Exercise</h2>
+          <button className="button-save" onClick={() => handleSave()}></button>
+      </div>
       <h2>
         <label htmlFor="typeOfExercise-input">Exercises: </label>
         <textarea 
@@ -56,18 +59,16 @@ const ExerciseCard = ({day}) => {
         onChange={handleChange}
         />
       </h2>
-      <button onClick={() => handleSave()}>Save</button>
     </>
   )
 
   const saveView = (
     <>
+    <div className="form-headings">
+        <h2>Exercise</h2>
+          <button className="button-edit" onClick={() => handleEdit()}></button>
+      </div>
       <table>
-        <thead>
-          <tr>
-            <th colSpan={2}>Exercise</th>
-          </tr>
-        </thead>
         <tbody>
           <tr>
             <td>Type of Exercise:</td>
@@ -85,7 +86,6 @@ const ExerciseCard = ({day}) => {
           </tr>
         </tbody>
       </table>
-      <button onClick={() => handleEdit()}>Edit</button>
     </>
   )
 
