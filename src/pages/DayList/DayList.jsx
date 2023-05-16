@@ -64,7 +64,11 @@ const DayList = ({ user }) => {
   return (
     <>
       <QuoteCard />
-      <h1 className="all-days"><button onClick={()=>handleDecrease()}>Prev</button>Days<button onClick={()=>handleIncrease()}>Next</button></h1>
+      <h1 className="all-days">
+        <button onClick={()=>handleDecrease()}>Prev</button>
+        Days
+        <button onClick={()=>handleIncrease()}>Next</button>
+      </h1>
       <div className="dropdown-container">
         <DropdownMenu
           onDisplayCountChange={handleDisplayCountChange}
