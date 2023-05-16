@@ -171,7 +171,7 @@ const NewDay = (props) => {
           />
         </div>
         <div>
-        <label className="notes-input" htmlFor='content-input'>Notes:</label>
+          <label className="notes-input" htmlFor='content-input'>Notes:</label>
           <input
             type='text'
             name='content'

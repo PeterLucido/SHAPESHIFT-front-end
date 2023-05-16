@@ -37,7 +37,6 @@ const DayDetails = (props) => {
       [name]: value
     })
     setEditMode(true)
-    console.log(day.rating, day.date)
   }
   
   const handleSave = async() => {
@@ -55,14 +54,15 @@ const DayDetails = (props) => {
         onChange={handleEdit}
         placeholder='dick'
       />
-      <h4><input 
+      <h4>
+        <input 
           type="number" 
           name="rating"
           min={1}
           max={5}
           value={day.rating}
           onChange={handleEdit}
-          /> 
+        /> 
       </h4>
       <button onClick={handleSave}>save</button>
     </>
@@ -71,7 +71,7 @@ const DayDetails = (props) => {
     <>
       <h3>{formatDate(day.date)}</h3>
       <h3>Day Rating: {day.rating}</h3>
-      <button onClick={handleEdit}>edit</button>
+      <button onClick={handleEdit}>Edit</button>
     </>
   )
 

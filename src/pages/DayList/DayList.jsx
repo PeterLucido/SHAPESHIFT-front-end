@@ -6,7 +6,6 @@ import { useEffect } from "react"
 import * as dayService from '../../services/dayService'
 
 const DayList = ({days, user}) => {
-  
   const [daysInList, setDaysInList] = useState([])
   const [displayCount, setDisplayCount] = useState(7)
   const [currIdx, setCurrIdx] = useState(0)
@@ -36,7 +35,10 @@ const DayList = ({days, user}) => {
       <QuoteCard />
       <h1 className="all-days">Days</h1>
       <div className="dropdown-container">
-        <DropdownMenu onDisplayCountChange={handleDisplayCountChange} days={days} />
+        <DropdownMenu
+          onDisplayCountChange={handleDisplayCountChange}
+          daysInList={daysInList}
+        />
       </div>
       <main>
         <div className="container">
