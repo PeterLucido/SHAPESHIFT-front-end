@@ -19,6 +19,7 @@ const ExerciseCard = ({day}) => {
       <button onClick={() => handleSave()}>Save</button>
     </>
   )
+  
   const saveView = (
     <>
       <h1>Card Info</h1>
