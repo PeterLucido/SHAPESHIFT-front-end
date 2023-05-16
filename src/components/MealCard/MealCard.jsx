@@ -4,13 +4,14 @@ import { update } from "../../services/dayService"
 const MealCard = ({day}) => {
   const [editMode, setEditMode] = useState(false)
   const [mealData, setMealData] = useState({
+    waterIntake: "",
     breakfast: "",
     lunch: "",
     dinner: "",
-    snacks: ""
+    snacks: "",
   })
 
-  const { breakfast, lunch, dinner, snacks, } = day.meal[0]
+  const { waterIntake, breakfast, lunch, dinner, snacks, } = day.meal[0];
 
   const handleChange = (evt) => {
     const {name, value} = evt.target
@@ -23,6 +24,7 @@ const MealCard = ({day}) => {
   const handleEdit = () => {
     setEditMode(true)
     setMealData({
+      waterIntake,
       breakfast,
       lunch,
       dinner,
@@ -45,89 +47,87 @@ const MealCard = ({day}) => {
   
   const editView = (
     <>
-      <h2>
-        Meals
-        <button onClick={() => handleSave()}>Save</button>
-      </h2>
-      <h4>
-        <label htmlFor="breakfast-input">Breakfast</label>
+      <div className="form-headings">
+        <h2>Meals</h2>
+          <button className="button-save" onClick={() => handleSave()}></button>
+      </div>
+  
+      <div className="meal-container">
+        <h4>Water Intake:</h4>
+        <textarea 
+          name="water" 
+          id="water-input" 
+          value={mealData.waterIntake}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="meal-container">
+        <h4>Breakfast: </h4>
         <textarea 
           name="breakfast" 
           id="breakfast-input" 
           value={mealData.breakfast}
           onChange={handleChange}
-        >
-        </textarea>
-      </h4>
-      <h4>
-        <label htmlFor="lunch-input">Lunch</label>
+        />
+      </div>
+      <div className="meal-container">
+        <h4>Lunch: </h4>
         <textarea 
           name="lunch" 
           id="lunch-input" 
           value={mealData.lunch}
           onChange={handleChange}
-        >
-        </textarea>
-      </h4>
-      <h4>
-        <label htmlFor="dinner-input">Dinner</label>
+        />
+      </div>
+      <div className="meal-container">
+        <h4>Dinner: </h4>
         <textarea 
           name="dinner" 
           id="dinner-input" 
           value={mealData.dinner}
           onChange={handleChange}
-        >
-        </textarea>
-      </h4>
-      <h4>
-        <label htmlFor="snacks-input">Snacks</label>
+        />
+      </div>
+      <div className="meal-container">
+        <h4>Snacks: </h4>
         <textarea 
           name="snacks" 
           id="snacks-input" 
           value={mealData.snacks}
           onChange={handleChange}
-        >
-        </textarea>
-      </h4>
+        />
+      </div>
     </>
   )
+  
   const saveView = (
     <>
-      <h2>
-        Meals
-        <button onClick={() => handleEdit()}>Edit</button>
-      </h2>
-      <h4>Breakfast
-        <ul>
-          {breakfast.split(',').map((item, index) => (
-            <li key={index}>{item.trim()}</li>
-          ))}
-        </ul>
-      </h4>
-      <h4>Lunch
-        <ul>
-          {lunch.split(',').map((item, index) => (
-            <li key={index}>{item.trim()}</li>
-          ))}
-        </ul>
-      </h4>
-      <h4>Dinner
-        <ul>
-          {dinner.split(',').map((item, index) => (
-            <li key={index}>{item.trim()}</li>
-          ))}
-        </ul>
-      </h4>
-      <h4>Snack
-        <ul>
-          {snacks.split(',').map((item, index) => (
-            <li key={index}>{item.trim()}</li>
-          ))}
-        </ul>
-      </h4>
+      <div className="form-headings">
+        <h2>Meals</h2>
+          <button className="button-edit" onClick={() => handleEdit()}></button>
+      </div>
+      <div className="meal-container">
+        <h4>Water Intake: </h4>
+        <p>{mealData.waterIntake}</p>
+      </div>
+      <div className="meal-container">
+        <h4>Breakfast: </h4>
+        <p>{mealData.breakfast}</p>
+      </div>
+      <div className="meal-container">
+        <h4>Lunch: </h4>
+        <p>{mealData.lunch}</p>
+      </div>
+      <div className="meal-container">
+        <h4>Dinner: </h4>
+        <p>{mealData.dinner}</p>
+      </div>
+      <div className="meal-container">
+        <h4>Snacks: </h4>
+        <p>{mealData.snacks}</p>
+      </div>
     </>
   )
-
 
   return (
     <>
