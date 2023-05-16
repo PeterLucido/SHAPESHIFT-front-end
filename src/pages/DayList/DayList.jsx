@@ -10,7 +10,38 @@ const DayList = ({days, user}) => {
   const [daysInList, setDaysInList] = useState([])
   const [displayCount, setDisplayCount] = useState(7)
   const [currIdx, setCurrIdx] = useState(0)
+  const [displayedDays, setDisplayedDays] = useState(filterData(0))
   
+  function filterData(newIdx) {
+    const filteredData = daysInList.filter((day, idx) => {
+      return idx >= newIdx && idx < newIdx + displayCount
+    })
+    return filteredData
+  }
+
+  function handleIncrease() {
+    let newIdx = currIdx
+    newIdx = newIdx + displayCount
+    if (newIdx > daysInList.length) {
+      return
+    }
+    const data = filterData(newIdx)
+    setCurrIdx(newIdx)
+    setDisplayedDays(data)
+  }
+
+  function handleDecrease() {
+    let newIdx = currIdx
+    newIdx = newIdx - displayCount
+    if (newIdx < 0) {
+      return
+    }
+    const data = filterData(newIdx)
+    setCurrIdx(newIdx)
+    setDisplayedDays(data)
+  }
+
+
   useEffect(() => {
     const fetchAllDays = async () => {
       const data = await dayService.index()
@@ -34,7 +65,11 @@ const DayList = ({days, user}) => {
   return (
     <>
       <QuoteCard />
-      <h1 className="all-days">Days</h1>
+      <h1 className="all-days">
+        <button onClick={()=>handleDecrease()}>Prev</button>
+        Days
+        <button onClick={()=>handleIncrease()}>Next</button>
+      </h1>
       <div className="dropdown-container">
         <DropdownMenu onDisplayCountChange={handleDisplayCountChange} days={days} />
       </div>
