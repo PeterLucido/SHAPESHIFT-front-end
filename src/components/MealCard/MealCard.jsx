@@ -45,8 +45,11 @@ const MealCard = ({day}) => {
   
   const editView = (
     <>
-      <h1>Edit Meals</h1>
       <h2>
+        Meals
+        <button onClick={() => handleSave()}>Save</button>
+      </h2>
+      <h4>
         <label htmlFor="breakfast-input">Breakfast</label>
         <textarea 
         name="breakfast" 
@@ -55,8 +58,8 @@ const MealCard = ({day}) => {
         onChange={handleChange}
         >
         </textarea>
-      </h2>
-      <h2>
+      </h4>
+      <h4>
         <label htmlFor="lunch-input">Lunch</label>
         <textarea 
         name="lunch" 
@@ -65,8 +68,8 @@ const MealCard = ({day}) => {
         onChange={handleChange}
         >
         </textarea>
-      </h2>
-      <h2>
+      </h4>
+      <h4>
         <label htmlFor="dinner-input">Dinner</label>
         <textarea 
         name="dinner" 
@@ -75,9 +78,9 @@ const MealCard = ({day}) => {
         onChange={handleChange}
         >
         </textarea>
-      </h2>
-      <h2>
-        <label htmlFor="snacks-input">Dinner</label>
+      </h4>
+      <h4>
+        <label htmlFor="snacks-input">Snacks</label>
         <textarea 
         name="snacks" 
         id="snacks-input" 
@@ -85,38 +88,43 @@ const MealCard = ({day}) => {
         onChange={handleChange}
         >
         </textarea>
-      </h2>
-      <button onClick={() => handleSave()}>Save</button>
+      </h4>
     </>
   )
   const saveView = (
     <>
-      <h1>Meals</h1>
-        <h2>Breakfast</h2>
+      <h2>
+        Meals
+          <button onClick={() => handleEdit()}>Edit</button>
+      </h2>
+        <h4>Breakfast
         <ul>
           {breakfast.split(',').map((item, index) => (
             <li key={index}>{item.trim()}</li>
           ))}
         </ul>
-        <h2>Lunch</h2>
+        </h4>
+        <h4>Lunch
         <ul>
           {lunch.split(',').map((item, index) => (
             <li key={index}>{item.trim()}</li>
           ))}
         </ul>
-        <h2>Dinner</h2>
+        </h4>
+        <h4>Dinner
         <ul>
           {dinner.split(',').map((item, index) => (
             <li key={index}>{item.trim()}</li>
           ))}
         </ul>
-        <h2>Snack</h2>
+        </h4>
+        <h4>Snack
         <ul>
           {snacks.split(',').map((item, index) => (
             <li key={index}>{item.trim()}</li>
           ))}
         </ul>
-      <button onClick={() => handleEdit()}>Edit</button>
+        </h4>
     </>
   )
 
