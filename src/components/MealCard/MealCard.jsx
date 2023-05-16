@@ -10,7 +10,7 @@ const MealCard = ({day}) => {
     snacks: ""
   })
 
-  const { breakfast, lunch, dinner, snacks, } = day.meal[0];
+  const { breakfast, lunch, dinner, snacks, } = day.meal[0]
 
   const handleChange = (evt) => {
     const {name, value} = evt.target
