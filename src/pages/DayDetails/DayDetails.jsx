@@ -39,6 +39,7 @@ const DayDetails = (props) => {
     setEditMode(true)
     console.log(day.rating, day.date)
   }
+  
   const handleSave = async() => {
     await dayService.update(day)
     setEditMode(false)
@@ -54,7 +55,7 @@ const DayDetails = (props) => {
         onChange={handleEdit}
         placeholder='dick'
       />
-      <h2><input 
+      <h4><input 
           type="number" 
           name="rating"
           min={1}
@@ -62,14 +63,14 @@ const DayDetails = (props) => {
           value={day.rating}
           onChange={handleEdit}
           /> 
-      </h2>
+      </h4>
       <button onClick={handleSave}>save</button>
     </>
   )
   const saveView = (
     <>
-      <h1>{formatDate(day.date)}</h1>
-      <h2>Day Rating: {day.rating}</h2>
+      <h3>{formatDate(day.date)}</h3>
+      <h3>Day Rating: {day.rating}</h3>
       <button onClick={handleEdit}>edit</button>
     </>
   )

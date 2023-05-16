@@ -6,15 +6,11 @@
 
 body {
   box-sizing: border-box;
-
   margin: 0;
   min-height: 100vh;
-
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-
   color: rgba(255, 255, 255, 0.87);
   background-color: #c0c0c0;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,7 +18,7 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-.all-days{
+.all-days {
   text-align: center;
   color: black;
 }
@@ -144,6 +140,12 @@ nav > ul {
   color: black;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 .quote-container {
   display: flex;
   justify-content: center;
@@ -152,3 +154,4 @@ nav > ul {
   font-size: 22px;
   color: black;
 }
+
