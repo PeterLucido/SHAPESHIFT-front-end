@@ -1,5 +1,5 @@
 // npm modules
-import { useState, useEffect } from 'react'
+import { useState, } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
