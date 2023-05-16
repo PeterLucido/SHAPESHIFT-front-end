@@ -1,14 +1,14 @@
 import DayCard from "../../components/DayCard/DayCard"
 import QuoteCard from '../../components/QuoteCard/QuoteCard'
 import DropdownMenu from "../../components/DropdownMenu/DropdownMenu"
-import { useState } from "react"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 import * as dayService from '../../services/dayService'
 
-const DayList = ({days, user}) => {
+const DayList = ({ user }) => {
   const [daysInList, setDaysInList] = useState([])
   const [displayCount, setDisplayCount] = useState(7)
-  const [currIdx, setCurrIdx] = useState(0)
+  // const [currIdx, setCurrIdx] = useState(0)
+  const currIdx = 0
   
   useEffect(() => {
     const fetchAllDays = async () => {
@@ -20,11 +20,11 @@ const DayList = ({days, user}) => {
   }, [user])
 
   const sortedDays = [...daysInList]
-  .sort((a,b) => new Date(b.date) - new Date(a.date))
+    .sort((a,b) => new Date(b.date) - new Date(a.date))
   
   const filteredDays = sortedDays
     .slice(currIdx, currIdx + displayCount)
-    .map((day) => <DayCard key={day._id} day={day} />);
+    .map((day) => <DayCard key={day._id} day={day} />)
 
   function handleDisplayCountChange(newDisplayCount) {
     setDisplayCount(newDisplayCount)
