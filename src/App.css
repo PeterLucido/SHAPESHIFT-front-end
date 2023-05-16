@@ -9,8 +9,8 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #000000;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #dedede;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import * as authService from '../../services/authService'
 
 // css
-import styles from './Login.module.css'
+import styles from '../Login/login.module.css'
 
 const LoginPage = ({ handleAuthEvt }) => {
   const navigate = useNavigate()
@@ -30,7 +30,7 @@ const LoginPage = ({ handleAuthEvt }) => {
       }
       await authService.login(formData)
       handleAuthEvt()
-      navigate('/')
+      navigate('/days')
     } catch (err) {
       console.log(err)
       setMessage(err.message)
@@ -44,7 +44,7 @@ const LoginPage = ({ handleAuthEvt }) => {
   }
 
   return (
-    <main className={styles.container}>
+    <main className={styles.logincontainer}>
       <h1>Log In</h1>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
@@ -67,7 +67,6 @@ const LoginPage = ({ handleAuthEvt }) => {
           />
         </label>
         <div>
-          <Link to="/">Cancel</Link>
           <button className={styles.button} disabled={isFormInvalid()}>
             Log In
           </button>

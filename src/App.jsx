@@ -68,6 +68,7 @@ function App() {
           element={
             <Landing 
               user={user}
+              handleAuthEvt={handleAuthEvt}
             />
           }
         />
