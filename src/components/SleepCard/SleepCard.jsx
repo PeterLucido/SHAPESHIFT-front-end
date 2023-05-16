@@ -31,7 +31,8 @@ const SleepCard = ({day}) => {
   
   const editView = (
     <>
-      <h4>Hours Slept:
+      <h4>
+        Hours Slept:
         <button onClick={() => handleSave()}>Save</button>
         <input
           type='number'
@@ -45,8 +46,9 @@ const SleepCard = ({day}) => {
   )
   const saveView = (
     <>
-      <h4>Hours Slept: {day.sleep[0].totalSleep}
-      <button onClick={() => handleEdit()}>Edit</button>
+      <h4>
+        Hours Slept: {day.sleep[0].totalSleep}
+        <button onClick={() => handleEdit()}>Edit</button>
       </h4>
     </>
   )

@@ -52,7 +52,7 @@ const DayDetails = (props) => {
         id='date-input'
         value={day.date}
         onChange={handleEdit}
-        placeholder='dick'
+        placeholder={dayId.date}
       />
       <h4>
         <input 
