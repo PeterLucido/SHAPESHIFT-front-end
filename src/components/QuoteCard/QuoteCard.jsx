@@ -25,7 +25,7 @@ function QuoteCard() {
         </div>
       )}
     </div>
-  );
+  )
 }
 
 export default QuoteCard

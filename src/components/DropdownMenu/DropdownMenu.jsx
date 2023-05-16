@@ -1,7 +1,6 @@
 import { useState } from "react"
-import DayList from "../../pages/DayList/DayList"
 
-function DropdownMenu({ onDisplayCountChange, days }) {
+function DropdownMenu({ onDisplayCountChange, daysInList }) {
   const [selectedOption, setSelectedOption] = useState('')
 
   const handleSelectOption = (event) => {
@@ -16,11 +15,11 @@ function DropdownMenu({ onDisplayCountChange, days }) {
         <option value="7">7</option>
         <option value="14">14</option>
         <option value="30">30</option>
-        <option value={days.length}>All Days</option>
+        <option value={daysInList.length}>All Days</option>
       </select>
       <p>{selectedOption} Results per page</p>
     </div>
-  );
+  )
 }
 
 export default DropdownMenu

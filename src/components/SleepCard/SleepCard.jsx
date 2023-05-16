@@ -34,12 +34,13 @@ const SleepCard = ({day}) => {
       <h4>Hours Slept:
         <button onClick={() => handleSave()}>Save</button>
         <input
-            type='number'
-            name='totalSleep'
-            id='sleep-input'
-            value={sleepData}
-            onChange={handleChange}
-      /></h4>
+          type='number'
+          name='totalSleep'
+          id='sleep-input'
+          value={sleepData}
+          onChange={handleChange}
+        />
+      </h4>
     </>
   )
   const saveView = (
@@ -49,7 +50,6 @@ const SleepCard = ({day}) => {
       </h4>
     </>
   )
-
 
   return (
     <>

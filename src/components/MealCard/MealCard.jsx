@@ -52,40 +52,40 @@ const MealCard = ({day}) => {
       <h4>
         <label htmlFor="breakfast-input">Breakfast</label>
         <textarea 
-        name="breakfast" 
-        id="breakfast-input" 
-        value={mealData.breakfast}
-        onChange={handleChange}
+          name="breakfast" 
+          id="breakfast-input" 
+          value={mealData.breakfast}
+          onChange={handleChange}
         >
         </textarea>
       </h4>
       <h4>
         <label htmlFor="lunch-input">Lunch</label>
         <textarea 
-        name="lunch" 
-        id="lunch-input" 
-        value={mealData.lunch}
-        onChange={handleChange}
+          name="lunch" 
+          id="lunch-input" 
+          value={mealData.lunch}
+          onChange={handleChange}
         >
         </textarea>
       </h4>
       <h4>
         <label htmlFor="dinner-input">Dinner</label>
         <textarea 
-        name="dinner" 
-        id="dinner-input" 
-        value={mealData.dinner}
-        onChange={handleChange}
+          name="dinner" 
+          id="dinner-input" 
+          value={mealData.dinner}
+          onChange={handleChange}
         >
         </textarea>
       </h4>
       <h4>
         <label htmlFor="snacks-input">Snacks</label>
         <textarea 
-        name="snacks" 
-        id="snacks-input" 
-        value={mealData.snacks}
-        onChange={handleChange}
+          name="snacks" 
+          id="snacks-input" 
+          value={mealData.snacks}
+          onChange={handleChange}
         >
         </textarea>
       </h4>
@@ -95,36 +95,36 @@ const MealCard = ({day}) => {
     <>
       <h2>
         Meals
-          <button onClick={() => handleEdit()}>Edit</button>
+        <button onClick={() => handleEdit()}>Edit</button>
       </h2>
-        <h4>Breakfast
+      <h4>Breakfast
         <ul>
           {breakfast.split(',').map((item, index) => (
             <li key={index}>{item.trim()}</li>
           ))}
         </ul>
-        </h4>
-        <h4>Lunch
+      </h4>
+      <h4>Lunch
         <ul>
           {lunch.split(',').map((item, index) => (
             <li key={index}>{item.trim()}</li>
           ))}
         </ul>
-        </h4>
-        <h4>Dinner
+      </h4>
+      <h4>Dinner
         <ul>
           {dinner.split(',').map((item, index) => (
             <li key={index}>{item.trim()}</li>
           ))}
         </ul>
-        </h4>
-        <h4>Snack
+      </h4>
+      <h4>Snack
         <ul>
           {snacks.split(',').map((item, index) => (
             <li key={index}>{item.trim()}</li>
           ))}
         </ul>
-        </h4>
+      </h4>
     </>
   )
 
