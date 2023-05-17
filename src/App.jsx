@@ -26,6 +26,7 @@ import './App.css'
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const [days, setDays] = useState([])
+  console.log(days)
   const navigate = useNavigate()
 
   const handleLogout = () => {
