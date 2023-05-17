@@ -1,6 +1,9 @@
 // npm modules
 import { NavLink } from 'react-router-dom'
 
+// assets
+import closed from '../../assets/icons/closed.png'
+
 // import { fill } from '@cloudinary/url-gen/actions/resize'
 // import { CloudinaryImage } from '@cloudinary/url-gen'
 
@@ -45,7 +48,7 @@ const NavBar = ({ user, handleLogout, averageRating }) =>{
         {user &&
           <div >
             <div className="dropdown">
-              <button className="dropdown-button"><img src="../src/assets/Icons/closed.png" /></button>
+              <button className="dropdown-button"><img src={closed} /></button>
               <div className="dropdown-content">
                 <p><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></p>
                 <p><NavLink to="/auth/change-password">Change Password</NavLink></p>
