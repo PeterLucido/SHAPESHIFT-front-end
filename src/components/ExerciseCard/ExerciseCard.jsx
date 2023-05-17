@@ -51,16 +51,16 @@ const ExerciseCard = ({day}) => {
       <h2>
         <label htmlFor="typeOfExercise-input">Exercises: </label>
         <textarea 
-        name="typeOfExercise" 
-        id="typeOfExercise-input" 
-        value={exerciseData.typeOfExercise} 
-        onChange={handleChange}
+          name="typeOfExercise" 
+          id="typeOfExercise-input" 
+          value={exerciseData.typeOfExercise} 
+          onChange={handleChange}
         />
         <input 
-        type="number" 
-        name="timeSpent"
-        value={exerciseData.timeSpent}
-        onChange={handleChange}
+          type="number" 
+          name="timeSpent"
+          value={exerciseData.timeSpent}
+          onChange={handleChange}
         />
       </h2>
     </>

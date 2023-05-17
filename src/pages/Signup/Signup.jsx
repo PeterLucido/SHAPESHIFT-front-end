@@ -11,7 +11,7 @@ import * as authService from '../../services/authService'
 import styles from './Signup.module.css'
 import { AdvancedImage } from '@cloudinary/react'
 
-const myImage = new CloudinaryImage('sample', {cloudName: 'dd5j0nypw'}).resize(fill().width(100).height(150));
+const myImage = new CloudinaryImage('mwihgtqlcsl7gytg5wh1', {cloudName: 'dd5j0nypw'}).resize(fill().width(100).height(150));
 
 
 const Signup = ({ handleAuthEvt }) => {

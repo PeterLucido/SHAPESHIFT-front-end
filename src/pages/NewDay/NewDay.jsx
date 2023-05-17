@@ -97,9 +97,6 @@ const NewDay = (props) => {
       
       <form className='add-day-form' onSubmit={handleSubmit}>
         <div>
-
-          {slicedDates.includes(dayFormData.date) && <h1>This fucking day exists!</h1>}
-
           <label className="day-input" htmlFor='date-input'>Date</label>
           <input
             required
