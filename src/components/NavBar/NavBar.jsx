@@ -2,7 +2,7 @@
 import { NavLink } from 'react-router-dom'
 
 // assets
-import closed from '../../assets/icons/closed.png'
+import closed from '../../assets/Icons/closed.png'
 
 // import { fill } from '@cloudinary/url-gen/actions/resize'
 // import { CloudinaryImage } from '@cloudinary/url-gen'
