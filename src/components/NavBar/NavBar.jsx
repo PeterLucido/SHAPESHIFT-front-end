@@ -4,11 +4,7 @@ import { NavLink } from 'react-router-dom'
 // assets
 import closed from '../../assets/icons/closed.png'
 
-// import { fill } from '@cloudinary/url-gen/actions/resize'
-// import { CloudinaryImage } from '@cloudinary/url-gen'
-
 import styles from '../NavBar/NavBar.module.css'
-import { useEffect, useState } from 'react'
 
 
 const NavBar = ({ user, handleLogout, averageRating, profile }) => {

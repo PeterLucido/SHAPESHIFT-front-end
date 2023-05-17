@@ -42,7 +42,6 @@ const DayDetails = (props) => {
       [name]: value
     })
     setEditMode(true)
-    console.log(day.rating, day.date)
   }
   
   const handleSave = async() => {

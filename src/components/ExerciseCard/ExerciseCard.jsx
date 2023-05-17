@@ -33,8 +33,8 @@ const ExerciseCard = ({day}) => {
     try {
       await dayService.update(day)
       setEditMode(false)
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      console.log(err)
     }
   }
 

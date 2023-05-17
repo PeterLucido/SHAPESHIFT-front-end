@@ -47,11 +47,9 @@ const DayList = ({days, user, getAverageRating}) => {
     const fetchAllDays = async () => {
       const data = await dayService.index()
       setDaysInList(data)
-      console.log('Day Data', data)
-
       const totalRating = data.reduce((sum, day) => sum + day.rating, 0)
-    const averageRating = totalRating / data.length
-    getAverageRating(averageRating)
+      const averageRating = totalRating / data.length
+      getAverageRating(averageRating)
     } 
     if (user) fetchAllDays()
   }, [user])

@@ -11,8 +11,6 @@ const SleepCard = ({day}) => {
   const handleChange = (evt) => {
     const updatedSleep = evt.target.value
     setSleepData(updatedSleep)
-    console.log(updatedSleep)
-    console.log(day)
   }
   const handleEdit = () => {
     setEditMode(true)
@@ -25,8 +23,8 @@ const SleepCard = ({day}) => {
     try {
       await update(updatedDay)
       setEditMode(false)
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      console.log(err)
     }
   }
 
