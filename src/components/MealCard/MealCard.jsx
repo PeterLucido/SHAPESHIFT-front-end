@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { update } from "../../services/dayService"
+import * as dayService from "../../services/dayService"
 
 const MealCard = ({day}) => {
   const [editMode, setEditMode] = useState(false)
@@ -18,7 +18,6 @@ const MealCard = ({day}) => {
     setMealData((prevData) => ({
       ...prevData, [name]: value
     }))
-    console.log(mealData)
   }
 
   const handleEdit = () => {
@@ -36,7 +35,7 @@ const MealCard = ({day}) => {
     const updatedDay = {...day}
     updatedDay.meal[0] = mealData
     try {
-      await update(day)
+      await dayService.update(day)
       setEditMode(false)
     } catch (error) {
       console.log(error)
@@ -53,9 +52,9 @@ const MealCard = ({day}) => {
       </div>
   
       <div className="meal-container">
-        <h4>Water Intake:</h4>
+        <h4>Water Intake: </h4>
         <textarea 
-          name="water" 
+          name="waterIntake" 
           id="water-input" 
           value={mealData.waterIntake}
           onChange={handleChange}
@@ -108,23 +107,23 @@ const MealCard = ({day}) => {
       </div>
       <div className="meal-container">
         <h4>Water Intake: </h4>
-        <p>{mealData.waterIntake}</p>
+        <p>{waterIntake}</p>
       </div>
       <div className="meal-container">
         <h4>Breakfast: </h4>
-        <p>{mealData.breakfast}</p>
+        <p>{breakfast}</p>
       </div>
       <div className="meal-container">
         <h4>Lunch: </h4>
-        <p>{mealData.lunch}</p>
+        <p>{lunch}</p>
       </div>
       <div className="meal-container">
         <h4>Dinner: </h4>
-        <p>{mealData.dinner}</p>
+        <p>{dinner}</p>
       </div>
       <div className="meal-container">
         <h4>Snacks: </h4>
-        <p>{mealData.snacks}</p>
+        <p>{snacks}</p>
       </div>
     </>
   )

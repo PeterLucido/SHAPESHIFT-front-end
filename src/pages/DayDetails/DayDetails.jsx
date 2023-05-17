@@ -58,7 +58,7 @@ const editView = (
     <div className="day-info">
       <div className="date-container">
         <input
-          className="date-input"
+          className="date-input-1"
           type='date'
           name='date'
           id='date-input'

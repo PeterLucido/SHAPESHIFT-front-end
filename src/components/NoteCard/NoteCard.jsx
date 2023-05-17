@@ -35,14 +35,14 @@ const NoteCard = ({day}) => {
         <h2>Notes</h2>
           <button className="button-save" onClick={() => handleSave()}></button>
       </div>
-      <h4>
-        <input
+      <div className='notes-input'>
+        <textarea 
           type='text'
           name='content'
           value={noteData}
           onChange={handleChange}
         />
-      </h4>
+      </div>
     </>
   )
 

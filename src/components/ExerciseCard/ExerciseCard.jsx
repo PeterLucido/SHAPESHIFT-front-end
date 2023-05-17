@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { update } from "../../services/dayService"
+import * as dayService from "../../services/dayService"
 
 const ExerciseCard = ({day}) => {
   const [editMode, setEditMode] = useState(false)
@@ -27,7 +27,7 @@ const ExerciseCard = ({day}) => {
     const updatedDay = {...day}
     updatedDay.exercise[0] = exerciseData
     try {
-      await update(day)
+      await dayService.update(day)
       setEditMode(false)
     } catch (error) {
       console.log(error)

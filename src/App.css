@@ -175,7 +175,7 @@ nav > ul {
   right: 10px;
   width: 25px;
   height: 25px;
-  background-image: url('../src/Icons/edit.png');
+  background-image: url('../src/assets/Icons/edit.png');
   background-size: cover;
   background-color: transparent;
   border: none;
@@ -187,7 +187,7 @@ nav > ul {
   right: 10px;
   width: 25px;
   height: 25px;
-  background-image: url('../src/Icons/save.png');
+  background-image: url('../src/assets/Icons/save.png');
   background-size: cover;
   background-color: transparent;
   border: none;
@@ -198,7 +198,8 @@ nav > ul {
   align-content: center;
   width: 35px;
   height: 45px;
-  background-image: url('../src/Icons/delete.png');
+]
+  background-image: url('../src/assets/Icons/delete.png');
   background-size: cover;
   background-color: transparent;
   border: none;
@@ -252,4 +253,14 @@ nav > ul {
 
 .rating-input-details{
   width: auto;
+}
+
+.date-input-1{
+  width: auto;
+}
+
+.notes-input {
+  padding-top: 10px;
+  width: 85%;
+  height: 80px;
 }

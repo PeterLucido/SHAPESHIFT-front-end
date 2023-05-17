@@ -1,6 +1,9 @@
 // npm modules
 import { NavLink } from 'react-router-dom'
 
+
+import styles from '../NavBar/NavBar.module.css'
+
 const NavBar = ({ user, handleLogout }) => {
   return (
     <>
