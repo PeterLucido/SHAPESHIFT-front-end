@@ -4,9 +4,8 @@ import DropdownMenu from "../../components/DropdownMenu/DropdownMenu"
 import { useState } from "react"
 import { useEffect } from "react"
 import * as dayService from '../../services/dayService'
-import NavBar from "../../components/NavBar/NavBar"
 
-const DayList = ({days, user, getAverageRating}) => {
+const DayList = ({ user, getAverageRating}) => {
   
   const [daysInList, setDaysInList] = useState([])
   const [displayCount, setDisplayCount] = useState(7)

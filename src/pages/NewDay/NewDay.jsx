@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-// import * as dayService from '../../services/dayService'
 import * as dayService from '../../services/dayService'
 
 
