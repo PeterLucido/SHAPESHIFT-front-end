@@ -132,7 +132,6 @@ const Signup = ({ handleAuthEvt }) => {
           />
         </label>
         <div>
-          {/* <Link to="/">Cancel</Link> */}
           <button
             className={styles.button}
             disabled={ isFormInvalid() || isSubmitted }

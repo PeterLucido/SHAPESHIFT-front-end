@@ -1,8 +1,13 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 // import * as dayService from '../../services/dayService'
+import * as dayService from '../../services/dayService'
 
 
 const NewDay = (props) => {
+  const [invalidDate, setInvalidDate] = useState([
+    {date: ''}
+  ])
+  const [message, setMessage] = useState('')
   const [dayFormData, setDayFormData]= useState({
     date: new Date().toISOString().slice(0,10),
     rating: 3,
@@ -24,12 +29,29 @@ const NewDay = (props) => {
     }
   })
 
+  useEffect(() => {
+    const fetchAllDays = async () => {
+      const data = await dayService.index()
+      setInvalidDate(data)
+      console.log('Day Data', data)
+    } 
+    if (props.user) fetchAllDays()
+  }, [props.user])
+
+  if (!invalidDate) return <h1>Loading...</h1>
+  console.log(dayFormData.date)
+  console.log(invalidDate[0].date.slice(0,10))
+  const slicedDates = invalidDate.map(obj => obj.date.slice(0,10))
+  console.log(slicedDates)
+
   const handleDayChange = (evt) => {
     setDayFormData({
       ...dayFormData,
       [evt.target.name]: evt.target.value,
     })
   }
+
+  
 
   const handleSleepChange = (evt) => {
     setDayFormData({
@@ -78,6 +100,9 @@ const NewDay = (props) => {
       
       <form className='add-day-form' onSubmit={handleSubmit}>
         <div>
+
+        {slicedDates.includes(dayFormData.date) && <h1>This fucking day exists!</h1>}
+
           <label className="day-input" htmlFor='date-input'>Date</label>
           <input
             required
@@ -183,7 +208,6 @@ const NewDay = (props) => {
         </div>
         <button type='submit'>Submit</button>
       </form>
-      {console.log(dayFormData)}
     </main>
   )
 }

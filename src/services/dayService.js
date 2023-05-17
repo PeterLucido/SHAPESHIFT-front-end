@@ -34,6 +34,7 @@ async function create(dayFormData) {
       },
       body: JSON.stringify(dayFormData)
     })
+
     return res.json()
   } catch (err) {
     console.log(err)
