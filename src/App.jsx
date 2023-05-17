@@ -58,10 +58,11 @@ function App() {
 
   return (
     <>
+    {user &&
       <NavBar
         user={user}
         handleLogout={handleLogout}
-      />
+      />}
       <Routes>
         <Route
           path="/"

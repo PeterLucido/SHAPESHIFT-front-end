@@ -3,11 +3,21 @@
 }
 
 .leftSide, .rightSide {
-  height: 90vh;
+  height: 100vh;
   width: 50%;
 }
 
+@media screen and (max-width: 1000px) {
+  .leftSide{
+    width: 0%;
+  }
+  .rightSide{
+    width: 100%;
+  }
+}
+
 .rightSide {
+  background-color: #F3E600;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -83,12 +93,14 @@
 
 
 .shapeshift {
+  margin-top: 50px;
   width: 500px;
   position: relative;
   z-index: 2;
 }
 
 .buttonsContainer {
+  margin-top: 100px;
   position: relative;
   z-index: 1;
   display: flex;

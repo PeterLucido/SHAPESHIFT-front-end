@@ -59,10 +59,6 @@ const Landing = ({handleAuthEvt}) => {
         </div>
         <div className={styles.rightSide}>
           <img src='src/assets/imgs/shapeshift-logo.png' className={styles.shapeshift}/>
-          {/* <div className={styles.loginButtonsContainer}>
-            <LoginPage  handleAuthEvt={handleAuthEvt}/>
-            <button onClick={handleLoginForm} className={styles.cancelButton}>CANCEL</button>
-          </div> */}
           <Signup handleAuthEvt={handleAuthEvt}/>
           <button onClick={handleCancel} className={styles.cancelButton}>CANCEL</button>
         </div>
@@ -70,7 +66,6 @@ const Landing = ({handleAuthEvt}) => {
       </>
     )
   }
-
 
   return (
     <main className={styles.container}>

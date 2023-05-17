@@ -49,17 +49,18 @@ input[type="file"] {
 .button,
 .button::after {
   position: relative;
-  width: 380px;
-  height: 86px;
-  font-size: 36px;
+  width: 200px;
+  height: 36px;
+  font-size: 20px;
   background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
   border: 0;
   color: #fff;
   letter-spacing: 3px;
-  line-height: 88px;
+  line-height: 30px;
   box-shadow: 6px 0 0 #00e6f6;
   outline: transparent;
   margin-bottom: 10px;
+  margin-right: 30px;
   cursor: pointer;
 }
 .button::after {
