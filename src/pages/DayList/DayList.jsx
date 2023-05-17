@@ -4,8 +4,9 @@ import DropdownMenu from "../../components/DropdownMenu/DropdownMenu"
 import { useState } from "react"
 import { useEffect } from "react"
 import * as dayService from '../../services/dayService'
+import NavBar from "../../components/NavBar/NavBar"
 
-const DayList = ({days, user}) => {
+const DayList = ({days, user, getAverageRating}) => {
   
   const [daysInList, setDaysInList] = useState([])
   const [displayCount, setDisplayCount] = useState(7)
@@ -47,6 +48,10 @@ const DayList = ({days, user}) => {
       const data = await dayService.index()
       setDaysInList(data)
       console.log('Day Data', data)
+
+      const totalRating = data.reduce((sum, day) => sum + day.rating, 0)
+    const averageRating = totalRating / data.length
+    getAverageRating(averageRating)
     } 
     if (user) fetchAllDays()
   }, [user])
