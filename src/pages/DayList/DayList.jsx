@@ -74,7 +74,7 @@ const DayList = ({days, user}) => {
         <DropdownMenu onDisplayCountChange={handleDisplayCountChange} daysInList={daysInList} />
       </div>
       <main>
-        <div className="container">
+        <div className="daylist-container">
           {filteredDays}
         </div>
       </main>
