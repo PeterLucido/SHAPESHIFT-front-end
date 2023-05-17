@@ -1,6 +1,8 @@
 // npm modules
 import { NavLink } from 'react-router-dom'
 
+// import { fill } from '@cloudinary/url-gen/actions/resize'
+// import { CloudinaryImage } from '@cloudinary/url-gen'
 
 import styles from '../NavBar/NavBar.module.css'
 import { useEffect, useState } from 'react'

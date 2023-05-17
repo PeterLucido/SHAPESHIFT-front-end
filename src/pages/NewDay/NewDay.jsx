@@ -66,6 +66,7 @@ const NewDay = (props) => {
   }
 
   const handleSubmit = (evt) => {
+
     evt.preventDefault()
     props.handleAddDay(dayFormData)
   }

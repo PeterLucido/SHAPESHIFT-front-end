@@ -1,8 +1,19 @@
+
+import workout from '../../assets/imgs/workout.jpg'
+import sleeping from '../../assets/imgs/sleeping.jpg'
+import food from '../../assets/imgs/food.jpg'
+import maxresdefault from '../../assets/imgs/maxresdefault.jpg'
+import logo from '../../assets/imgs/logo.png'
+
+
+
 // css
 import styles from './Landing.module.css'
 import LoginPage from '../Login/Login'
 import Signup from '../Signup/Signup'
 import { useState } from 'react'
+
+
 
 
 const Landing = ({handleAuthEvt}) => {
@@ -30,13 +41,13 @@ const Landing = ({handleAuthEvt}) => {
       <>
         <main className={styles.container}>
         <div className={styles.leftSide}>
-          <img src='src/assets/imgs/two-strong-people-working-out-in-gym-2021-08-27-09-32-07-utc.jpg' className={styles.slide} id={styles.slide1}/>
-          <img src='src/assets/imgs/sleeping.jpg' className={styles.slide} id={styles.slide2}/>
-          <img src='src/assets/imgs/pexels-spencer-davis-9837738.jpg' className={styles.slide} id={styles.slide3}/>
-          <img src='src/assets/imgs/maxresdefault.jpg' className={styles.slide} id={styles.slide4}/>
+          <img src={workout} className={styles.slide} id={styles.slide1}/>
+          <img src={sleeping} className={styles.slide} id={styles.slide2}/>
+          <img src={food} className={styles.slide} id={styles.slide3}/>
+          <img src={maxresdefault} className={styles.slide} id={styles.slide4}/>
         </div>
         <div className={styles.rightSide}>
-          <img src='src/assets/imgs/shapeshift-logo.png' className={styles.shapeshift}/>
+          <img src={logo} className={styles.shapeshift}/>
           <div className={styles.loginButtonsContainer}>
             <LoginPage  handleAuthEvt={handleAuthEvt}/>
             <button onClick={handleCancel} className={styles.cancelButton}>CANCEL</button>
@@ -52,13 +63,13 @@ const Landing = ({handleAuthEvt}) => {
       <>
         <main className={styles.container}>
         <div className={styles.leftSide}>
-          <img src='src/assets/imgs/two-strong-people-working-out-in-gym-2021-08-27-09-32-07-utc.jpg' className={styles.slide} id={styles.slide1}/>
-          <img src='src/assets/imgs/sleeping.jpg' className={styles.slide} id={styles.slide2}/>
-          <img src='src/assets/imgs/pexels-spencer-davis-9837738.jpg' className={styles.slide} id={styles.slide3}/>
-          <img src='src/assets/imgs/maxresdefault.jpg' className={styles.slide} id={styles.slide4}/>
+          <img src={workout} className={styles.slide} id={styles.slide1}/>
+          <img src={sleeping} className={styles.slide} id={styles.slide2}/>
+          <img src={food} className={styles.slide} id={styles.slide3}/>
+          <img src={maxresdefault} className={styles.slide} id={styles.slide4}/>
         </div>
         <div className={styles.rightSide}>
-          <img src='src/assets/imgs/shapeshift-logo.png' className={styles.shapeshift}/>
+          <img src={logo} className={styles.shapeshift}/>
           {/* <div className={styles.loginButtonsContainer}>
             <LoginPage  handleAuthEvt={handleAuthEvt}/>
             <button onClick={handleLoginForm} className={styles.cancelButton}>CANCEL</button>
@@ -75,14 +86,14 @@ const Landing = ({handleAuthEvt}) => {
   return (
     <main className={styles.container}>
       <div className={styles.leftSide}>
-        <img src='src/assets/imgs/two-strong-people-working-out-in-gym-2021-08-27-09-32-07-utc.jpg' className={styles.slide} id={styles.slide1}/>
-        <img src='src/assets/imgs/sleeping.jpg' className={styles.slide} id={styles.slide2}/>
-        <img src='src/assets/imgs/pexels-spencer-davis-9837738.jpg' className={styles.slide} id={styles.slide3}/>
-        <img src='src/assets/imgs/maxresdefault.jpg' className={styles.slide} id={styles.slide4}/>
+        <img src={workout} className={styles.slide} id={styles.slide1}/>
+        <img src={sleeping} className={styles.slide} id={styles.slide2}/>
+        <img src={food} className={styles.slide} id={styles.slide3}/>
+        <img src={maxresdefault} className={styles.slide} id={styles.slide4}/>
       </div>
 
       <div className={styles.rightSide}>
-        <img src='src/assets/imgs/shapeshift-logo.png' className={styles.shapeshift}/>
+        <img src={logo} className={styles.shapeshift}/>
         <div className={styles.buttonsContainer}>
           <button onClick={handleLoginForm} className={styles.button}>Log In</button>
           <button onClick={handleSignUpForm}className={styles.button}>Sign Up</button>
