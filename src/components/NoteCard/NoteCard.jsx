@@ -31,25 +31,29 @@ const NoteCard = ({day}) => {
 
   const editView = (
     <>
-      <h4>
-        Notes:
-        <button onClick={()=>handleSave()}>Save</button>
-        <input
+    <div className="form-headings">
+        <h2>Notes</h2>
+          <button className="button-save" onClick={() => handleSave()}></button>
+      </div>
+      <div className='notes-input'>
+        <textarea 
           type='text'
           name='content'
           value={noteData}
           onChange={handleChange}
         />
-      </h4>
+      </div>
     </>
   )
 
   const saveView = (
     <>
+    <div className="form-headings">
+        <h2>Notes</h2>
+          <button className="button-edit" onClick={() => handleEdit()}></button>
+      </div>
       <h4>
-        Additional Notes:
         <p>{day.notes[0].content}</p>
-        <button onClick={()=>handleEdit()}>Edit</button>
       </h4>
     </>
   )

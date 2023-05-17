@@ -7,6 +7,7 @@ import { useState } from 'react'
 const Landing = ({handleAuthEvt}) => {
 
   const [loginForm, setLoginForm] = useState(false)
+  const [signUpForm, setSignUpForm] = useState(false)
 
   const handleLoginForm = () => {
     setLoginForm(!loginForm)

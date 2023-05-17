@@ -9,8 +9,8 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color: rgba(0, 0, 0, 0.87);
-  background-color: #dedede;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #c0c0c0;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -133,7 +133,7 @@ nav > ul {
   display: grid;
   justify-items: center;
   align-items: center;
-  max-width: 800px;
+  max-width: 600px;
   border: 5px solid black;
   background-color: white;
   margin: 0 auto;
@@ -155,3 +155,111 @@ nav > ul {
   color: black;
 }
 
+.day-info {
+  display: flex; 
+  flex-direction: column;
+  text-align: center;
+  width: 90%;
+}
+
+.date-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 50px;
+}
+
+.button-edit {
+  position: absolute;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  background-image: url('../src/assets/Icons/edit.png');
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+}
+
+.button-save {
+  position: absolute;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  background-image: url('../src/assets/Icons/save.png');
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+}
+
+.button-delete {
+  align-content: center;
+  width: 35px;
+  height: 45px;
+  background-image: url('../src/assets/Icons/delete.png');
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+}
+
+.form-headings {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center; 
+  width: 90%;
+  border-bottom: 2px solid #000000;
+}
+
+.sleep-info {
+  display: flex; 
+  flex-direction: column;
+  text-align: center;
+  width: 90%;
+}
+
+.sleep-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  position: relative;
+}
+
+.sleep-container p,
+.sleep-container input {
+  flex-basis: 70%; 
+}
+
+.meal-container {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.meal-container label {
+  flex-basis: 20%; 
+}
+
+.meal-container textarea, 
+.meal-container p {
+  flex-basis: 70%; 
+}
+
+.rating-input-details{
+  width: auto;
+}
+
+.date-input-1{
+  width: auto;
+}
+
+.notes-input {
+  padding-top: 10px;
+  width: 85%;
+  height: 80px;
+}

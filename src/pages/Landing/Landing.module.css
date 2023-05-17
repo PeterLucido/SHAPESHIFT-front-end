@@ -83,6 +83,7 @@
 
 
 .shapeshift {
+  width: 500px;
   position: relative;
   z-index: 2;
 }

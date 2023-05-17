@@ -4,7 +4,7 @@ import NoteCard from '../../components/NoteCard/NoteCard'
 import SleepCard from '../../components/SleepCard/SleepCard'
 
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 import * as dayService from '../../services/dayService'
 
@@ -37,6 +37,7 @@ const DayDetails = (props) => {
       [name]: value
     })
     setEditMode(true)
+    console.log(day.rating, day.date)
   }
   
   const handleSave = async() => {
@@ -44,49 +45,68 @@ const DayDetails = (props) => {
     setEditMode(false)
   }
 
-  const editView = (
-    <>
-      <input
-        type='date'
-        name='date'
-        id='date-input'
-        value={day.date}
-        onChange={handleEdit}
-        placeholder={dayId.date}
-      />
-      <h4>
+  const getCardColor = (rating) => {
+    if (rating <= 1) return { backgroundColor: "red" }
+    if (rating <= 2) return { backgroundColor: "orange" }
+    if (rating <= 3) return { backgroundColor: "yellow" }
+    if (rating <= 4) return { backgroundColor: "lightgreen" }
+    return { backgroundColor: "green" }
+}
+
+const editView = (
+  <>
+    <div className="day-info">
+      <div className="date-container">
+        <input
+          className="date-input-1"
+          type='date'
+          name='date'
+          id='date-input'
+          value={day.date}
+          onChange={handleEdit}
+        />
+        <button className="button-save" onClick={handleSave}></button>
+      </div>
+      <h2>
+        Day Rating: 
         <input 
+          className="rating-input-details"
           type="number" 
           name="rating"
           min={1}
           max={5}
           value={day.rating}
           onChange={handleEdit}
-        /> 
-      </h4>
-      <button onClick={handleSave}>save</button>
-    </>
-  )
-  const saveView = (
-    <>
-      <h3>{formatDate(day.date)}</h3>
-      <h3>Day Rating: {day.rating}</h3>
-      <button onClick={handleEdit}>Edit</button>
-    </>
-  )
+        />
+      </h2>
+    </div>
+  </>
+)
 
-  return (
-    <>
-      <div className='details-container'>
-        {editMode ?  editView : saveView}
-        <SleepCard day={day}/>
-        <MealCard day={day}/>
-        <ExerciseCard day={day}/>
-        <NoteCard day={day}/>
-        <button onClick={() => props.handleDeleteDay(dayId)}>Delete</button>
-      </div>
-    </>
-  )
+const saveView = (
+  <>
+    <div className="day-info">
+        <div className="date-container">
+          <h1>{formatDate(day.date)}</h1>
+          <button className="button-edit" onClick={handleEdit}></button>
+        </div>
+      <h2>Day Rating: {day.rating}</h2>
+    </div>
+  </>
+)
+
+return (
+  <>
+    <div className='details-container' style={getCardColor(day.rating)}>
+      {editMode ?  editView : saveView}
+      <SleepCard day={day}/>
+      <MealCard day={day}/>
+      <ExerciseCard day={day}/>
+      <NoteCard day={day}/>
+      <button className="button-delete" onClick={() => props.handleDeleteDay(dayId)}></button>
+    </div>
+  </>
+)
 }
 
 export default DayDetails
