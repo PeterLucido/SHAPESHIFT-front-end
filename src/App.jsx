@@ -27,6 +27,11 @@ function App() {
   const [user, setUser] = useState(authService.getUser())
   const [days, setDays] = useState([])
   const navigate = useNavigate()
+  const [averageRating, setAverageRating] = useState()
+
+  const getAverageRating = (average) => {
+    setAverageRating(average)
+  }
 
   const handleLogout = () => {
     authService.logout()
@@ -61,6 +66,7 @@ function App() {
       <NavBar
         user={user}
         handleLogout={handleLogout}
+        averageRating={averageRating}
       />
       <Routes>
         <Route
@@ -79,6 +85,7 @@ function App() {
               <DayList 
                 days={days}
                 user={user}
+                getAverageRating={getAverageRating}
               />
             </ProtectedRoute>
           }
