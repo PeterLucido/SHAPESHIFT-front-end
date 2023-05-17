@@ -7,7 +7,6 @@ const NewDay = (props) => {
   const [invalidDate, setInvalidDate] = useState([
     {date: ''}
   ])
-  const [message, setMessage] = useState('')
   const [dayFormData, setDayFormData]= useState({
     date: new Date().toISOString().slice(0,10),
     rating: 3,
@@ -40,7 +39,6 @@ const NewDay = (props) => {
 
   if (!invalidDate) return <h1>Loading...</h1>
   console.log(dayFormData.date)
-  console.log(invalidDate[0].date.slice(0,10))
   const slicedDates = invalidDate.map(obj => obj.date.slice(0,10))
   console.log(slicedDates)
 
@@ -88,7 +86,6 @@ const NewDay = (props) => {
   }
 
   const handleSubmit = (evt) => {
-
     evt.preventDefault()
     props.handleAddDay(dayFormData)
   }
@@ -101,7 +98,7 @@ const NewDay = (props) => {
       <form className='add-day-form' onSubmit={handleSubmit}>
         <div>
 
-        {slicedDates.includes(dayFormData.date) && <h1>This fucking day exists!</h1>}
+          {slicedDates.includes(dayFormData.date) && <h1>This fucking day exists!</h1>}
 
           <label className="day-input" htmlFor='date-input'>Date</label>
           <input
@@ -206,7 +203,9 @@ const NewDay = (props) => {
             onChange={handleNotesChange}
           />
         </div>
-        <button type='submit'>Submit</button>
+        {slicedDates.includes(dayFormData.date) ? 
+        <p>You have already created a page for this day</p> :
+        <button type='submit'>Submit</button> }
       </form>
     </main>
   )

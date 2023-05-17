@@ -151,7 +151,7 @@ function App() {
             <DayList />
           </ProtectedRoute>
         }
-        />
+      />
       </Routes>
     </>
   )

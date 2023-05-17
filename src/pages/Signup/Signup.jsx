@@ -1,6 +1,6 @@
 // npm modules
 import { useState, useRef } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { fill } from '@cloudinary/url-gen/actions/resize'
 import { CloudinaryImage } from '@cloudinary/url-gen'
 
