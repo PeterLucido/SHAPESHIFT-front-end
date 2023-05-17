@@ -71,7 +71,7 @@ const DayList = ({days, user}) => {
         <button onClick={()=>handleIncrease()}>Next</button>
       </h1>
       <div className="dropdown-container">
-        <DropdownMenu onDisplayCountChange={handleDisplayCountChange} days={days} />
+        <DropdownMenu onDisplayCountChange={handleDisplayCountChange} daysInList={daysInList} />
       </div>
       <main>
         <div className="container">
