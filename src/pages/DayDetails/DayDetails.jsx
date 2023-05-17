@@ -3,8 +3,13 @@ import MealCard from '../../components/MealCard/MealCard'
 import NoteCard from '../../components/NoteCard/NoteCard'
 import SleepCard from '../../components/SleepCard/SleepCard'
 
+import deleteIcon from '../../assets/icons/deleteIcon.png'
+import edit from '../../assets/icons/edit.png'
+import save from '../../assets/icons/save.png'
+
+
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import * as dayService from '../../services/dayService'
 
@@ -65,7 +70,7 @@ const editView = (
           value={day.date}
           onChange={handleEdit}
         />
-        <button className="button-save" onClick={handleSave}></button>
+        <button className="button-save" onClick={handleSave}><img src={save} height='25px'/></button>
       </div>
       <h2>
         Day Rating: 
@@ -88,7 +93,7 @@ const saveView = (
     <div className="day-info">
         <div className="date-container">
           <h1>{formatDate(day.date)}</h1>
-          <button className="button-edit" onClick={handleEdit}></button>
+          <button className="button-edit" onClick={handleEdit}><img src={edit} height='25px'/></button>
         </div>
       <h2>Day Rating: {day.rating}</h2>
     </div>
@@ -103,7 +108,7 @@ return (
       <MealCard day={day}/>
       <ExerciseCard day={day}/>
       <NoteCard day={day}/>
-      <button className="button-delete" onClick={() => props.handleDeleteDay(dayId)}></button>
+      <button className="button-delete" onClick={() => props.handleDeleteDay(dayId)}><img src={deleteIcon} height='30px' /></button>
     </div>
   </>
 )

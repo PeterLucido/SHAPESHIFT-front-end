@@ -1,5 +1,8 @@
 import { useState } from 'react'
 
+import edit from "../../assets/icons/edit.png"
+import save from "../../assets/icons/save.png"
+
 import * as dayService from '../../services/dayService'
 
 const NoteCard = ({day}) => {
@@ -33,7 +36,7 @@ const NoteCard = ({day}) => {
     <>
     <div className="form-headings">
         <h2>Notes</h2>
-          <button className="button-save" onClick={() => handleSave()}></button>
+          <button className="button-save" onClick={() => handleSave()}><img src={save} height='25px'/></button>
       </div>
       <div className='notes-input'>
         <textarea 
@@ -50,7 +53,7 @@ const NoteCard = ({day}) => {
     <>
     <div className="form-headings">
         <h2>Notes</h2>
-          <button className="button-edit" onClick={() => handleEdit()}></button>
+          <button className="button-edit" onClick={() => handleEdit()}><img src={edit} height='25px'/></button>
       </div>
       <h4>
         <p>{day.notes[0].content}</p>
