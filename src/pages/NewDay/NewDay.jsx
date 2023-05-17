@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react"
-// import * as dayService from '../../services/dayService'
 import * as dayService from '../../services/dayService'
-
 
 const NewDay = (props) => {
   const [invalidDate, setInvalidDate] = useState([
     {date: ''}
   ])
-  const [message, setMessage] = useState('')
   const [dayFormData, setDayFormData]= useState({
     date: new Date().toISOString().slice(0,10),
     rating: 3,
@@ -39,10 +36,8 @@ const NewDay = (props) => {
   }, [props.user])
 
   if (!invalidDate) return <h1>Loading...</h1>
-  console.log(dayFormData.date)
-  console.log(invalidDate[0].date.slice(0,10))
+
   const slicedDates = invalidDate.map(obj => obj.date.slice(0,10))
-  console.log(slicedDates)
 
   const handleDayChange = (evt) => {
     setDayFormData({

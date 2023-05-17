@@ -1,5 +1,5 @@
 // npm modules
-import { useState, } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -19,16 +19,28 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 // services
 import * as authService from './services/authService'
 import * as dayService from './services/dayService'
+import * as profileService from './services/profileService'
 
 // styles
 import './App.css'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
+  const [profile, setProfile] = useState(null)
   const [days, setDays] = useState([])
-  console.log(days)
-  const navigate = useNavigate()
   const [averageRating, setAverageRating] = useState()
+  
+  const navigate = useNavigate()
+
+  useEffect(()=> {
+    const fetchProfiles = async () => {
+      const profileData = await profileService.getAllProfiles()
+      setProfile(
+        profileData.find((pro) => user.profile === pro._id)
+      )
+    }
+    if (user) fetchProfiles()
+  }, [user])
 
   const getAverageRating = (average) => {
     setAverageRating(average)
@@ -67,6 +79,7 @@ function App() {
     {user &&
       <NavBar
         user={user}
+        profile={profile}
         handleLogout={handleLogout}
         averageRating={averageRating}
       />

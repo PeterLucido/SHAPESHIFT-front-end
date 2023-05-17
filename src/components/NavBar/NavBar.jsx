@@ -4,14 +4,12 @@ import { NavLink } from 'react-router-dom'
 // assets
 import closed from '../../assets/icons/closed.png'
 
-// import { fill } from '@cloudinary/url-gen/actions/resize'
-// import { CloudinaryImage } from '@cloudinary/url-gen'
 
 import styles from '../NavBar/NavBar.module.css'
 import { useEffect, useState } from 'react'
 
 
-const NavBar = ({ user, handleLogout, averageRating }) =>{
+const NavBar = ({ user, handleLogout, averageRating, profile }) =>{
   
   let navClass = 'nav-container'
   if (averageRating >= 4) {
@@ -32,7 +30,13 @@ const NavBar = ({ user, handleLogout, averageRating }) =>{
       {user ?
         <>
           <div className="user-info">
-            <p>{user.name}</p>
+            {
+              profile ?
+              profile.photo ?
+              <img src={profile.photo} height='45px' alt={user.name} /> :
+              user.name :
+              ''
+            }
           </div>
           <div className="nav-right">
             <p><NavLink to='/days'>All Days</NavLink></p>

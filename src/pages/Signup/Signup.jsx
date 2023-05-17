@@ -1,17 +1,12 @@
 // npm modules
 import { useState, useRef } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { fill } from '@cloudinary/url-gen/actions/resize'
-import { CloudinaryImage } from '@cloudinary/url-gen'
+import { useNavigate } from 'react-router-dom'
 
 // services
 import * as authService from '../../services/authService'
 
 // css
 import styles from './Signup.module.css'
-import { AdvancedImage } from '@cloudinary/react'
-
-const myImage = new CloudinaryImage('sample', {cloudName: 'dd5j0nypw'}).resize(fill().width(100).height(150));
 
 
 const Signup = ({ handleAuthEvt }) => {
@@ -85,9 +80,6 @@ const Signup = ({ handleAuthEvt }) => {
 
   return (
     <main className={styles.container}>
-      <div>
-        <AdvancedImage cldImg={myImage} />
-      </div>
       <h1>Sign Up</h1>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
