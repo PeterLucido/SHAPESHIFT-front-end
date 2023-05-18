@@ -138,13 +138,7 @@ nav > ul {
 }
 
 
-.day-container {
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  color: black;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-}
+
 
 .add-day-form {
   display: flex;
@@ -176,16 +170,6 @@ nav > ul {
   flex-direction: column;
 }
 
-.details-container {
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  max-width: 600px;
-  border: 5px solid black;
-  background-color: white;
-  margin: 0 auto;
-  color: black;
-}
 
 .button-container {
   display: flex;

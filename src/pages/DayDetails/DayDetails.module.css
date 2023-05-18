@@ -13,6 +13,17 @@
   height: 50px;
 }
 
+.detailsContainer {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  max-width: 600px;
+  border: 5px solid black;
+  background-color: white;
+  margin: 0 auto;
+  color: black;
+}
+
 .buttonEdit {
   position: absolute;
   right: 10px;
@@ -45,7 +56,7 @@
   background-repeat: no-repeat;
 }
 
-.form-headings {
+.formHeadings {
   display: flex;
   position: relative;
   justify-content: center;

@@ -120,7 +120,7 @@ const saveView = (
 
 return (
   <>
-    <div className='details-container' style={getCardColor(day.rating)}>
+    <div className={styles.detailsContainer} style={getCardColor(day.rating)}>
       {editMode ?  editView : saveView}
       <SleepCard day={day}/>
       <MealCard day={day}/>
