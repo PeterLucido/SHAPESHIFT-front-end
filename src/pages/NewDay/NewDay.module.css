@@ -33,13 +33,16 @@
   margin-top: 10px;
 }
 
-
 .addDay {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  background-color: #E2C26D;
+  width: 500px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  border: 5px solid black;
 }
 
 .inline label {
@@ -50,4 +53,10 @@
 
 .inline input {
   flex-basis: 100%; 
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
 }
