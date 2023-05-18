@@ -9,27 +9,29 @@ import styles from '../NavBar/NavBar.module.css'
 
 const NavBar = ({ user, handleLogout, averageRating, profile }) => {
   
-  let navClass = 'nav-container'
+  let color = styles.green
   if (averageRating > 4) {
-    navClass += ' green'
+    color = styles.green
   } else if (averageRating > 3) {
-    navClass += ' lightgreen'
+    color = styles.lightGreen
   } else if (averageRating > 2) {
-    navClass += ' yellow'
+    color = styles.yellow
   } else if (averageRating > 1) {
-    navClass += ' orange'
+    color = styles.orange
   } else if (averageRating === 1) {
-    navClass += ' red'
+    color = styles.red
   } else {
-    navClass += ' green'
+    color = styles.green
   }
+
+  console.log(averageRating)
 
   return (
     <>
-    <nav className={navClass}>
+    <nav className={styles.navContainer} id={color}>
       {user ?
         <>
-          <div className="user-info">
+          <div className={styles.userInfo}>
             {
               profile ?
               profile.photo ?
@@ -38,7 +40,7 @@ const NavBar = ({ user, handleLogout, averageRating, profile }) => {
               ''
             }
           </div>
-          <div className="nav-right">
+          <div className={styles.navRight}>
             <p><NavLink to='/days'>All Days</NavLink></p>
             <p><NavLink to='/days/new'>Add Day</NavLink></p>
           </div>
@@ -51,9 +53,9 @@ const NavBar = ({ user, handleLogout, averageRating, profile }) => {
         }
         {user &&
           <div >
-            <div className="dropdown">
-              <button className="dropdown-button"><img src={closed} /></button>
-              <div className="dropdown-content">
+            <div className={styles.dropdown}>
+              <button className={styles.dropdownButton}><img src={closed} /></button>
+              <div className={styles.dropdownContent}>
                 <p><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></p>
                 <p><NavLink to="/auth/change-password">Change Password</NavLink></p>
               </div>
