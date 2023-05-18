@@ -1,0 +1,53 @@
+.addDayForm,
+.dayInput,
+.sleepInput,
+.mealInput,
+.exerciseInput,
+.notesInput {
+  flex-direction: column;
+}
+
+.buttonSave {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.buttonSave button {
+  background: none;
+  border: none;
+}
+
+.buttonSave img {
+  height: 50px;
+}
+
+.buttonSave p {
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.inline {
+  display: flex;
+  margin-top: 10px;
+}
+
+
+.addDay {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inline label {
+  flex-basis: 50%;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.inline input {
+  flex-basis: 100%; 
+}
