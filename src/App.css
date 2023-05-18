@@ -146,35 +146,6 @@ nav > ul {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.add-day-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.day-input {
-  display: flex;
-  flex-direction: column;
-}
-
-.sleep-input {
-  display: flex;
-  flex-direction: column;
-}
-
-.meal-input {
-  display: flex;
-  flex-direction: column;
-}
-
-.exercise-input {
-  display: flex;
-  flex-direction: column;
-}
-
-.notes-input {
-  display: flex;
-  flex-direction: column;
-}
 
 .details-container {
   display: grid;
