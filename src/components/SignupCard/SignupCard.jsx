@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom'
 
 import * as authService from '../../services/authService'
 
-import styles from './Signup.module.css'
+import styles from './SignupCard.module.css'
 
-const Signup = ({ handleAuthEvt }) => {
+const SignupCard = ({ handleAuthEvt }) => {
   const [message, setMessage] = useState('')
   const [formData, setFormData] = useState({
     name: '',
@@ -132,4 +132,4 @@ const Signup = ({ handleAuthEvt }) => {
   )
 }
 
-export default Signup
+export default SignupCard

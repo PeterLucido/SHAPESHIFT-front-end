@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom'
 
 import * as authService from '../../services/authService'
 
-import styles from '../Login/Login.module.css'
+import styles from '../LoginCard/LoginCard.module.css'
 
-const LoginPage = ({ handleAuthEvt }) => {
+const LoginCard = ({ handleAuthEvt }) => {
   const [message, setMessage] = useState('')
   const [formData, setFormData] = useState({
     email: '',
@@ -73,4 +73,4 @@ const LoginPage = ({ handleAuthEvt }) => {
   )
 }
 
-export default LoginPage
+export default LoginCard

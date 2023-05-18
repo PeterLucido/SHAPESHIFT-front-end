@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import LoginCard from '../../components/Login/Login'
+import LoginCard from '../../components/LoginCard/LoginCard'
 import SignupCard from '../../components/SignupCard/SignupCard'
 
 import workout from '../../assets/imgs/workout.jpg'
