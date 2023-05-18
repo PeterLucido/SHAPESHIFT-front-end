@@ -10,14 +10,14 @@ const DayList = ({ user, getAverageRating}) => {
   const [daysInList, setDaysInList] = useState([])
   const [displayCount, setDisplayCount] = useState(7)
   const [currIdx, setCurrIdx] = useState(0)
-  const [displayedDays, setDisplayedDays] = useState(filterData(0))
+  // const [displayedDays, setDisplayedDays] = useState(filterData(0))
   
-  function filterData(newIdx) {
-    const filteredData = daysInList.filter((day, idx) => {
-      return idx >= newIdx && idx < newIdx + displayCount
-    })
-    return filteredData
-  }
+  // function filterData(newIdx) {
+  //   const filteredData = daysInList.filter((day, idx) => {
+  //     return idx >= newIdx && idx < newIdx + displayCount
+  //   })
+  //   return filteredData
+  // }
 
   function handleIncrease() {
     let newIdx = currIdx
@@ -25,9 +25,9 @@ const DayList = ({ user, getAverageRating}) => {
     if (newIdx > daysInList.length) {
       return
     }
-    const data = filterData(newIdx)
+    // const data = filterData(newIdx)
     setCurrIdx(newIdx)
-    setDisplayedDays(data)
+    // setDisplayedDays(data)
   }
 
   function handleDecrease() {
@@ -36,9 +36,9 @@ const DayList = ({ user, getAverageRating}) => {
     if (newIdx < 0) {
       return
     }
-    const data = filterData(newIdx)
+    // const data = filterData(newIdx)
     setCurrIdx(newIdx)
-    setDisplayedDays(data)
+    // setDisplayedDays(data)
   }
 
 
