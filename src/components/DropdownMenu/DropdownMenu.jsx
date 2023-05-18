@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import styles from './DropdownMenu.module.css'
+import styles from "./DropdownMenu.module.css"
 
 function DropdownMenu({ onDisplayCountChange, daysInList }) {
   const [selectedOption, setSelectedOption] = useState('')

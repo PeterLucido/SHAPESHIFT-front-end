@@ -1,26 +1,18 @@
-// npm modules
 import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
-// pages
-import Landing from './pages/Landing/Landing'
-import ChangePassword from './pages/ChangePassword/ChangePassword'
-import DayList from './pages/DayList/DayList'
-import DayDetails from './pages/DayDetails/DayDetails'
-import NewDay from './pages/NewDay/NewDay'
-
-// components
-import NavBar from './components/NavBar/NavBar'
-import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
-import Login from './components/Login/Login'
-import Signup from './components/Signup/Signup'
-
-// services
 import * as authService from './services/authService'
 import * as dayService from './services/dayService'
 import * as profileService from './services/profileService'
 
-// styles
+import Landing from './pages/Landing/Landing'
+import DayList from './pages/DayList/DayList'
+import DayDetails from './pages/DayDetails/DayDetails'
+import NewDay from './pages/NewDay/NewDay'
+
+import NavBar from './components/NavBar/NavBar'
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+
 import './App.css'
 
 function App() {
@@ -28,8 +20,8 @@ function App() {
   const [days, setDays] = useState([])
   const [averageRating, setAverageRating] = useState()
   const [profile, setProfile] = useState(null)
-  const navigate = useNavigate()
 
+  const navigate = useNavigate()
   
   useEffect(() => {
     const fetchProfiles = async () => {
@@ -115,22 +107,6 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <DayDetails user={user} handleDeleteDay={handleDeleteDay}/>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/auth/signup"
-          element={<Signup handleAuthEvt={handleAuthEvt} />}
-        />
-        <Route
-          path="/auth/login"
-          element={<Login handleAuthEvt={handleAuthEvt} />}
-        />
-        <Route
-          path="/auth/change-password"
-          element={
-            <ProtectedRoute user={user}>
-              <ChangePassword handleAuthEvt={handleAuthEvt} />
             </ProtectedRoute>
           }
         />

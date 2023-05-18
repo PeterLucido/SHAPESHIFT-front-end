@@ -1,17 +1,11 @@
-// npm modules
 import { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-// services
 import * as authService from '../../services/authService'
 
-// css
-import styles from './Signup.module.css'
+import styles from './SignupCard.module.css'
 
-const Signup = ({ handleAuthEvt }) => {
-  const navigate = useNavigate()
-  const imgInputRef = useRef(null)
-
+const SignupCard = ({ handleAuthEvt }) => {
   const [message, setMessage] = useState('')
   const [formData, setFormData] = useState({
     name: '',
@@ -21,6 +15,9 @@ const Signup = ({ handleAuthEvt }) => {
   })
   const [photoData, setPhotoData] = useState({ photo: null })
   const [isSubmitted, setIsSubmitted] = useState(false)
+  
+  const navigate = useNavigate()
+  const imgInputRef = useRef(null)
 
   const handleChange = evt => {
     setMessage('')
@@ -34,11 +31,11 @@ const Signup = ({ handleAuthEvt }) => {
     const validFormats = ['gif', 'jpeg', 'jpg', 'png', 'svg', 'webp']
     const photoFormat = file.name.split('.').at(-1)
 
-    // cloudinary supports files up to 10.4MB each as of May 2023
     if (file.size >= 10485760) {
       errMsg = "Image must be smaller than 10.4MB"
       isFileInvalid = true
     }
+    
     if (!validFormats.includes(photoFormat)) {
       errMsg = "Image must be in gif, jpeg/jpg, png, svg, or webp format"
       isFileInvalid = true
@@ -116,7 +113,7 @@ const Signup = ({ handleAuthEvt }) => {
         <label className={styles.label}>
           Upload Photo
           <input 
-            type="file" 
+            type="file"
             name="photo" 
             onChange={handleChangePhoto}
             ref={imgInputRef}
@@ -127,7 +124,7 @@ const Signup = ({ handleAuthEvt }) => {
             className={styles.button}
             disabled={ isFormInvalid() || isSubmitted }
           >
-            {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
+            {!isSubmitted ? 'Sign Up' : '♥️ Sending...'}
           </button>
         </div>
       </form>
@@ -135,4 +132,4 @@ const Signup = ({ handleAuthEvt }) => {
   )
 }
 
-export default Signup
+export default SignupCard

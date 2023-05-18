@@ -1,10 +1,6 @@
-
-// npm modules
 import { Link } from "react-router-dom"
 
-// CSS
-import styles from './DayCard.module.css'
-
+import styles from "./DayCard.module.css"
 
 const DayCard = ({day}) => {
   const formatDate = (dateStr) => {

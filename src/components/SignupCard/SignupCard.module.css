@@ -1,3 +1,7 @@
+* {
+  /* color: black; */
+}
+
 input {
   margin-left: 16px;
   padding: 4px 8px;
@@ -9,15 +13,16 @@ input[type="file"] {
   padding: 0;
 }
 
-.logincontainer {
+.container {
   display: flex;
   align-items: center;
   flex-direction: column;
+  color: white;
 }
 
 .message {
   margin-top: 0;
-  height: 22px;
+  height: 20px;
   color: #dd1b16;
   font-size: 18px;
   font-weight: bold;
@@ -27,7 +32,7 @@ input[type="file"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .label {
@@ -36,10 +41,6 @@ input[type="file"] {
   justify-content: end;
   align-items: center;
   margin-bottom: 8px;
-}
-
-.button {
-  margin-left: 16px;
 }
 
 .form > label:last-of-type {
@@ -59,10 +60,10 @@ input[type="file"] {
   line-height: 30px;
   box-shadow: 6px 0 0 #00e6f6;
   outline: transparent;
-  margin-bottom: 10px;
-  margin-right: 30px;
+  margin-left: 50px;
   cursor: pointer;
 }
+
 .button::after {
   --slice-0: inset(50% 50% 50% 50%);
   --slice-1: inset(80% -6px 0 0);
@@ -80,9 +81,11 @@ input[type="file"] {
   text-shadow: -3px -3px 0 #f8f005, 3px 3px 0 #00e6f6;
   clip-path: var(--slice-0);
 }
+
 .button:hover::after {
   animation: glitch 1s steps(2, end);
 }
+
 @-moz-keyframes glitch {
   0% {
     clip-path: var(--slice-1);

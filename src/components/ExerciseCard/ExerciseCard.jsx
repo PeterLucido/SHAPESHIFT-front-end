@@ -1,14 +1,13 @@
 import { useState } from "react"
 
+import * as dayService from "../../services/dayService"
+
 import edit from "../../assets/icons/edit.png"
 import save from "../../assets/icons/save.png"
 
-import * as dayService from "../../services/dayService"
+import styles from "./ExerciseCard.module.css"
 
-// CSS
-import styles from './ExerciseCard.module.css'
-
-const ExerciseCard = ({day}) => {
+const ExerciseCard = ({ day }) => {
   const [editMode, setEditMode] = useState(false)
   const [exerciseData, setExerciseData] = useState({
     typeOfExercise: '',
@@ -59,6 +58,7 @@ const ExerciseCard = ({day}) => {
           name="typeOfExercise" 
           value={exerciseData.typeOfExercise} 
           onChange={handleChange}
+          autoComplete="off"
         />
       </div>
       <div className={styles.exerciseContainer}>
@@ -96,7 +96,7 @@ const ExerciseCard = ({day}) => {
 
   return (
     <>
-      {editMode ?  editView : saveView}
+      {editMode ? editView : saveView}
     </>
   )
 }

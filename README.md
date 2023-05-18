@@ -1,6 +1,3 @@
-
-  
-
 # SHAPESHIFT
 
 # Getting Started

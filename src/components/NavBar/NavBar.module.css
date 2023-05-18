@@ -1,13 +1,13 @@
+nav > ul {
+  margin: 0;
+  padding: 16px 32px;
+}
+
 .userInfo{
   position: relative;
   left: 25px;
   color: black;
   font-weight: bold;
-}
-
-nav > ul {
-  margin: 0;
-  padding: 16px 32px;
 }
 
 .navContainer {
@@ -37,7 +37,6 @@ nav > ul {
 #red {
   background-color: #F15F61;
 }
-
 
 .navRight {
   display: flex;
@@ -83,10 +82,11 @@ nav > ul {
 .dropdownContent p {
   padding: 12px 16px;
   display: block;
+  background-color: #e6e6e6;
 }
 
 .dropdownContent p:hover {
-  background-color: #e6e6e6;
+  background-color: #E2C26D;
 }
 
 .dropdown:hover .dropdownContent {

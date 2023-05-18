@@ -34,7 +34,6 @@ async function create(dayFormData) {
       },
       body: JSON.stringify(dayFormData)
     })
-
     return res.json()
   } catch (err) {
     console.log(err)
@@ -69,29 +68,10 @@ async function update(dayFormData) {
   }
 }
 
-
-async function createSleep(dayId, sleepFormData) {
-  try{
-    const res = await fetch(`${BASE_URL}/${dayId}/sleep`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${tokenService.getToken()}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(sleepFormData)
-    })
-    return res.json()
-  } catch (err) {
-    console.log(err)
-  }
-}
-
-
 export {
   index,
   create,
   show,
   deleteDay,
   update,
-  createSleep,
 }

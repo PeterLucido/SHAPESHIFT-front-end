@@ -1,14 +1,13 @@
 import { useState } from "react"
 
+import * as dayService from "../../services/dayService"
+
 import edit from "../../assets/icons/edit.png"
 import save from "../../assets/icons/save.png"
 
-import * as dayService from "../../services/dayService"
-
-// CSS
 import styles from './MealCard.module.css'
 
-const MealCard = ({day}) => {
+const MealCard = ({ day }) => {
   const [editMode, setEditMode] = useState(false)
   const [mealData, setMealData] = useState({
     waterIntake: "",
@@ -61,10 +60,11 @@ const MealCard = ({day}) => {
       </div>
       <div className={styles.mealContainer}>
         <h4>Water Intake: </h4>
-        <textarea 
+        <textarea
           name="waterIntake" 
           value={mealData.waterIntake}
           onChange={handleChange}
+          autoComplete="off"
         />
       </div>
       <div className={styles.mealContainer}>
@@ -73,6 +73,7 @@ const MealCard = ({day}) => {
           name="breakfast" 
           value={mealData.breakfast}
           onChange={handleChange}
+          autoComplete="off"
         />
       </div>
       <div className={styles.mealContainer}>
@@ -81,6 +82,7 @@ const MealCard = ({day}) => {
           name="lunch" 
           value={mealData.lunch}
           onChange={handleChange}
+          autoComplete="off"
         />
       </div>
       <div className={styles.mealContainer}>
@@ -89,6 +91,7 @@ const MealCard = ({day}) => {
           name="dinner" 
           value={mealData.dinner}
           onChange={handleChange}
+          autoComplete="off"
         />
       </div>
       <div className={styles.mealContainer}>
@@ -97,6 +100,7 @@ const MealCard = ({day}) => {
           name="snacks" 
           value={mealData.snacks}
           onChange={handleChange}
+          autoComplete="off"
         />
       </div>
     </>
@@ -106,7 +110,9 @@ const MealCard = ({day}) => {
     <>
       <div className={styles.formHeadings}>
         <h2>Meals</h2>
-          <button className={styles.buttonEdit} onClick={() => handleEdit()}><img src={edit} height='25px'/></button>
+        <button className={styles.buttonEdit} onClick={() => handleEdit()}>
+          <img src={edit} height='25px'/>
+        </button>
       </div>
       <div className={styles.mealContainer}>
         <h4>Water Intake: </h4>
@@ -133,7 +139,7 @@ const MealCard = ({day}) => {
 
   return (
     <>
-      {editMode ?  editView : saveView}
+      {editMode ? editView : saveView}
     </>
   )
 }
