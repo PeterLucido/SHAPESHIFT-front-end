@@ -1,21 +1,18 @@
-// npm modules
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-// services
 import * as authService from '../../services/authService'
 
-// css
 import styles from '../Login/Login.module.css'
 
 const LoginPage = ({ handleAuthEvt }) => {
-  const navigate = useNavigate()
-
   const [message, setMessage] = useState('')
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   })
+  
+  const navigate = useNavigate()
 
   const handleChange = evt => {
     setMessage('')

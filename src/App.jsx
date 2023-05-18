@@ -4,7 +4,6 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
 import Landing from './pages/Landing/Landing'
-import ChangePassword from './pages/ChangePassword/ChangePassword'
 import DayList from './pages/DayList/DayList'
 import DayDetails from './pages/DayDetails/DayDetails'
 import NewDay from './pages/NewDay/NewDay'
@@ -125,14 +124,6 @@ function App() {
         <Route
           path="/auth/login"
           element={<Login handleAuthEvt={handleAuthEvt} />}
-        />
-        <Route
-          path="/auth/change-password"
-          element={
-            <ProtectedRoute user={user}>
-              <ChangePassword handleAuthEvt={handleAuthEvt} />
-            </ProtectedRoute>
-          }
         />
       </Routes>
     </>

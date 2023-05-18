@@ -4,10 +4,9 @@ import { update } from "../../services/dayService"
 import edit from "../../assets/icons/edit.png"
 import save from "../../assets/icons/save.png"
 
-// CSS
 import styles from './SleepCard.module.css'
 
-const SleepCard = ({day}) => {
+const SleepCard = ({ day }) => {
   const [editMode, setEditMode] = useState(false)
   const [sleepData, setSleepData] = useState("")
 
@@ -15,6 +14,7 @@ const SleepCard = ({day}) => {
     const updatedSleep = evt.target.value
     setSleepData(updatedSleep)
   }
+
   const handleEdit = () => {
     setEditMode(true)
     setSleepData(day.sleep[0].totalSleep)
@@ -37,7 +37,9 @@ const SleepCard = ({day}) => {
     <>
       <div className={styles.formHeadings}>
         <h2>Sleep</h2>
-          <button className={styles.buttonSave} onClick={handleSave}><img src={save} height='25px'/></button>
+        <button className={styles.buttonSave} onClick={handleSave}>
+          <img src={save} height='25px'/>
+        </button>
       </div>
       <div className={styles.sleepContainer}>
         <h4>Hours Slept:</h4>
@@ -57,7 +59,9 @@ const SleepCard = ({day}) => {
     <>
       <div className={styles.formHeadings}>
         <h2>Sleep</h2>
-          <button className={styles.buttonEdit} onClick={handleEdit}><img src={edit} height='25px'/></button>
+        <button className={styles.buttonEdit} onClick={handleEdit}>
+          <img src={edit} height='25px'/>
+        </button>
       </div>
       <div className={styles.sleepContainer}>
         <h4>Hours Slept:</h4>
@@ -66,11 +70,9 @@ const SleepCard = ({day}) => {
     </>
   )
 
-
-
   return (
     <>
-      {editMode ?  editView : saveView}
+      {editMode ? editView : saveView}
     </>
   )
 }

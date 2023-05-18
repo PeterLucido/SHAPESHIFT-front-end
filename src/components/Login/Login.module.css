@@ -13,12 +13,13 @@ input[type="file"] {
   display: flex;
   align-items: center;
   flex-direction: column;
+  color: white;
 }
 
 .message {
   margin-top: 0;
   height: 22px;
-  color: #dd1b16;
+  color: white;
   font-size: 18px;
   font-weight: bold;
 }

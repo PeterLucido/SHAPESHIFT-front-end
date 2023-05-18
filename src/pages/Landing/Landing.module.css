@@ -39,16 +39,18 @@
   width: 100px;
   height: 20px;
   border-style: none;
+  font-weight: bold;
   text-decoration: underline;
   text-underline-offset: 3px;
+  background: white;
+  border-radius: 10px;
+  color: black;
 }
 
 .cancelButton:hover{
   cursor: pointer;
   color: blue;
 }
-
-
 
 .slide {
   width: 50%;

@@ -1,3 +1,8 @@
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+
+import * as dayService from '../../services/dayService'
+
 import ExerciseCard from '../../components/ExerciseCard/ExerciseCard'
 import MealCard from '../../components/MealCard/MealCard'
 import NoteCard from '../../components/NoteCard/NoteCard'
@@ -7,22 +12,16 @@ import deleteIcon from '../../assets/icons/deleteIcon.png'
 import edit from '../../assets/icons/edit.png'
 import save from '../../assets/icons/save.png'
 
-
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-
-import * as dayService from '../../services/dayService'
-
-// CSS
 import styles from './DayDetails.module.css'
 
 const DayDetails = (props) => {
-  const {dayId} = useParams()
   const [day, setDay] = useState(null)
   const [editMode, setEditMode] = useState(false)
   const [invalidDate, setInvalidDate] = useState([
     {date: ''}
   ])
+  
+  const {dayId} = useParams()
 
   useEffect(() => {
     const fetchAllDays = async () => {
@@ -49,7 +48,7 @@ const DayDetails = (props) => {
     return date.toLocaleDateString(undefined, options)
   }
 
-  if (!day ) return <h1>loading</h1>
+  if (!day) return <h1>loading</h1>
 
   const handleEdit = (evt) => {
     const {name, value} = evt.target
@@ -80,61 +79,62 @@ const DayDetails = (props) => {
   }
 
   const editView = (
-    <>
-      <div className={styles.dayInfo}>
-        <div className={styles.dateContainer}>
-          <input
-            className={styles.dateInput1}
-            type='date'
-            name='date'
-            id='date-input'
-            value={day.date.slice(0,10)}
-            onChange={handleEdit}
-          />
-          {slicedDates.includes(day.date) ?
+    <div className={styles.dayInfo}>
+      <div className={styles.dateContainer}>
+        <input
+          className={styles.dateInput1}
+          type='date'
+          name='date'
+          id='date-input'
+          value={day.date.slice(0,10)}
+          onChange={handleEdit}
+        />
+        {
+          slicedDates.includes(day.date) ?
           '' :
-          <button className={styles.buttonSave} onClick={handleSave}><img src={save} height='25px'/></button>
-          }
-        </div>
-        <h2>
-          Day Rating: 
-          <input 
-            className={styles.ratingInputDetails}
-            type="number" 
-            name="rating"
-            min={1}
-            max={5}
-            value={day.rating}
-            onChange={handleEdit}
-          />
-        </h2>
+          <button className={styles.buttonSave} onClick={handleSave}>
+            <img src={save} height='25px'/>
+          </button>
+        }
       </div>
-    </>
+      <h2>
+        Day Rating: 
+        <input 
+          className={styles.ratingInputDetails}
+          type="number" 
+          name="rating"
+          min={1}
+          max={5}
+          value={day.rating}
+          onChange={handleEdit}
+        />
+      </h2>
+    </div>
   )
 
   const saveView = (
-    <>
-      <div className={styles.dayInfo}>
-          <div className={styles.dateContainer}>
-            <h1>{formatDate(day.date)}</h1>
-            <button className={styles.buttonEdit} onClick={handleEdit}><img src={edit} height='25px'/></button>
-          </div>
-        <h2>Day Rating: {day.rating}</h2>
-      </div>
-    </>
+    <div className={styles.dayInfo}>
+        <div className={styles.dateContainer}>
+          <h1>{formatDate(day.date)}</h1>
+          <button className={styles.buttonEdit} onClick={handleEdit}>
+            <img src={edit} height='25px'/>
+          </button>
+        </div>
+      <h2>Day Rating: {day.rating}</h2>
+    </div>
   )
 
   return (
-    <>
-      <div className={styles.detailsContainer} style={getCardColor(day.rating)}>
-        {editMode ?  editView : saveView}
-        <SleepCard day={day}/>
-        <MealCard day={day}/>
-        <ExerciseCard day={day}/>
-        <NoteCard day={day}/>
-        <button className={styles.buttonDelete} onClick={() => props.handleDeleteDay(dayId)}><img src={deleteIcon} height='30px' /></button>
-      </div>
-    </>
+    <div className={styles.detailsContainer} style={getCardColor(day.rating)}>
+      {editMode ?  editView : saveView}
+      <SleepCard day={day}/>
+      <MealCard day={day}/>
+      <ExerciseCard day={day}/>
+      <NoteCard day={day}/>
+      <button className={styles.buttonDelete} onClick={() => props.handleDeleteDay(dayId)}>
+        <img src={deleteIcon} height='30px' />
+      </button>
+    </div>
   )
 }
 

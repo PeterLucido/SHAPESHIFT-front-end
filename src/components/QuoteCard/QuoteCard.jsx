@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
+
 import { fetchQuoteFromAPI } from '../../services/quoteService'
 
-// CSS
 import styles from './QuoteCard.module.css'
 
 function QuoteCard() {
@@ -19,14 +19,13 @@ function QuoteCard() {
 
   return (
     <div className={styles.quoteContainer}>
-      {!quote ? (
-        <p>Inspiration coming in hot...</p>
-      ) : (
+      {!quote ?
+        <p>Inspiration coming in hot...</p> :
         <div className={styles.quoteText}>
           <p>{quote.text}</p>
           <p>- {quote.author}</p>
         </div>
-      )}
+      }
     </div>
   )
 }

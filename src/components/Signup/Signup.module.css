@@ -1,5 +1,5 @@
 * {
-  color: black;
+  /* color: black; */
 }
 
 input {
@@ -17,6 +17,7 @@ input[type="file"] {
   display: flex;
   align-items: center;
   flex-direction: column;
+  color: white;
 }
 
 .message {
@@ -42,7 +43,6 @@ input[type="file"] {
   margin-bottom: 8px;
 }
 
-
 .form > label:last-of-type {
   margin-bottom: 16px;
 }
@@ -63,6 +63,7 @@ input[type="file"] {
   margin-left: 50px;
   cursor: pointer;
 }
+
 .button::after {
   --slice-0: inset(50% 50% 50% 50%);
   --slice-1: inset(80% -6px 0 0);
@@ -80,9 +81,11 @@ input[type="file"] {
   text-shadow: -3px -3px 0 #f8f005, 3px 3px 0 #00e6f6;
   clip-path: var(--slice-0);
 }
+
 .button:hover::after {
   animation: glitch 1s steps(2, end);
 }
+
 @-moz-keyframes glitch {
   0% {
     clip-path: var(--slice-1);

@@ -25,7 +25,6 @@
   text-align: center;
 }
 
-
 @media screen and (min-width: 1000px) {
   .quoteText {
     overflow: visible;
