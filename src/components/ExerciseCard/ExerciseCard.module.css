@@ -6,3 +6,25 @@
   width: 90%;
   border-bottom: 2px solid #000000;
 }
+
+.buttonSave {
+  position: absolute;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+}
+
+.buttonEdit {
+  position: absolute;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+}

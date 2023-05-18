@@ -56,15 +56,6 @@
   background-repeat: no-repeat;
 }
 
-.formHeadings {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center; 
-  width: 90%;
-  border-bottom: 2px solid #000000;
-}
-
 .sleep-info {
   display: flex; 
   flex-direction: column;
