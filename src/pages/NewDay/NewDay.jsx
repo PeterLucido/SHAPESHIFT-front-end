@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import * as dayService from '../../services/dayService'
 
+import save from '../../assets/icons/save.png'
 
 const NewDay = (props) => {
   const [invalidDate, setInvalidDate] = useState([
@@ -218,7 +219,7 @@ const NewDay = (props) => {
         </div>
         {slicedDates.includes(dayFormData.date) ? 
         <p>You have already created a page for this day</p> :
-        <button type='submit'>Submit</button> }
+        <button className="button-delete" type='submit'><img src={save} height='50px'/></button> }
       </form>
     </main>
   )
