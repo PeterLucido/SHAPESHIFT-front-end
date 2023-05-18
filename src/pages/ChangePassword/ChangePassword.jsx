@@ -27,7 +27,7 @@ const ChangePassword = ({ handleAuthEvt }) => {
     try {
       await authService.changePassword(formData)
       handleAuthEvt()
-      navigate('/')
+      navigate('/days')
     } catch (err) {
       setMessage(err.message)
     }
