@@ -2,32 +2,35 @@
   background-image: url(../../assets/imgs/quoteplate.png);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center center; /* Center the background image */
+  background-position: center center;
   width: 100%;
   max-width: 800px;
   height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* Added positioning */
-  margin: 0 auto; /* Center the container horizontally */
+  position: relative;
+  margin: 0 auto;
   z-index: 0;
+  font-family: 'Bentham', serif;
+  font-size: 20px;
+  margin-top: 55px;
 }
 
 .quoteText {
   position: absolute;
   z-index: 1;
-  width: 30%; /* Adjust the width as needed */
-  height: auto; /* Allow the height to adjust based on content */
-  text-align: center; /* Center the text horizontally */
+  width: 30%;
+  height: auto;
+  text-align: center;
 }
 
 
 @media screen and (min-width: 1000px) {
   .quoteText {
-    overflow: visible; /* Show the full content without ellipsis */
-    white-space: normal; /* Allow line wrapping */
-    text-overflow: clip; /* Disable the ellipsis */
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
   }
 }
 

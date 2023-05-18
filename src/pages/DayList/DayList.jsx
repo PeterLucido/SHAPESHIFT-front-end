@@ -57,13 +57,17 @@ const DayList = ({ user, getAverageRating}) => {
     <>
       <main className={styles.dayListBody}>
         <QuoteCard />
-        <h1 className="all-days">
-          <button className={styles.forwardBack} onClick={()=>handleDecrease()}>⬅️</button>
-          Days
-          <button className={styles.forwardBack} onClick={()=>handleIncrease()}>➡️</button>
-        </h1>
-        <div className="dropdown-container">
-          <DropdownMenu onDisplayCountChange={handleDisplayCountChange} daysInList={daysInList} />
+        <div className={styles.pickDayContainer}>
+          <div className={styles.pickDay}>
+            <h1 className="all-days">
+              <button className={styles.forwardBack} onClick={()=>handleDecrease()}>↞</button>
+              DAYS
+              <button className={styles.forwardBack} onClick={()=>handleIncrease()}>↠</button>
+            </h1>
+            <div className="dropdown-container">
+              <DropdownMenu onDisplayCountChange={handleDisplayCountChange} daysInList={daysInList} />
+            </div>
+          </div>
         </div>
         <div>
           <div className="daylist-container">
