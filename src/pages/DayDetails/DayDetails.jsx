@@ -84,7 +84,7 @@ const editView = (
           type='date'
           name='date'
           id='date-input'
-          value={day.date}
+          value={day.date.slice(0,10)}
           onChange={handleEdit}
         />
         {slicedDates.includes(day.date) ?
