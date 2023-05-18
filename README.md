@@ -1,4 +1,10 @@
+
+  
+
 # SHAPESHIFT
+
+![](src/assets/imgs/landingpage.png)
+![](src/assets/imgs/indexpage.png)
 
 # Getting Started
 
@@ -6,15 +12,23 @@
 
 Click [here]([https://shapeshift-peds.netlify.app/](https://shapeshift-peds.netlify.app/)) link to go to the app!
 
-  
-
 Click [here](https://trello.com/b/FlVCz559/shapeshift) to check out the Trello!
+
+Click [here](https://github.com/PeterLucido/SHAPESHIFT-back-end) to check out the backend repo!
 
 # Contributors
 
+[Peter Lucido](https://github.com/PeterLucido)
+
+[Eugene Fung](https://github.com/efung7994)
+
+[Dawson Myers](https://github.com/dawson120)
+
+[Stephen Im](https://github.com/stevim)
 
 
 # Background
+ShapeShift is a user-friendly app designed to simplify the management of your overall well-being by tracking sleep, food intake, and exercise. With its easy-to-use interface and advanced technology, ShapeShift provides you with personalized data on your health and wellness. Discover a healthier, more balanced lifestyle by monitoring your progress with ShapeShift as your ultimate health companion.
 
   
 
@@ -43,12 +57,15 @@ Click [here](https://trello.com/b/FlVCz559/shapeshift) to check out the Trello!
 - Netlify
 
 - Cloudinary
+- Postman
 
   
 
 # Attributions
 
-[Stock Photos](https://www.pexels.com/)
+[Landing Page Stock Photos](https://www.pexels.com/)
+
+[Other Stock Photos](https://elements.envato.com/)
 
 [Login Button Styling](https://codepen.io/seaox/pen/GRRbzjY)
 
@@ -61,10 +78,8 @@ Click [here](https://trello.com/b/FlVCz559/shapeshift) to check out the Trello!
 
 - [ ] See an empty card for any missed days 
 
-- [ ] Functionality to search for foods in a search bar instead of having a user input their own meals
+- [ ] Functionality to search for foods in a search bar instead of having a user input their meals
 
 - [ ] Mobile-friendly view
 
 - [ ] Add function to track calories automatically when food is input into the meals category
-
-- [ ] Limit the total amount of hours spent between exercise and sleep to be 24 hours
