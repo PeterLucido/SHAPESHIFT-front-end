@@ -8,6 +8,9 @@ import * as dayService from '../../services/dayService'
 // CSS
 import styles from './DayList.module.css'
 
+// assets
+import corkboard from '../../assets/imgs/corkboard.jpg'
+
 const DayList = ({ user, getAverageRating}) => {
   const [daysInList, setDaysInList] = useState([])
   const [displayCount, setDisplayCount] = useState(7)
@@ -54,22 +57,24 @@ const DayList = ({ user, getAverageRating}) => {
   }
 
   return (
-    <main className={styles.dayListBody}>
-      <QuoteCard />
-      <h1 className="all-days">
-        <button className={styles.forwardBack} onClick={()=>handleDecrease()}>⬅️</button>
-        Days
-        <button className={styles.forwardBack} onClick={()=>handleIncrease()}>➡️</button>
-      </h1>
-      <div className="dropdown-container">
-        <DropdownMenu onDisplayCountChange={handleDisplayCountChange} daysInList={daysInList} />
-      </div>
-      <div>
-        <div className="daylist-container">
-          {filteredDays}
+    <>
+      <main className={styles.dayListBody}>
+        <QuoteCard />
+        <h1 className="all-days">
+          <button className={styles.forwardBack} onClick={()=>handleDecrease()}>⬅️</button>
+          Days
+          <button className={styles.forwardBack} onClick={()=>handleIncrease()}>➡️</button>
+        </h1>
+        <div className="dropdown-container">
+          <DropdownMenu onDisplayCountChange={handleDisplayCountChange} daysInList={daysInList} />
         </div>
-      </div>
-    </main>
+        <div>
+          <div className="daylist-container">
+            {filteredDays}
+          </div>
+        </div>
+      </main>
+    </>
   )
 }
 
