@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import LoginCard from '../../components/LoginCard/LoginCard'
 import SignupCard from '../../components/SignupCard/SignupCard'
@@ -11,9 +12,11 @@ import logo from '../../assets/imgs/logo.png'
 
 import styles from './Landing.module.css'
 
-const Landing = ({ handleAuthEvt }) => {
+const Landing = ({ handleAuthEvt, user }) => {
   const [loginForm, setLoginForm] = useState(false)
   const [signUpForm, setSignUpForm] = useState(false)
+
+  const navigate = useNavigate()
 
   const handleLoginForm = () => {
     setLoginForm(true)
@@ -70,6 +73,10 @@ const Landing = ({ handleAuthEvt }) => {
         </div>
       </main>
     )
+  }
+  
+  if (user) {
+    navigate ('/days')
   }
 
   return (
