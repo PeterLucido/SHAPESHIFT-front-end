@@ -5,6 +5,9 @@ import save from "../../assets/icons/save.png"
 
 import * as dayService from '../../services/dayService'
 
+// CSS
+import styles from './NoteCard.module.css'
+
 const NoteCard = ({day}) => {
   const [editMode, setEditMode] = useState(false)
   const [noteData, setNoteData] = useState("")
@@ -34,11 +37,11 @@ const NoteCard = ({day}) => {
 
   const editView = (
     <>
-    <div className="form-headings">
+    <div className={styles.formHeadings}>
         <h2>Notes</h2>
-          <button className="button-save" onClick={() => handleSave()}><img src={save} height='25px'/></button>
+          <button className={styles.buttonSave} onClick={() => handleSave()}><img src={save} height='25px'/></button>
       </div>
-      <div className='notes-input'>
+      <div className={styles.notesInput}>
         <textarea 
           type='text'
           name='content'
@@ -51,9 +54,9 @@ const NoteCard = ({day}) => {
 
   const saveView = (
     <>
-    <div className="form-headings">
+    <div className={styles.formHeadings}>
         <h2>Notes</h2>
-          <button className="button-edit" onClick={() => handleEdit()}><img src={edit} height='25px'/></button>
+          <button className={styles.buttonEdit} onClick={() => handleEdit()}><img src={edit} height='25px'/></button>
       </div>
       <h4>
         <p>{day.notes[0].content}</p>

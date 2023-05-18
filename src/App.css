@@ -165,11 +165,6 @@ nav > ul {
   flex-direction: column;
 }
 
-.notes-input {
-  display: flex;
-  flex-direction: column;
-}
-
 
 .button-container {
   display: flex;
