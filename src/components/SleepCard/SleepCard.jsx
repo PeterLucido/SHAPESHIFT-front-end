@@ -1,6 +1,9 @@
 import { useState} from "react"
 import { update } from "../../services/dayService"
 
+import edit from "../../assets/icons/edit.png"
+import save from "../../assets/icons/save.png"
+
 const SleepCard = ({day}) => {
   const [editMode, setEditMode] = useState(false)
   const [sleepData, setSleepData] = useState("")
@@ -8,8 +11,6 @@ const SleepCard = ({day}) => {
   const handleChange = (evt) => {
     const updatedSleep = evt.target.value
     setSleepData(updatedSleep)
-    console.log(updatedSleep)
-    console.log(day)
   }
   const handleEdit = () => {
     setEditMode(true)
@@ -22,8 +23,8 @@ const SleepCard = ({day}) => {
     try {
       await update(updatedDay)
       setEditMode(false)
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      console.log(err)
     }
   }
 
@@ -33,7 +34,7 @@ const SleepCard = ({day}) => {
     <>
       <div className="form-headings">
         <h2>Sleep</h2>
-          <button className="button-save" onClick={handleSave}></button>
+          <button className="button-save" onClick={handleSave}><img src={save} height='25px'/></button>
       </div>
       <div className="sleep-container">
         <h4>Hours Slept:</h4>
@@ -52,7 +53,7 @@ const SleepCard = ({day}) => {
     <>
       <div className="form-headings">
         <h2>Sleep</h2>
-          <button className="button-edit" onClick={handleEdit}></button>
+          <button className="button-edit" onClick={handleEdit}><img src={edit} height='25px'/></button>
       </div>
       <div className="sleep-container">
         <h4>Hours Slept:</h4>

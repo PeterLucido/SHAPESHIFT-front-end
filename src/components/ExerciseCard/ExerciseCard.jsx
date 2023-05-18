@@ -1,4 +1,8 @@
 import { useState } from "react"
+
+import edit from "../../assets/icons/edit.png"
+import save from "../../assets/icons/save.png"
+
 import * as dayService from "../../services/dayService"
 
 const ExerciseCard = ({day}) => {
@@ -29,8 +33,8 @@ const ExerciseCard = ({day}) => {
     try {
       await dayService.update(day)
       setEditMode(false)
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      console.log(err)
     }
   }
 
@@ -42,21 +46,21 @@ const ExerciseCard = ({day}) => {
     <>
       <div className="form-headings">
         <h2>Exercise</h2>
-          <button className="button-save" onClick={() => handleSave()}></button>
+          <button className="button-save" onClick={() => handleSave()}><img src={save} height='25px'/></button>
       </div>
       <h2>
         <label htmlFor="typeOfExercise-input">Exercises: </label>
         <textarea 
-        name="typeOfExercise" 
-        id="typeOfExercise-input" 
-        value={exerciseData.typeOfExercise} 
-        onChange={handleChange}
+          name="typeOfExercise" 
+          id="typeOfExercise-input" 
+          value={exerciseData.typeOfExercise} 
+          onChange={handleChange}
         />
         <input 
-        type="number" 
-        name="timeSpent"
-        value={exerciseData.timeSpent}
-        onChange={handleChange}
+          type="number" 
+          name="timeSpent"
+          value={exerciseData.timeSpent}
+          onChange={handleChange}
         />
       </h2>
     </>
@@ -66,7 +70,7 @@ const ExerciseCard = ({day}) => {
     <>
     <div className="form-headings">
         <h2>Exercise</h2>
-          <button className="button-edit" onClick={() => handleEdit()}></button>
+          <button className="button-edit" onClick={() => handleEdit()}><img src={edit} height='25px'/></button>
       </div>
       <table>
         <tbody>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-// import * as dayService from '../../services/dayService'
 import * as dayService from '../../services/dayService'
 
 
@@ -7,7 +6,6 @@ const NewDay = (props) => {
   const [invalidDate, setInvalidDate] = useState([
     {date: ''}
   ])
-  const [message, setMessage] = useState('')
   const [dayFormData, setDayFormData]= useState({
     date: new Date().toISOString().slice(0,10),
     rating: 3,
@@ -33,16 +31,13 @@ const NewDay = (props) => {
     const fetchAllDays = async () => {
       const data = await dayService.index()
       setInvalidDate(data)
-      console.log('Day Data', data)
     } 
     if (props.user) fetchAllDays()
   }, [props.user])
 
   if (!invalidDate) return <h1>Loading...</h1>
-  console.log(dayFormData.date)
-  console.log(invalidDate[0].date.slice(0,10))
+
   const slicedDates = invalidDate.map(obj => obj.date.slice(0,10))
-  console.log(slicedDates)
 
   const handleDayChange = (evt) => {
     setDayFormData({
@@ -50,8 +45,6 @@ const NewDay = (props) => {
       [evt.target.name]: evt.target.value,
     })
   }
-
-  
 
   const handleSleepChange = (evt) => {
     setDayFormData({
@@ -88,7 +81,6 @@ const NewDay = (props) => {
   }
 
   const handleSubmit = (evt) => {
-
     evt.preventDefault()
     props.handleAddDay(dayFormData)
   }
@@ -97,13 +89,11 @@ const NewDay = (props) => {
   return (
     <main>
       <h1>Create Day</h1>
-      
       <form className='add-day-form' onSubmit={handleSubmit}>
         <div>
-
-        {slicedDates.includes(dayFormData.date) && <h1>This fucking day exists!</h1>}
-
-          <label className="day-input" htmlFor='date-input'>Date</label>
+          <label className="day-input" htmlFor='date-input'>
+            Date
+          </label>
           <input
             required
             type='date'
@@ -112,7 +102,9 @@ const NewDay = (props) => {
             value={dayFormData.date}
             onChange={handleDayChange}
           />
-          <label className="day-input" htmlFor='rating-input'>Rating</label>
+          <label className="day-input" htmlFor='rating-input'>
+            Rating
+          </label>
           <select
             name='rating'
             id='rating-input'
@@ -127,7 +119,9 @@ const NewDay = (props) => {
           </select>
         </div>
         <div>
-          <label className="sleep-input" htmlFor='sleep-input'>Hours of Sleep:</label>
+          <label className="sleep-input" htmlFor='sleep-input'>
+            Hours of Sleep:
+          </label>
           <input
             type='number'
             name='totalSleep'
@@ -137,7 +131,9 @@ const NewDay = (props) => {
           />
         </div>
         <div>
-          <label className="meal-input" htmlFor='water-input'>Water Intake:</label>
+          <label className="meal-input" htmlFor='water-input'>
+            Water Intake:
+          </label>
           <input
             type='text'
             name='waterIntake'
@@ -145,7 +141,9 @@ const NewDay = (props) => {
             value={dayFormData.meal.waterIntake}
             onChange={handleMealChange}
           />
-          <label className="meal-input" htmlFor='breakfast-input'>Breakfast:</label>
+          <label className="meal-input" htmlFor='breakfast-input'>
+            Breakfast:
+          </label>
           <input
             type='text'
             name='breakfast'
@@ -153,7 +151,9 @@ const NewDay = (props) => {
             value={dayFormData.meal.breakfast}
             onChange={handleMealChange}
           />
-          <label className="meal-input" htmlFor='lunch-input'>Lunch:</label>
+          <label className="meal-input" htmlFor='lunch-input'>
+            Lunch:
+          </label>
           <input
             type='text'
             name='lunch'
@@ -161,7 +161,9 @@ const NewDay = (props) => {
             value={dayFormData.meal.lunch}
             onChange={handleMealChange}
           />
-          <label className="meal-input" htmlFor='dinner-input'>Dinner:</label>
+          <label className="meal-input" htmlFor='dinner-input'>
+            Dinner:
+          </label>
           <input
             type='text'
             name='dinner'
@@ -169,7 +171,9 @@ const NewDay = (props) => {
             value={dayFormData.meal.dinner}
             onChange={handleMealChange}
           />
-          <label className="meal-input" htmlFor='snacks-input'>Snacks:</label>
+          <label className="meal-input" htmlFor='snacks-input'>
+            Snacks:
+          </label>
           <input
             type='text'
             name='snacks'
@@ -179,7 +183,9 @@ const NewDay = (props) => {
           />
         </div>
         <div>
-          <label className="exercise-input" htmlFor='typeOfExercise-input'>Exercise:</label>
+          <label className="exercise-input" htmlFor='typeOfExercise-input'>
+            Exercise:
+          </label>
           <input
             type='text'
             name='typeOfExercise'
@@ -187,7 +193,9 @@ const NewDay = (props) => {
             value={dayFormData.exercise.typeOfExercise}
             onChange={handleExerciseChange}
           />
-          <label className="exercise-input" htmlFor='timeSpent-input'>Time Spent:</label>
+          <label className="exercise-input" htmlFor='timeSpent-input'>
+            Time Spent:
+          </label>
           <input
             type='number'
             name='timeSpent'
@@ -197,7 +205,9 @@ const NewDay = (props) => {
           />
         </div>
         <div>
-          <label className="notes-input" htmlFor='content-input'>Notes:</label>
+          <label className="notes-input" htmlFor='content-input'>
+            Notes:
+          </label>
           <input
             type='text'
             name='content'
@@ -206,7 +216,9 @@ const NewDay = (props) => {
             onChange={handleNotesChange}
           />
         </div>
-        <button type='submit'>Submit</button>
+        {slicedDates.includes(dayFormData.date) ? 
+        <p>You have already created a page for this day</p> :
+        <button type='submit'>Submit</button> }
       </form>
     </main>
   )
