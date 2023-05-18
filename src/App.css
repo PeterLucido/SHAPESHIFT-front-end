@@ -5,12 +5,11 @@
 }
 
 body {
+  background-image: url(https://i.imgur.com/XO7TtWI.jpg);
   box-sizing: border-box;
   margin: 0;
   min-height: 100vh;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #c0c0c0;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -28,9 +27,6 @@ a:visited {
   color: #000000;
   font-size: larger;
 }
-
-
-
 
 .daylist-container {
   display: flex;

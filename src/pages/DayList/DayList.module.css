@@ -9,9 +9,3 @@
 .forwardBack:hover {
   cursor: pointer;
 }
-
-.dayListBody {
-  background: url(https://i.imgur.com/XO7TtWI.jpg);
-  /* background-size: cover; */
-  background-color: black;
-}

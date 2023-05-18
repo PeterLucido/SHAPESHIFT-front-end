@@ -8,9 +8,6 @@ import * as dayService from '../../services/dayService'
 // CSS
 import styles from './DayList.module.css'
 
-// assets
-import corkboard from '../../assets/imgs/corkboard.jpg'
-
 const DayList = ({ user, getAverageRating}) => {
   const [daysInList, setDaysInList] = useState([])
   const [displayCount, setDisplayCount] = useState(7)
@@ -73,6 +70,8 @@ const DayList = ({ user, getAverageRating}) => {
             {filteredDays}
           </div>
         </div>
+        {/* <div className={styles.extraRoom}>
+        </div> */}
       </main>
     </>
   )

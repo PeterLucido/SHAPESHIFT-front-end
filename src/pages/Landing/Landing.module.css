@@ -16,8 +16,12 @@
   }
 }
 
+.leftSide {
+  background-color: white;
+}
+
 .rightSide {
-  background-color: #FFD300;
+  background-color: #3b3b3b;
   position: relative;
   display: flex;
   flex-direction: column;
