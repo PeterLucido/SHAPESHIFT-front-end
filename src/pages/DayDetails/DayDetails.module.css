@@ -5,7 +5,7 @@
   width: 90%;
 }
 
-.date-container {
+.dateContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,7 +13,7 @@
   height: 50px;
 }
 
-.button-edit {
+.buttonEdit {
   position: absolute;
   right: 10px;
   width: 25px;

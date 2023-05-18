@@ -76,7 +76,7 @@ const DayDetails = (props) => {
 const editView = (
   <>
     <div className={styles.dayInfo}>
-      <div className="date-container">
+      <div className={styles.dateContainer}>
         <input
           className="date-input-1"
           type='date'
@@ -108,10 +108,10 @@ const editView = (
 
 const saveView = (
   <>
-    <div className="day-info">
-        <div className="date-container">
+    <div className={styles.dayInfo}>
+        <div className={styles.dateContainer}>
           <h1>{formatDate(day.date)}</h1>
-          <button className="button-edit" onClick={handleEdit}><img src={edit} height='25px'/></button>
+          <button className={styles.buttonEdit} onClick={handleEdit}><img src={edit} height='25px'/></button>
         </div>
       <h2>Day Rating: {day.rating}</h2>
     </div>
