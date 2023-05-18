@@ -6,7 +6,6 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import DayList from './pages/DayList/DayList'
 import DayDetails from './pages/DayDetails/DayDetails'
@@ -68,12 +67,6 @@ function App() {
     navigate('/days')
   }
 
-  // const handleUpdateDay = async (dayFormData) => {
-  //   const updatedDay = await dayService.update(dayFormData)
-  //   setDays(days.map((d) => dayFormData._id === d._id ? updatedDay: d))
-  //   navigate('/days')
-  // }
-
   return (
     <>
       {user &&
@@ -122,14 +115,6 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <DayDetails user={user} handleDeleteDay={handleDeleteDay}/>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/profiles"
-          element={
-            <ProtectedRoute user={user}>
-              <Profiles />
             </ProtectedRoute>
           }
         />
