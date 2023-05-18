@@ -10,16 +10,18 @@ import styles from '../NavBar/NavBar.module.css'
 const NavBar = ({ user, handleLogout, averageRating, profile }) => {
   
   let navClass = 'nav-container'
-  if (averageRating >= 4) {
+  if (averageRating > 4) {
     navClass += ' green'
-  } else if (averageRating >= 3) {
+  } else if (averageRating > 3) {
     navClass += ' lightgreen'
-  } else if (averageRating >= 2) {
+  } else if (averageRating > 2) {
     navClass += ' yellow'
-  } else if (averageRating >= 1) {
+  } else if (averageRating > 1) {
     navClass += ' orange'
-  } else {
+  } else if (averageRating === 1) {
     navClass += ' red'
+  } else {
+    navClass += ' green'
   }
 
   return (
