@@ -24,7 +24,7 @@ const DayCard = ({day}) => {
 
   return (
     <>
-      <div className={"day-container"} style={getCardColor(day.rating)}>
+      <div className={styles.dayContainer} style={getCardColor(day.rating)}>
         <Link to={`/days/${day._id}`}>
           <h4>{formatDate(day.date)}</h4>
         </Link>
