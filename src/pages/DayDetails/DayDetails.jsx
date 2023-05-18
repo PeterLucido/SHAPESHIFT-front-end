@@ -13,6 +13,9 @@ import { useParams } from 'react-router-dom'
 
 import * as dayService from '../../services/dayService'
 
+// CSS
+import styles from './DayDetails.module.css'
+
 const DayDetails = (props) => {
   const {dayId} = useParams()
   const [day, setDay] = useState(null)
@@ -72,7 +75,7 @@ const DayDetails = (props) => {
 
 const editView = (
   <>
-    <div className="day-info">
+    <div className={styles.dayInfo}>
       <div className="date-container">
         <input
           className="date-input-1"

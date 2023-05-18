@@ -1,0 +1,105 @@
+.dayInfo {
+  display: flex; 
+  flex-direction: column;
+  text-align: center;
+  width: 90%;
+}
+
+.date-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 50px;
+}
+
+.button-edit {
+  position: absolute;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+}
+
+.button-save {
+  position: absolute;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+}
+
+.button-delete {
+  align-content: center;
+  width: 35px;
+  height: 45px;
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+}
+
+.form-headings {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center; 
+  width: 90%;
+  border-bottom: 2px solid #000000;
+}
+
+.sleep-info {
+  display: flex; 
+  flex-direction: column;
+  text-align: center;
+  width: 90%;
+}
+
+.sleep-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  position: relative;
+}
+
+.sleep-container p,
+.sleep-container input {
+  flex-basis: 70%; 
+}
+
+.meal-container {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.meal-container label {
+  flex-basis: 20%; 
+}
+
+.meal-container textarea, 
+.meal-container p {
+  flex-basis: 70%; 
+}
+
+.rating-input-details{
+  width: auto;
+}
+
+.date-input-1{
+  width: auto;
+}
+
+.notes-input {
+  padding-top: 10px;
+  width: 85%;
+  height: 80px;
+}
