@@ -5,6 +5,9 @@ import save from "../../assets/icons/save.png"
 
 import * as dayService from "../../services/dayService"
 
+// CSS
+import styles from './MealCard.module.css'
+
 const MealCard = ({day}) => {
   const [editMode, setEditMode] = useState(false)
   const [mealData, setMealData] = useState({
@@ -50,12 +53,12 @@ const MealCard = ({day}) => {
   
   const editView = (
     <>
-      <div className="form-headings">
+      <div className={styles.formHeadings}>
         <h2>Meals</h2>
-          <button className="button-save" onClick={() => handleSave()}><img src={save} height='25px'/></button>
+          <button className={styles.buttonSave} onClick={() => handleSave()}><img src={save} height='25px'/></button>
       </div>
   
-      <div className="meal-container">
+      <div className={styles.mealContainer}>
         <h4>Water Intake: </h4>
         <textarea 
           name="waterIntake" 
@@ -64,7 +67,7 @@ const MealCard = ({day}) => {
           onChange={handleChange}
         />
       </div>
-      <div className="meal-container">
+      <div className={styles.mealContainer}>
         <h4>Breakfast: </h4>
         <textarea 
           name="breakfast" 
@@ -73,7 +76,7 @@ const MealCard = ({day}) => {
           onChange={handleChange}
         />
       </div>
-      <div className="meal-container">
+      <div className={styles.mealContainer}>
         <h4>Lunch: </h4>
         <textarea 
           name="lunch" 
@@ -82,7 +85,7 @@ const MealCard = ({day}) => {
           onChange={handleChange}
         />
       </div>
-      <div className="meal-container">
+      <div className={styles.mealContainer}>
         <h4>Dinner: </h4>
         <textarea 
           name="dinner" 
@@ -91,7 +94,7 @@ const MealCard = ({day}) => {
           onChange={handleChange}
         />
       </div>
-      <div className="meal-container">
+      <div className={styles.mealContainer}>
         <h4>Snacks: </h4>
         <textarea 
           name="snacks" 
@@ -105,27 +108,27 @@ const MealCard = ({day}) => {
   
   const saveView = (
     <>
-      <div className="form-headings">
+      <div className={styles.formHeadings}>
         <h2>Meals</h2>
-          <button className="button-edit" onClick={() => handleEdit()}><img src={edit} height='25px'/></button>
+          <button className={styles.buttonEdit} onClick={() => handleEdit()}><img src={edit} height='25px'/></button>
       </div>
-      <div className="meal-container">
+      <div className={styles.mealContainer}>
         <h4>Water Intake: </h4>
         <p>{waterIntake}</p>
       </div>
-      <div className="meal-container">
+      <div className={styles.mealContainer}>
         <h4>Breakfast: </h4>
         <p>{breakfast}</p>
       </div>
-      <div className="meal-container">
+      <div className={styles.mealContainer}>
         <h4>Lunch: </h4>
         <p>{lunch}</p>
       </div>
-      <div className="meal-container">
+      <div className={styles.mealContainer}>
         <h4>Dinner: </h4>
         <p>{dinner}</p>
       </div>
-      <div className="meal-container">
+      <div className={styles.mealContainer}>
         <h4>Snacks: </h4>
         <p>{snacks}</p>
       </div>

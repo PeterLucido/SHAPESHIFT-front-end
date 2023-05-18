@@ -1,74 +1,71 @@
-# Decoupled MERN Stack with JWT Auth Template - Front End
 
-This is the front end of a decoupled MERN Stack app that includes JWT Authentication.
+  
 
-When combined with the back end found [here](https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-back-end), you'll have all you need to build a full stack MERN app!
+# SHAPESHIFT
 
-Use this to go build things! 🚀
+# Getting Started
 
-## To Use This Template
+  
 
-**Replace `<name-of-your-app-here>` (including the `<` and `>`) in the commands below with the name of your app!**
+Click [here]([https://shapeshift-peds.netlify.app/](https://shapeshift-peds.netlify.app/)) link to go to the app!
 
-```bash
-git clone https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-front-end <name-of-your-app-here>-front-end
-cd <name-of-your-app-here>-front-end
-code .
-```
+  
 
-With the project open in VS Code, open a terminal and run:
+Click [here](https://trello.com/b/FlVCz559/shapeshift) to check out the Trello!
 
-```bash
-rm -rf .git
-```
+# Contributors
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
 
-Re-initialize a git repository:
+# Background
 
-```bash
-git init
-```
+  
 
-Create a repo for this project on GitHub and add that remote to your project with:
+# Technologies Used
 
-```bash
-git remote add origin your-repo-URL-here
-```
+  
 
-Run `npm i` to fetch the template's dependencies:
+- Node.js
 
-```bash
-npm i
-```
+- Express
 
-touch a `.env` file:
+- MongoDB
 
-```bash
-touch .env
-```
+- Mongoose
 
-Fill it with the following:
+- Javascript
 
-```
-VITE_BACK_END_SERVER_URL=http://localhost:3001
-```
+- React
 
-> 🚨 DO NOT place secrets in this `.env` file. The contents of this file WILL be exposed to site visitors. We are only using the front-end .env to create variables specific to the environment the application is running in.
+- CSS
 
-Delete this README.md, then make an initial commit:
+- Git
 
-```bash
-git add .
-git commit -m "initial commit"
-git push origin main
-```
+- Fly.io
 
-Finally, start up the app with:
-```bash
-npm run dev
-```
+- Netlify
 
-You're done!
+- Cloudinary
+
+  
+
+# Attributions
+
+[Stock Photos](https://www.pexels.com/)
+
+[Login Button Styling](https://codepen.io/seaox/pen/GRRbzjY)
+
+  
+
+# Next Steps
+
+- [x] Show a different motivational quote every time a user navigates to or refreshes the page
+- [x] Render a user's profile photo in the navigation bar
+
+- [ ] See an empty card for any missed days 
+
+- [ ] Functionality to search for foods in a search bar instead of having a user input their own meals
+
+- [ ] Mobile-friendly view
+
+- [ ] Add function to track calories automatically when food is input into the meals category
