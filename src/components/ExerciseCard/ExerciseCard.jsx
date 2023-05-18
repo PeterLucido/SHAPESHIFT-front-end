@@ -5,6 +5,9 @@ import save from "../../assets/icons/save.png"
 
 import * as dayService from "../../services/dayService"
 
+// CSS
+import styles from './ExerciseCard.module.css'
+
 const ExerciseCard = ({day}) => {
   const [editMode, setEditMode] = useState(false)
   const [exerciseData, setExerciseData] = useState({
@@ -44,9 +47,9 @@ const ExerciseCard = ({day}) => {
 
   const editView = (
     <>
-      <div className="form-headings">
+      <div className={styles.formHeadings}>
         <h2>Exercise</h2>
-          <button className="button-save" onClick={() => handleSave()}><img src={save} height='25px'/></button>
+          <button className={styles.buttonSave} onClick={() => handleSave()}><img src={save} height='25px'/></button>
       </div>
       <h2>
         <label htmlFor="typeOfExercise-input">Exercises: </label>
@@ -68,9 +71,9 @@ const ExerciseCard = ({day}) => {
 
   const saveView = (
     <>
-    <div className="form-headings">
+    <div className={styles.formHeadings}>
         <h2>Exercise</h2>
-          <button className="button-edit" onClick={() => handleEdit()}><img src={edit} height='25px'/></button>
+          <button className={styles.buttonEdit} onClick={() => handleEdit()}><img src={edit} height='25px'/></button>
       </div>
       <table>
         <tbody>

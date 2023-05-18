@@ -1,0 +1,11 @@
+.forwardBack {
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+  font-size: 30px;
+}
+
+.forwardBack:hover {
+  cursor: pointer;
+}

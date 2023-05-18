@@ -5,6 +5,9 @@ import { useState } from "react"
 import { useEffect } from "react"
 import * as dayService from '../../services/dayService'
 
+// CSS
+import styles from './DayList.module.css'
+
 const DayList = ({ user, getAverageRating}) => {
   
   const [daysInList, setDaysInList] = useState([])
@@ -68,9 +71,9 @@ const DayList = ({ user, getAverageRating}) => {
     <>
       <QuoteCard />
       <h1 className="all-days">
-        <button onClick={()=>handleDecrease()}>Prev</button>
+        <button className={styles.forwardBack} onClick={()=>handleDecrease()}>⬅️</button>
         Days
-        <button onClick={()=>handleIncrease()}>Next</button>
+        <button className={styles.forwardBack} onClick={()=>handleIncrease()}>➡️</button>
       </h1>
       <div className="dropdown-container">
         <DropdownMenu onDisplayCountChange={handleDisplayCountChange} daysInList={daysInList} />

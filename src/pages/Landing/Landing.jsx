@@ -86,7 +86,6 @@ const Landing = ({handleAuthEvt}) => {
         <img src={food} className={styles.slide} id={styles.slide3}/>
         <img src={maxresdefault} className={styles.slide} id={styles.slide4}/>
       </div>
-
       <div className={styles.rightSide}>
         <img src={logo} className={styles.shapeshift}/>
         <div className={styles.buttonsContainer}>

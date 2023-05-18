@@ -1,0 +1,7 @@
+.dayContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  color: black;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
