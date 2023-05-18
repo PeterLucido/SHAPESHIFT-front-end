@@ -70,8 +70,6 @@ const DayList = ({ user, getAverageRating}) => {
             {filteredDays}
           </div>
         </div>
-        {/* <div className={styles.extraRoom}>
-        </div> */}
       </main>
     </>
   )
