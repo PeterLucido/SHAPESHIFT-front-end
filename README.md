@@ -13,6 +13,9 @@ Click [here]([https://shapeshift-peds.netlify.app/](https://shapeshift-peds.netl
 
 Click [here](https://trello.com/b/FlVCz559/shapeshift) to check out the Trello!
 
+# Contributors
+
+
 
 # Background
 
