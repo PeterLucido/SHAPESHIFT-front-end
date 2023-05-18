@@ -68,7 +68,7 @@ const DayList = ({ user, getAverageRating}) => {
   }
 
   return (
-    <>
+    <body>
       <QuoteCard />
       <h1 className="all-days">
         <button className={styles.forwardBack} onClick={()=>handleDecrease()}>⬅️</button>
@@ -83,7 +83,7 @@ const DayList = ({ user, getAverageRating}) => {
           {filteredDays}
         </div>
       </main>
-    </>
+    </body>
   )
 }
 

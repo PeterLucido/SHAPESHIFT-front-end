@@ -9,3 +9,7 @@
 .forwardBack:hover {
   cursor: pointer;
 }
+
+body {
+  background-image: url(../../src/assets/imgs/corkboard.jpg);
+}
