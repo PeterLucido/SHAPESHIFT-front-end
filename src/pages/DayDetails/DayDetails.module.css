@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 50px;
+  height: 60px;
 }
 
 .dateInput1{
@@ -24,7 +24,7 @@
   max-width: 600px;
   border: 5px solid black;
   background-color: white;
-  margin: 0 auto;
+  margin: 50px auto;
   color: black;
 }
 

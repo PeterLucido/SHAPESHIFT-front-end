@@ -49,16 +49,20 @@ const ExerciseCard = ({day}) => {
     <>
       <div className={styles.formHeadings}>
         <h2>Exercise</h2>
-          <button className={styles.buttonSave} onClick={() => handleSave()}><img src={save} height='25px'/></button>
+        <button className={styles.buttonSave} onClick={() => handleSave()}>
+          <img src={save} height='25px'/>
+        </button>
       </div>
-      <h2>
-        <label htmlFor="typeOfExercise-input">Exercises: </label>
+      <div className={styles.exerciseContainer}>
+        <h4>Exercise Type: </h4>
         <textarea 
           name="typeOfExercise" 
-          id="typeOfExercise-input" 
           value={exerciseData.typeOfExercise} 
           onChange={handleChange}
         />
+      </div>
+      <div className={styles.exerciseContainer}>
+        <h4>Hours Spent:</h4>
         <input 
           type="number" 
           name="timeSpent"
@@ -67,34 +71,26 @@ const ExerciseCard = ({day}) => {
           value={exerciseData.timeSpent}
           onChange={handleChange}
         />
-      </h2>
+      </div>
     </>
   )
 
   const saveView = (
     <>
-    <div className={styles.formHeadings}>
+      <div className={styles.formHeadings}>
         <h2>Exercise</h2>
-          <button className={styles.buttonEdit} onClick={() => handleEdit()}><img src={edit} height='25px'/></button>
+        <button className={styles.buttonEdit} onClick={() => handleEdit()}>
+          <img src={edit} height='25px'/>
+        </button>
       </div>
-      <table>
-        <tbody>
-          <tr>
-            <td>Type of Exercise:</td>
-            <td>
-              <ul>
-                {typeOfExercise.split(",").map((item, index) => (
-                  <li key={index}>{item.trim()}</li>
-                ))}
-              </ul>
-            </td>
-          </tr>
-          <tr>
-            <td>Time Spent:</td>
-            <td>{timeSpent}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className={styles.exerciseContainer}>
+        <h4>Exercise Type:</h4>
+        <p>{typeOfExercise}</p>
+      </div>
+      <div className={styles.exerciseContainer}>
+        <h4>Hours Spent:</h4>
+        <p>{timeSpent}</p>
+      </div>
     </>
   )
 
