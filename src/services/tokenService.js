@@ -1,4 +1,3 @@
-// npm modules
 import jwt_decode from 'jwt-decode'
 
 function setToken(token) {
@@ -27,4 +26,9 @@ function removeToken() {
   localStorage.removeItem('token')
 }
 
-export { setToken, getToken, getUserFromToken, removeToken }
+export {
+  setToken, 
+  getToken,
+  getUserFromToken,
+  removeToken
+}

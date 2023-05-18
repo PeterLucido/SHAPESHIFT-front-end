@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+
 import * as dayService from '../../services/dayService'
 
 import save from '../../assets/icons/save.png'
@@ -88,42 +89,41 @@ const NewDay = (props) => {
     props.handleAddDay(dayFormData)
   }
   
-
   return (
     <div className={styles.container}>
       <div className={styles.addDay}>
         <h1>Create Day</h1>
         <form className={styles.addDayForm} onSubmit={handleSubmit}>
           <div>
-          <div className={styles.inline}>
-            <label className={styles.dateInput} htmlFor='date-input'>
-              Date:
-            </label>
-            <input
-              required
-              type='date'
-              name='date'
-              id='date-input'
-              value={dayFormData.date}
-              onChange={handleDayChange}
+            <div className={styles.inline}>
+              <label className={styles.dateInput} htmlFor='date-input'>
+                Date:
+              </label>
+              <input
+                required
+                type='date'
+                name='date'
+                id='date-input'
+                value={dayFormData.date}
+                onChange={handleDayChange}
               />
             </div>
             <div className={styles.inline}>
-            <label className={styles.dayInput} htmlFor='rating-input'>
-              Rating:
-            </label>
-            <select
-              name='rating'
-              id='rating-input'
-              value={dayFormData.rating}
-              onChange={handleDayChange}
+              <label className={styles.dayInput} htmlFor='rating-input'>
+                Rating:
+              </label>
+              <select
+                name='rating'
+                id='rating-input'
+                value={dayFormData.rating}
+                onChange={handleDayChange}
               >
-              <option value={1}>1</option>
-              <option value={2}>2</option>
-              <option value={3}>3</option>
-              <option value={4}>4</option>
-              <option value={5}>5</option>
-            </select>
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+                <option value={5}>5</option>
+              </select>
             </div>
           </div>
           <div className={styles.inline}>
@@ -134,105 +134,111 @@ const NewDay = (props) => {
               type='number'
               name='totalSleep'
               id='sleep-input'
-              default='0'
-              min='0'
-              max='24'
+              default={0}
+              min={0}
+              max={24}
               value={dayFormData.sleep.totalSleep}
               onChange={handleSleepChange}
-              />
+            />
           </div>
           <div>
+            <div className={styles.inline}>
+              <label className={styles.mealInput} htmlFor='water-input'>
+                Water Intake:
+              </label>
+              <input
+                type='text'
+                name='waterIntake'
+                id='water-input'
+                value={dayFormData.meal.waterIntake}
+                onChange={handleMealChange}
+                autoComplete="off"
+              />
+            </div>
+            <div className={styles.inline}>
+              <label className={styles.mealInput} htmlFor='breakfast-input'>
+                Breakfast:
+              </label>
+              <input
+                type='text'
+                name='breakfast'
+                id='breakfast-input'
+                value={dayFormData.meal.breakfast}
+                onChange={handleMealChange}
+                autoComplete="off"
+              />
+            </div>
+            <div className={styles.inline}>
+              <label className={styles.mealInput} htmlFor='lunch-input'>
+                Lunch:
+              </label>
+              <input
+                type='text'
+                name='lunch'
+                id='lunch-input'
+                value={dayFormData.meal.lunch}
+                onChange={handleMealChange}
+                autoComplete="off"
+              />
+            </div>
+            <div className={styles.inline}>
+              <label className={styles.mealInput} htmlFor='dinner-input'>
+                Dinner:
+              </label>
+              <input
+                type='text'
+                name='dinner'
+                id='dinner-input'
+                value={dayFormData.meal.dinner}
+                onChange={handleMealChange}
+                autoComplete="off"
+              />
+            </div>
+            <div className={styles.inline}>
+              <label className={styles.mealInput} htmlFor='snacks-input'>
+                Snacks:
+              </label>
+              <input
+                type='text'
+                name='snacks'
+                id='snacks-input'
+                value={dayFormData.meal.snacks}
+                onChange={handleMealChange}
+                autoComplete="off"
+              />
+            </div>
+          </div>
+          <div>
+            <div className={styles.inline}> 
+              <label className={styles.exerciseInput} htmlFor='typeOfExercise-input'>
+                Exercise:
+              </label>
+              <input
+                type='text'
+                name='typeOfExercise'
+                id='typeOfExercise-input'
+                value={dayFormData.exercise.typeOfExercise}
+                onChange={handleExerciseChange}
+                autoComplete="off"
+              />
+            </div>
+            <div className={styles.inline}>
+              <label className={styles.exerciseInput} htmlFor='timeSpent-input'>
+                Time Spent:
+              </label>
+              <input
+                type='number'
+                name='timeSpent'
+                id='timeSpent-input'
+                default={0}
+                min={0}
+                max={24}
+                value={dayFormData.exercise.timeSpent}
+                onChange={handleExerciseChange}
+              />
+            </div>
+          </div>
           <div className={styles.inline}>
-            <label className={styles.mealInput} htmlFor='water-input'>
-              Water Intake:
-            </label>
-            <input
-              type='text'
-              name='waterIntake'
-              id='water-input'
-              value={dayFormData.meal.waterIntake}
-              onChange={handleMealChange}
-              />
-            </div>
-            <div className={styles.inline}>
-            <label className={styles.mealInput} htmlFor='breakfast-input'>
-              Breakfast:
-            </label>
-            <input
-              type='text'
-              name='breakfast'
-              id='breakfast-input'
-              value={dayFormData.meal.breakfast}
-              onChange={handleMealChange}
-              />
-            </div>
-            <div className={styles.inline}>
-            <label className={styles.mealInput} htmlFor='lunch-input'>
-              Lunch:
-            </label>
-            <input
-              type='text'
-              name='lunch'
-              id='lunch-input'
-              value={dayFormData.meal.lunch}
-              onChange={handleMealChange}
-              />
-            </div>
-            <div className={styles.inline}>
-            <label className={styles.mealInput} htmlFor='dinner-input'>
-              Dinner:
-            </label>
-            <input
-              type='text'
-              name='dinner'
-              id='dinner-input'
-              value={dayFormData.meal.dinner}
-              onChange={handleMealChange}
-              />
-            </div>
-            <div className={styles.inline}>
-            <label className={styles.mealInput} htmlFor='snacks-input'>
-              Snacks:
-            </label>
-            <input
-              type='text'
-              name='snacks'
-              id='snacks-input'
-              value={dayFormData.meal.snacks}
-              onChange={handleMealChange}
-              />
-          </div>
-            </div>
-          <div>
-          <div className={styles.inline}> 
-            <label className={styles.exerciseInput} htmlFor='typeOfExercise-input'>
-              Exercise:
-            </label>
-            <input
-              type='text'
-              name='typeOfExercise'
-              id='typeOfExercise-input'
-              value={dayFormData.exercise.typeOfExercise}
-              onChange={handleExerciseChange}
-              />
-            </div>
-            <div className={styles.inline}>
-            <label className={styles.exerciseInput} htmlFor='timeSpent-input'>
-              Time Spent:
-            </label>
-            <input
-              type='number'
-              name='timeSpent'
-              id='timeSpent-input'
-              default='0'
-              min='0'
-              max='24'
-              value={dayFormData.exercise.timeSpent}
-              onChange={handleExerciseChange}
-              />
-          </div>
-            </div>
-            <div className={styles.inline}>
             <label className={styles.notesInput} htmlFor='content-input'>
               Notes:
             </label>
@@ -242,13 +248,18 @@ const NewDay = (props) => {
               id='content-input'
               value={dayFormData.notes.content}
               onChange={handleNotesChange}
-              />
+              autoComplete="off"
+            />
           </div>
           <div className={styles.buttonSave}>
-          {slicedDates.includes(dayFormData.date) ? 
-          <p>You have already created a page for this day</p> :
-          <button type='submit'><img src={save} height='50px'/></button> 
-        }</div>
+            {
+              slicedDates.includes(dayFormData.date) ? 
+              <p>You have already created a page for this day</p> :
+              <button type='submit'>
+                <img src={save} height='50px'/>
+              </button> 
+            }
+          </div>
         </form>
       </div>
     </div>

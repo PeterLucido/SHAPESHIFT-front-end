@@ -97,7 +97,6 @@
   animation-delay: 12s;
 }
 
-
 .shapeshift {
   margin-top: 50px;
   width: 500px;
@@ -112,8 +111,6 @@
   display: flex;
   flex-direction: column;
 }
-
-
 
 .button,
 .button::after {
@@ -131,6 +128,7 @@
   margin-bottom: 10px;
   cursor: pointer;
 }
+
 .button::after {
   --slice-0: inset(50% 50% 50% 50%);
   --slice-1: inset(80% -6px 0 0);
@@ -148,9 +146,11 @@
   text-shadow: -3px -3px 0 #f8f005, 3px 3px 0 #00e6f6;
   clip-path: var(--slice-0);
 }
+
 .button:hover::after {
   animation: glitch 1s steps(2, end);
 }
+
 @-moz-keyframes glitch {
   0% {
     clip-path: var(--slice-1);
@@ -197,6 +197,7 @@
     transform: translate(0);
   }
 }
+
 @-webkit-keyframes glitch {
   0% {
     clip-path: var(--slice-1);
@@ -243,6 +244,7 @@
     transform: translate(0);
   }
 }
+
 @-o-keyframes glitch {
   0% {
     clip-path: var(--slice-1);
@@ -289,6 +291,7 @@
     transform: translate(0);
   }
 }
+
 @keyframes glitch {
   0% {
     clip-path: var(--slice-1);
