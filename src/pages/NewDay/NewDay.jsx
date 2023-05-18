@@ -3,6 +3,8 @@ import * as dayService from '../../services/dayService'
 
 import save from '../../assets/icons/save.png'
 
+import styles from './NewDay.module.css'
+
 const NewDay = (props) => {
   const [invalidDate, setInvalidDate] = useState([
     {date: ''}
@@ -88,12 +90,13 @@ const NewDay = (props) => {
   
 
   return (
-    <main>
+    <div className={styles.addDay}>
       <h1>Create Day</h1>
-      <form className='add-day-form' onSubmit={handleSubmit}>
+      <form className={styles.addDayForm} onSubmit={handleSubmit}>
         <div>
-          <label className="day-input" htmlFor='date-input'>
-            Date
+        <div className={styles.inline}>
+          <label className={styles.dateInput} htmlFor='date-input'>
+            Date:
           </label>
           <input
             required
@@ -103,8 +106,10 @@ const NewDay = (props) => {
             value={dayFormData.date}
             onChange={handleDayChange}
           />
-          <label className="day-input" htmlFor='rating-input'>
-            Rating
+          </div>
+          <div className={styles.inline}>
+          <label className={styles.dayInput} htmlFor='rating-input'>
+            Rating:
           </label>
           <select
             name='rating'
@@ -118,9 +123,10 @@ const NewDay = (props) => {
             <option value={4}>4</option>
             <option value={5}>5</option>
           </select>
+          </div>
         </div>
-        <div>
-          <label className="sleep-input" htmlFor='sleep-input'>
+        <div className={styles.inline}>
+          <label className={styles.sleepInput} htmlFor='sleep-input'>
             Hours of Sleep:
           </label>
           <input
@@ -132,7 +138,8 @@ const NewDay = (props) => {
           />
         </div>
         <div>
-          <label className="meal-input" htmlFor='water-input'>
+        <div className={styles.inline}>
+          <label className={styles.mealInput} htmlFor='water-input'>
             Water Intake:
           </label>
           <input
@@ -142,7 +149,9 @@ const NewDay = (props) => {
             value={dayFormData.meal.waterIntake}
             onChange={handleMealChange}
           />
-          <label className="meal-input" htmlFor='breakfast-input'>
+          </div>
+          <div className={styles.inline}>
+          <label className={styles.mealInput} htmlFor='breakfast-input'>
             Breakfast:
           </label>
           <input
@@ -152,7 +161,9 @@ const NewDay = (props) => {
             value={dayFormData.meal.breakfast}
             onChange={handleMealChange}
           />
-          <label className="meal-input" htmlFor='lunch-input'>
+          </div>
+          <div className={styles.inline}>
+          <label className={styles.mealInput} htmlFor='lunch-input'>
             Lunch:
           </label>
           <input
@@ -162,7 +173,9 @@ const NewDay = (props) => {
             value={dayFormData.meal.lunch}
             onChange={handleMealChange}
           />
-          <label className="meal-input" htmlFor='dinner-input'>
+          </div>
+          <div className={styles.inline}>
+          <label className={styles.mealInput} htmlFor='dinner-input'>
             Dinner:
           </label>
           <input
@@ -172,7 +185,9 @@ const NewDay = (props) => {
             value={dayFormData.meal.dinner}
             onChange={handleMealChange}
           />
-          <label className="meal-input" htmlFor='snacks-input'>
+          </div>
+          <div className={styles.inline}>
+          <label className={styles.mealInput} htmlFor='snacks-input'>
             Snacks:
           </label>
           <input
@@ -183,8 +198,10 @@ const NewDay = (props) => {
             onChange={handleMealChange}
           />
         </div>
+          </div>
         <div>
-          <label className="exercise-input" htmlFor='typeOfExercise-input'>
+        <div className={styles.inline}> 
+          <label className={styles.exerciseInput} htmlFor='typeOfExercise-input'>
             Exercise:
           </label>
           <input
@@ -194,7 +211,9 @@ const NewDay = (props) => {
             value={dayFormData.exercise.typeOfExercise}
             onChange={handleExerciseChange}
           />
-          <label className="exercise-input" htmlFor='timeSpent-input'>
+          </div>
+          <div className={styles.inline}>
+          <label className={styles.exerciseInput} htmlFor='timeSpent-input'>
             Time Spent:
           </label>
           <input
@@ -205,8 +224,9 @@ const NewDay = (props) => {
             onChange={handleExerciseChange}
           />
         </div>
-        <div>
-          <label className="notes-input" htmlFor='content-input'>
+          </div>
+          <div className={styles.inline}>
+          <label className={styles.notesInput} htmlFor='content-input'>
             Notes:
           </label>
           <input
@@ -217,11 +237,13 @@ const NewDay = (props) => {
             onChange={handleNotesChange}
           />
         </div>
+        <div className={styles.buttonSave}>
         {slicedDates.includes(dayFormData.date) ? 
         <p>You have already created a page for this day</p> :
-        <button className="button-delete" type='submit'><img src={save} height='50px'/></button> }
+        <button type='submit'><img src={save} height='50px'/></button> 
+        }</div>
       </form>
-    </main>
+    </div>
   )
 }
 

@@ -51,6 +51,8 @@ const DayDetails = (props) => {
 
   if (!day ) return <h1>loading</h1>
   
+  console.log(day.date.slice(0,10))
+
   const handleEdit = (evt) => {
     const {name, value} = evt.target
     setDay({
@@ -82,7 +84,7 @@ const editView = (
           type='date'
           name='date'
           id='date-input'
-          value={day.date}
+          value={day.date.slice(0,10)}
           onChange={handleEdit}
         />
         {slicedDates.includes(day.date) ?
