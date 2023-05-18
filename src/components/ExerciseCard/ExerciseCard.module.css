@@ -28,3 +28,20 @@
   border: none;
   background-repeat: no-repeat;
 }
+
+.exerciseContainer {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.exerciseContainer label {
+  flex-basis: 20%; 
+}
+
+.exerciseContainer textarea, 
+.exerciseContainer p,
+.exerciseContainer input {
+  flex-basis: 70%; 
+}

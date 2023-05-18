@@ -55,14 +55,14 @@ const MealCard = ({day}) => {
     <>
       <div className={styles.formHeadings}>
         <h2>Meals</h2>
-          <button className={styles.buttonSave} onClick={() => handleSave()}><img src={save} height='25px'/></button>
+        <button className={styles.buttonSave} onClick={() => handleSave()}>
+          <img src={save} height='25px'/>
+        </button>
       </div>
-  
       <div className={styles.mealContainer}>
         <h4>Water Intake: </h4>
         <textarea 
           name="waterIntake" 
-          id="water-input" 
           value={mealData.waterIntake}
           onChange={handleChange}
         />
@@ -71,7 +71,6 @@ const MealCard = ({day}) => {
         <h4>Breakfast: </h4>
         <textarea 
           name="breakfast" 
-          id="breakfast-input" 
           value={mealData.breakfast}
           onChange={handleChange}
         />
@@ -80,7 +79,6 @@ const MealCard = ({day}) => {
         <h4>Lunch: </h4>
         <textarea 
           name="lunch" 
-          id="lunch-input" 
           value={mealData.lunch}
           onChange={handleChange}
         />
@@ -89,7 +87,6 @@ const MealCard = ({day}) => {
         <h4>Dinner: </h4>
         <textarea 
           name="dinner" 
-          id="dinner-input" 
           value={mealData.dinner}
           onChange={handleChange}
         />
@@ -98,7 +95,6 @@ const MealCard = ({day}) => {
         <h4>Snacks: </h4>
         <textarea 
           name="snacks" 
-          id="snacks-input" 
           value={mealData.snacks}
           onChange={handleChange}
         />
