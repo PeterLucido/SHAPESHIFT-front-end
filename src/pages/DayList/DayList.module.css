@@ -10,6 +10,8 @@
   cursor: pointer;
 }
 
-body {
-  background-image: url(../../src/assets/imgs/corkboard.jpg);
+.dayListBody {
+  background: url(../../src/assets/imgs/corkboard.jpg);
+  background-size: cover;
+  background-color: black;
 }

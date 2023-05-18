@@ -3,8 +3,6 @@ import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
-import Signup from './pages/Signup/Signup'
-import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import DayList from './pages/DayList/DayList'
@@ -14,6 +12,8 @@ import NewDay from './pages/NewDay/NewDay'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import Login from './components/Login/Login'
+import Signup from './components/Signup/Signup'
 
 // services
 import * as authService from './services/authService'
