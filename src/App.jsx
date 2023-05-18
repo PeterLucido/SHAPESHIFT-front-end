@@ -68,11 +68,11 @@ function App() {
     navigate('/days')
   }
 
-  const handleUpdateDay = async (dayFormData) => {
-    const updatedDay = await dayService.update(dayFormData)
-    setDays(days.map((d) => dayFormData._id === d._id ? updatedDay: d))
-    navigate('/days')
-  }
+  // const handleUpdateDay = async (dayFormData) => {
+  //   const updatedDay = await dayService.update(dayFormData)
+  //   setDays(days.map((d) => dayFormData._id === d._id ? updatedDay: d))
+  //   navigate('/days')
+  // }
 
   return (
     <>
@@ -126,14 +126,6 @@ function App() {
           }
         />
         <Route
-          path='/days/:dayId/edit'
-          element={
-            <ProtectedRoute user={user}>
-              <DayDetails user={user} handleUpdateDay={handleUpdateDay}/>
-            </ProtectedRoute>
-          }
-        />
-        <Route
           path="/profiles"
           element={
             <ProtectedRoute user={user}>
@@ -154,14 +146,6 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <ChangePassword handleAuthEvt={handleAuthEvt} />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/days"
-          element={
-            <ProtectedRoute user={user}>
-              <DayList />
             </ProtectedRoute>
           }
         />
