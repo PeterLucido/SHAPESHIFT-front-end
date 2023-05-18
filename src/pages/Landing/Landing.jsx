@@ -9,8 +9,8 @@ import logo from '../../assets/imgs/logo.png'
 
 // css
 import styles from './Landing.module.css'
-import LoginPage from '../Login/Login'
-import Signup from '../Signup/Signup'
+import LoginPage from '../../components/Login/Login'
+import Signup from '../../components/Signup/Signup'
 import { useState } from 'react'
 
 

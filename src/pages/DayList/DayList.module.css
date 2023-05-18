@@ -9,3 +9,9 @@
 .forwardBack:hover {
   cursor: pointer;
 }
+
+.dayListBody {
+  background: url(../../src/assets/imgs/corkboard.jpg);
+  background-size: cover;
+  background-color: black;
+}
