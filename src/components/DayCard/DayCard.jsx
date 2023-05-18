@@ -15,11 +15,17 @@ const DayCard = ({day}) => {
   }
   
   const getCardColor = (rating) => {
-    if (rating <= 1) return { backgroundColor: "red" }
-    if (rating <= 2) return { backgroundColor: "orange" }
-    if (rating <= 3) return { backgroundColor: "yellow" }
-    if (rating <= 4) return { backgroundColor: "lightgreen" }
-    return { backgroundColor: "green" }
+    if (rating <= 1) {
+      return { backgroundColor: '#F15F61' }
+    } else if (rating <= 2) {
+      return { backgroundColor: '#F89C49' }
+    } else if (rating <= 3) {
+      return { backgroundColor: '#FBF17D' }
+    } else if (rating <= 4) {
+      return { backgroundColor: '#9DD089' }
+    } else {
+      return { backgroundColor: '#4F8C4F' }
+    }
   }
 
   return (
