@@ -28,33 +28,32 @@ const NavBar = ({ user, handleLogout, averageRating, profile }) => {
 
   return (
     <>
-    <nav className={styles.navContainer} id={color}>
-      {user ?
-        <>
-          <div className={styles.userInfo}>
-            {
-              profile ?
-              profile.photo ?
-              <img src={profile.photo} height='45px' alt={user.name}/> :
-              user.name :
-              ''
-            }
-          </div>
-          <div className={styles.navRight}>
-            <p><NavLink to='/days'>All Days</NavLink></p>
-            <p><NavLink to='/days/new'>Add Day</NavLink></p>
-          </div>
-        </>
-          :
-          <div >
+      <nav className={styles.navContainer} id={color}>
+        {user ?
+          <>
+            <div className={styles.userInfo}>
+              {
+                profile ?
+                profile.photo ?
+                <img src={profile.photo} height='45px' alt={user.name}/> :
+                user.name :
+                ''
+              }
+            </div>
+            <div className={styles.navRight}>
+              <p><NavLink to='/days'>All Days</NavLink></p>
+              <p><NavLink to='/days/new'>Add Day</NavLink></p>
+            </div>
+          </> :
+          <div>
             <p><NavLink to="/auth/login">Log In</NavLink></p>
             <p><NavLink to="/auth/signup">Sign Up</NavLink></p>
           </div>
         }
         {user &&
-          <div >
+          <div>
             <div className={styles.dropdown}>
-              <button className={styles.dropdownButton}><img src={closed} /></button>
+              <button className={styles.dropdownButton}><img src={closed}/></button>
               <div className={styles.dropdownContent}>
                 <p><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></p>
                 <p><NavLink to="/auth/change-password">Change Password</NavLink></p>
