@@ -69,3 +69,5 @@ Click [here](https://trello.com/b/FlVCz559/shapeshift) to check out the Trello!
 - [ ] Mobile-friendly view
 
 - [ ] Add function to track calories automatically when food is input into the meals category
+
+- [ ] Limit the total amount of hours spent between exercise and sleep to be 24 hours
