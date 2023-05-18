@@ -17,6 +17,17 @@ const DayDetails = (props) => {
   const {dayId} = useParams()
   const [day, setDay] = useState(null)
   const [editMode, setEditMode] = useState(false)
+  const [invalidDate, setInvalidDate] = useState([
+    {date: ''}
+  ])
+
+  useEffect(() => {
+    const fetchAllDays = async () => {
+      const data = await dayService.index()
+      setInvalidDate(data)
+    } 
+    if (props.user) fetchAllDays()
+  }, [props.user])
 
   useEffect(() => {
     const fetchDay = async () => {
@@ -25,6 +36,8 @@ const DayDetails = (props) => {
     }
     fetchDay()
   }, [dayId])
+
+  const slicedDates = invalidDate.map(obj => obj.date.slice(0,10))
 
   const formatDate = (dateStr) => {
     const date = new Date(dateStr)
@@ -69,7 +82,10 @@ const editView = (
           value={day.date}
           onChange={handleEdit}
         />
+        {slicedDates.includes(day.date) ?
+        '' :
         <button className="button-save" onClick={handleSave}><img src={save} height='25px'/></button>
+        }
       </div>
       <h2>
         Day Rating: 
