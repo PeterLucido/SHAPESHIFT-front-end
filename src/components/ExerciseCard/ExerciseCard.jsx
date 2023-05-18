@@ -62,6 +62,8 @@ const ExerciseCard = ({day}) => {
         <input 
           type="number" 
           name="timeSpent"
+          min='0'
+          max='24'
           value={exerciseData.timeSpent}
           onChange={handleChange}
         />

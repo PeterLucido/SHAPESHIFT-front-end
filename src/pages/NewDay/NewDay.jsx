@@ -133,6 +133,9 @@ const NewDay = (props) => {
             type='number'
             name='totalSleep'
             id='sleep-input'
+            default='0'
+            min='0'
+            max='24'
             value={dayFormData.sleep.totalSleep}
             onChange={handleSleepChange}
           />
@@ -220,6 +223,9 @@ const NewDay = (props) => {
             type='number'
             name='timeSpent'
             id='timeSpent-input'
+            default='0'
+            min='0'
+            max='24'
             value={dayFormData.exercise.timeSpent}
             onChange={handleExerciseChange}
           />

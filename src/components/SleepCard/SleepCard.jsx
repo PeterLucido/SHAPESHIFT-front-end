@@ -45,6 +45,8 @@ const SleepCard = ({day}) => {
           type='number'
           name='totalSleep'
           id='sleep-input'
+          min='0'
+          max='24'
           value={sleepData}
           onChange={handleChange}
         />
