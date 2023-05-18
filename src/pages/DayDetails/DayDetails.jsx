@@ -78,7 +78,7 @@ const editView = (
     <div className={styles.dayInfo}>
       <div className={styles.dateContainer}>
         <input
-          className="date-input-1"
+          className={styles.dateInput1}
           type='date'
           name='date'
           id='date-input'
@@ -93,7 +93,7 @@ const editView = (
       <h2>
         Day Rating: 
         <input 
-          className="rating-input-details"
+          className={styles.ratingInputDetails}
           type="number" 
           name="rating"
           min={1}
