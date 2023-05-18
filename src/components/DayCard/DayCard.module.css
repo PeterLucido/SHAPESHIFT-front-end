@@ -4,4 +4,8 @@
   padding: 30px;
   color: black;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+  font-family: 'Permanent Marker', cursive;
+  /* font-size: 30px; */
+  font-weight: bold;
+  text-align: center;
 }
