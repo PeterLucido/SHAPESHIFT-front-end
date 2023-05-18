@@ -87,7 +87,7 @@ const editView = (
         />
         {slicedDates.includes(day.date) ?
         '' :
-        <button className="button-save" onClick={handleSave}><img src={save} height='25px'/></button>
+        <button className={styles.buttonSave} onClick={handleSave}><img src={save} height='25px'/></button>
         }
       </div>
       <h2>
@@ -126,7 +126,7 @@ return (
       <MealCard day={day}/>
       <ExerciseCard day={day}/>
       <NoteCard day={day}/>
-      <button className="button-delete" onClick={() => props.handleDeleteDay(dayId)}><img src={deleteIcon} height='30px' /></button>
+      <button className={styles.buttonDelete} onClick={() => props.handleDeleteDay(dayId)}><img src={deleteIcon} height='30px' /></button>
     </div>
   </>
 )
