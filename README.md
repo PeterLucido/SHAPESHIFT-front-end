@@ -10,7 +10,7 @@
 
   
 
-Click [here]([https://shapeshift-peds.netlify.app/](https://shapeshift-peds.netlify.app/)) link to go to the app!
+Click [here](https://shapeshift-peds.netlify.app/) to go to the app!
 
 Click [here](https://trello.com/b/FlVCz559/shapeshift) to check out the Trello!
 
