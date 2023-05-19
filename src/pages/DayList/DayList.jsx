@@ -1,11 +1,10 @@
-import { useState } from "react"
-import { useEffect } from "react"
+import { useState, useEffect } from 'react'
 
 import * as dayService from '../../services/dayService'
 
-import DayCard from "../../components/DayCard/DayCard"
+import DayCard from '../../components/DayCard/DayCard'
 import QuoteCard from '../../components/QuoteCard/QuoteCard'
-import DropdownMenu from "../../components/DropdownMenu/DropdownMenu"
+import DropdownMenu from '../../components/DropdownMenu/DropdownMenu'
 
 import styles from './DayList.module.css'
 
@@ -59,12 +58,12 @@ const DayList = ({ user, getAverageRating }) => {
       <QuoteCard />
       <div className={styles.pickDayContainer}>
         <div className={styles.pickDay}>
-          <h1 className="all-days">
+          <h1 className='all-days'>
             <button className={styles.forwardBack} onClick={()=>handleDecrease()}>↞</button>
             DAYS
             <button className={styles.forwardBack} onClick={()=>handleIncrease()}>↠</button>
           </h1>
-          <div className="dropdown-container">
+          <div className='dropdown-container'>
             <DropdownMenu
               onDisplayCountChange={handleDisplayCountChange}
               daysInList={daysInList}
@@ -73,7 +72,7 @@ const DayList = ({ user, getAverageRating }) => {
         </div>
       </div>
       <div>
-        <div className="daylist-container">
+        <div className='daylist-container'>
           {filteredDays}
         </div>
       </div>

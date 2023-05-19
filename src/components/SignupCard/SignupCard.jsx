@@ -27,17 +27,17 @@ const SignupCard = ({ handleAuthEvt }) => {
   const handleChangePhoto = evt => {
     const file = evt.target.files[0]
     let isFileInvalid = false
-    let errMsg = ""
+    let errMsg = ''
     const validFormats = ['gif', 'jpeg', 'jpg', 'png', 'svg', 'webp']
     const photoFormat = file.name.split('.').at(-1)
 
     if (file.size >= 10485760) {
-      errMsg = "Image must be smaller than 10.4MB"
+      errMsg = 'Image must be smaller than 10.4MB'
       isFileInvalid = true
     }
     
     if (!validFormats.includes(photoFormat)) {
-      errMsg = "Image must be in gif, jpeg/jpg, png, svg, or webp format"
+      errMsg = 'Image must be in gif, jpeg/jpg, png, svg, or webp format'
       isFileInvalid = true
     }
     
@@ -78,43 +78,43 @@ const SignupCard = ({ handleAuthEvt }) => {
     <main className={styles.container}>
       <h1>Sign Up</h1>
       <p className={styles.message}>{message}</p>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
+      <form autoComplete='off' onSubmit={handleSubmit} className={styles.form}>
         <label className={styles.label}>
           Name
-          <input type="text" value={name} name="name" onChange={handleChange} />
+          <input type='text' value={name} name='name' onChange={handleChange} />
         </label>
         <label className={styles.label}>
           Email
           <input
-            type="text"
+            type='text'
             value={email}
-            name="email"
+            name='email'
             onChange={handleChange}
           />
         </label>
         <label className={styles.label}>
           Password
           <input
-            type="password"
+            type='password'
             value={password}
-            name="password"
+            name='password'
             onChange={handleChange}
           />
         </label>
         <label className={styles.label}>
           Confirm Password
           <input
-            type="password"
+            type='password'
             value={passwordConf}
-            name="passwordConf"
+            name='passwordConf'
             onChange={handleChange}
           />
         </label>
         <label className={styles.label}>
           Upload Photo
           <input 
-            type="file"
-            name="photo" 
+            type='file'
+            name='photo' 
             onChange={handleChangePhoto}
             ref={imgInputRef}
           />

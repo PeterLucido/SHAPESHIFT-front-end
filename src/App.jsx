@@ -27,7 +27,7 @@ function App() {
     const fetchProfiles = async () => {
       const profileData = await profileService.getAllProfiles()
       setProfile(
-        profileData.find((pro)=>user.profile===pro._id)
+        profileData.find((pro) => user.profile === pro._id)
       )
     }
     if (user) fetchProfiles()
@@ -55,7 +55,7 @@ function App() {
 
   const handleDeleteDay = async (dayId) => {
     const deletedDay = await dayService.deleteDay(dayId)
-    setDays(days.filter(d => d._id !== deletedDay._id))
+    setDays(days.filter(day => day._id !== deletedDay._id))
     navigate('/days')
   }
 
@@ -71,7 +71,7 @@ function App() {
       }
       <Routes>
         <Route
-          path="/"
+          path='/'
           element={
             <Landing 
               user={user}
@@ -92,7 +92,7 @@ function App() {
           }
         />
         <Route
-          path="/days/new"
+          path='/days/new'
           element={
             <ProtectedRoute user={user}>
               <NewDay
@@ -106,7 +106,10 @@ function App() {
           path='/days/:dayId'
           element={
             <ProtectedRoute user={user}>
-              <DayDetails user={user} handleDeleteDay={handleDeleteDay}/>
+              <DayDetails
+                user={user}
+                handleDeleteDay={handleDeleteDay}
+              />
             </ProtectedRoute>
           }
         />

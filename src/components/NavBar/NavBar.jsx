@@ -40,7 +40,7 @@ const NavBar = ({ user, handleLogout, averageRating, profile }) => {
           <div className={styles.dropdown}>
             <button className={styles.dropdownButton}><img src={closed}/></button>
             <div className={styles.dropdownContent}>
-              <p><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></p>
+              <p><NavLink to='' onClick={handleLogout}>LOG OUT</NavLink></p>
             </div>
           </div>
         </div>

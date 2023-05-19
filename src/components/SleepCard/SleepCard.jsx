@@ -1,14 +1,14 @@
-import { useState} from "react"
-import { update } from "../../services/dayService"
+import { useState} from 'react'
+import { update } from '../../services/dayService'
 
-import edit from "../../assets/icons/edit.png"
-import save from "../../assets/icons/save.png"
+import edit from '../../assets/icons/edit.png'
+import save from '../../assets/icons/save.png'
 
 import styles from './SleepCard.module.css'
 
 const SleepCard = ({ day }) => {
   const [editMode, setEditMode] = useState(false)
-  const [sleepData, setSleepData] = useState("")
+  const [sleepData, setSleepData] = useState('')
 
   const handleChange = (evt) => {
     const updatedSleep = evt.target.value
