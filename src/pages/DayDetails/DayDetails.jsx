@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useState, useEffect, } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 
 import * as dayService from '../../services/dayService'
 
@@ -22,6 +22,7 @@ const DayDetails = (props) => {
   ])
   
   const {dayId} = useParams()
+  const navigate =useNavigate()
 
   useEffect(() => {
     const fetchAllDays = async () => {
@@ -49,6 +50,7 @@ const DayDetails = (props) => {
   }
 
   if (!day) return <h1>loading</h1>
+  if (props.user.profile !== day.owner._id) navigate('/days')
 
   const handleEdit = (evt) => {
     const {name, value} = evt.target
