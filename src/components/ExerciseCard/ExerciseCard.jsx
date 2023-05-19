@@ -1,11 +1,11 @@
-import { useState } from "react"
+import { useState } from 'react'
 
-import * as dayService from "../../services/dayService"
+import * as dayService from '../../services/dayService'
 
-import edit from "../../assets/icons/edit.png"
-import save from "../../assets/icons/save.png"
+import edit from '../../assets/icons/edit.png'
+import save from '../../assets/icons/save.png'
 
-import styles from "./ExerciseCard.module.css"
+import styles from './ExerciseCard.module.css'
 
 const ExerciseCard = ({ day }) => {
   const [editMode, setEditMode] = useState(false)
@@ -55,17 +55,17 @@ const ExerciseCard = ({ day }) => {
       <div className={styles.exerciseContainer}>
         <h4>Exercise Type: </h4>
         <textarea 
-          name="typeOfExercise" 
+          name='typeOfExercise'
           value={exerciseData.typeOfExercise} 
           onChange={handleChange}
-          autoComplete="off"
+          autoComplete='off'
         />
       </div>
       <div className={styles.exerciseContainer}>
         <h4>Hours Spent:</h4>
         <input 
-          type="number" 
-          name="timeSpent"
+          type='number'
+          name='timeSpent'
           min='0'
           max='24'
           value={exerciseData.timeSpent}

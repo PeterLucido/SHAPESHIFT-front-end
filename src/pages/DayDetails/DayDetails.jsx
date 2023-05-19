@@ -103,8 +103,8 @@ const DayDetails = ({user, handleDeleteDay}) => {
         Day Rating: 
         <input 
           className={styles.ratingInputDetails}
-          type="number" 
-          name="rating"
+          type='number'
+          name='rating'
           min={1}
           max={5}
           value={day.rating}
@@ -134,7 +134,7 @@ const DayDetails = ({user, handleDeleteDay}) => {
       <ExerciseCard day={day}/>
       <NoteCard day={day}/>
       <button className={styles.buttonDelete} onClick={() => handleDeleteDay(dayId)}>
-        <img src={deleteIcon} height='30px' />
+        <img src={deleteIcon} height='30px'/>
       </button>
     </div>
   )

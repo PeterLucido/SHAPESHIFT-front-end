@@ -44,22 +44,22 @@ const LoginCard = ({ handleAuthEvt }) => {
     <main className={styles.logincontainer}>
       <h1>Log In</h1>
       <p className={styles.message}>{message}</p>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
+      <form autoComplete='off' onSubmit={handleSubmit} className={styles.form}>
         <label className={styles.label}>
           Email
           <input
-            type="text"
+            type='text'
             value={email}
-            name="email"
+            name='email'
             onChange={handleChange}
           />
         </label>
         <label className={styles.label}>
           Password
           <input
-            type="password"
+            type='password'
             value={password}
-            name="password"
+            name='password'
             onChange={handleChange}
           />
         </label>
