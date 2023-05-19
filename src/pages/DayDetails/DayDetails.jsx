@@ -14,7 +14,7 @@ import save from '../../assets/icons/save.png'
 
 import styles from './DayDetails.module.css'
 
-const DayDetails = (props) => {
+const DayDetails = ({user, handleDeleteDay}) => {
   const [day, setDay] = useState(null)
   const [editMode, setEditMode] = useState(false)
   const [invalidDate, setInvalidDate] = useState([
@@ -29,8 +29,8 @@ const DayDetails = (props) => {
       const data = await dayService.index()
       setInvalidDate(data)
     } 
-    if (props.user) fetchAllDays()
-  }, [props.user])
+    if (user) fetchAllDays()
+  }, [user])
 
   useEffect(() => {
     const fetchDay = async () => {
@@ -50,7 +50,7 @@ const DayDetails = (props) => {
   }
 
   if (!day) return <h1>loading</h1>
-  if (props.user.profile !== day.owner._id) navigate('/days')
+  if (user.profile !== day.owner._id) navigate('/days')
 
   const handleEdit = (evt) => {
     const {name, value} = evt.target
@@ -133,7 +133,7 @@ const DayDetails = (props) => {
       <MealCard day={day}/>
       <ExerciseCard day={day}/>
       <NoteCard day={day}/>
-      <button className={styles.buttonDelete} onClick={() => props.handleDeleteDay(dayId)}>
+      <button className={styles.buttonDelete} onClick={() => handleDeleteDay(dayId)}>
         <img src={deleteIcon} height='30px' />
       </button>
     </div>
