@@ -58,7 +58,7 @@ ShapeShift is a user-friendly app designed to simplify the management of your ov
 
 - Cloudinary
 - Postman
-- JWT Token
+- JWT Auth
 
   
 
