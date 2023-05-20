@@ -1,7 +1,5 @@
 import { NavLink } from 'react-router-dom'
 
-import closed from '../../assets/icons/closed.png'
-
 import styles from '../NavBar/NavBar.module.css'
 
 const NavBar = ({ user, handleLogout, averageRating, profile }) => {
@@ -33,16 +31,9 @@ const NavBar = ({ user, handleLogout, averageRating, profile }) => {
           }
         </div>
         <div className={styles.navRight}>
-          <p><NavLink to='/days'>All Days</NavLink></p>
-          <p><NavLink to='/days/new'>Add Day</NavLink></p>
-        </div>
-        <div>
-          <div className={styles.dropdown}>
-            <button className={styles.dropdownButton}><img src={closed}/></button>
-            <div className={styles.dropdownContent}>
-              <p><NavLink to='' onClick={handleLogout}>LOG OUT</NavLink></p>
-            </div>
-          </div>
+          <p><NavLink to='/days'>ALL DAYS</NavLink></p>
+          <p><NavLink to='/days/new'>ADD DAY</NavLink></p>
+          <p><NavLink to='' onClick={handleLogout}>LOG OUT</NavLink></p>
         </div>
       </nav>
     </div>
