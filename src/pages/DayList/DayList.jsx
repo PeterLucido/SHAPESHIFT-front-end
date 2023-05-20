@@ -59,9 +59,9 @@ const DayList = ({ user, getAverageRating }) => {
       <div className={styles.pickDayContainer}>
         <div className={styles.pickDay}>
           <h1 className='all-days'>
-            <button className={styles.forwardBack} onClick={() => handleDecrease()}>↞</button>
+            <button className={styles.forwardBack} onClick={handleDecrease}>↞</button>
             DAYS
-            <button className={styles.forwardBack} onClick={() => handleIncrease()}>↠</button>
+            <button className={styles.forwardBack} onClick={handleIncrease}>↠</button>
           </h1>
           <div className='dropdown-container'>
             <DropdownMenu

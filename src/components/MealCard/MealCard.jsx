@@ -54,7 +54,7 @@ const MealCard = ({ day }) => {
     <>
       <div className={styles.formHeadings}>
         <h2>Meals</h2>
-        <button className={styles.buttonSave} onClick={() => handleSave()}>
+        <button className={styles.buttonSave} onClick={handleSave}>
           <img src={save} height='25px'/>
         </button>
       </div>
@@ -110,7 +110,7 @@ const MealCard = ({ day }) => {
     <>
       <div className={styles.formHeadings}>
         <h2>Meals</h2>
-        <button className={styles.buttonEdit} onClick={() => handleEdit()}>
+        <button className={styles.buttonEdit} onClick={handleEdit}>
           <img src={edit} height='25px'/>
         </button>
       </div>
