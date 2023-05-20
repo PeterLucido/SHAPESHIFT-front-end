@@ -24,7 +24,7 @@ const DayList = ({ user, getAverageRating }) => {
     if (user) fetchAllDays()
   }, [user, getAverageRating])
 
-  function handleIncrease() {
+  const handleIncrease = () => {
     let newIdx = currIdx
     newIdx = newIdx + displayCount
     if (newIdx > daysInList.length) {
@@ -33,7 +33,7 @@ const DayList = ({ user, getAverageRating }) => {
     setCurrIdx(newIdx)
   }
 
-  function handleDecrease() {
+  const handleDecrease = () => {
     let newIdx = currIdx
     newIdx = newIdx - displayCount
     if (newIdx < 0) {
@@ -49,7 +49,7 @@ const DayList = ({ user, getAverageRating }) => {
     .slice(currIdx, currIdx + displayCount)
     .map((day) => <DayCard key={day._id} day={day} />)
 
-  function handleDisplayCountChange(newDisplayCount) {
+  const handleDisplayCountChange = (newDisplayCount) => {
     setDisplayCount(newDisplayCount)
   }
 
@@ -59,9 +59,9 @@ const DayList = ({ user, getAverageRating }) => {
       <div className={styles.pickDayContainer}>
         <div className={styles.pickDay}>
           <h1 className='all-days'>
-            <button className={styles.forwardBack} onClick={()=>handleDecrease()}>↞</button>
+            <button className={styles.forwardBack} onClick={() => handleDecrease()}>↞</button>
             DAYS
-            <button className={styles.forwardBack} onClick={()=>handleIncrease()}>↠</button>
+            <button className={styles.forwardBack} onClick={() => handleIncrease()}>↠</button>
           </h1>
           <div className='dropdown-container'>
             <DropdownMenu
