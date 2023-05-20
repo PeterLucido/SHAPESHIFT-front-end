@@ -58,6 +58,7 @@ ShapeShift is a user-friendly app designed to simplify the management of your ov
 
 - Cloudinary
 - Postman
+- JWT Auth
 
   
 
@@ -66,8 +67,6 @@ ShapeShift is a user-friendly app designed to simplify the management of your ov
 [Landing Page Stock Photos](https://www.pexels.com/)
 
 [Other Stock Photos](https://elements.envato.com/)
-
-[Login Button Styling](https://codepen.io/seaox/pen/GRRbzjY)
 
 [Inspirational Quotes API](https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373)
 

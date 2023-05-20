@@ -255,9 +255,12 @@ const NewDay = (props) => {
             {
               slicedDates.includes(dayFormData.date) ? 
               <p>You have already created a page for this day</p> :
-              <button type='submit'>
-                <img src={save} height='50px'/>
-              </button> 
+              <div>
+                  <img src={save} height='50px'/>
+                <button type='submit'>
+                  ADD DAY
+                </button> 
+              </div>
             }
           </div>
         </form>
