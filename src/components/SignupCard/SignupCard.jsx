@@ -19,12 +19,12 @@ const SignupCard = ({ handleAuthEvt }) => {
   const navigate = useNavigate()
   const imgInputRef = useRef(null)
 
-  const handleChange = evt => {
+  const handleChange = (evt) => {
     setMessage('')
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
-  const handleChangePhoto = evt => {
+  const handleChangePhoto = (evt) => {
     const file = evt.target.files[0]
     let isFileInvalid = false
     let errMsg = ''
@@ -51,7 +51,7 @@ const SignupCard = ({ handleAuthEvt }) => {
     setPhotoData({ photo: evt.target.files[0] })
   }
 
-  const handleSubmit = async evt => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault()
     try {
       if (!import.meta.env.VITE_BACK_END_SERVER_URL) {
