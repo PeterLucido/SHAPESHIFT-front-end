@@ -47,7 +47,8 @@ input[type="file"] {
   background-color: #ffed4b;
   border: none;
   color: #000;
-  font-size: 1.2rem;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 27px;
   font-weight: bold;
   padding: 0.5rem 1rem;
   text-transform: uppercase;
