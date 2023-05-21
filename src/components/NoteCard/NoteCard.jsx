@@ -2,14 +2,14 @@ import { useState } from 'react'
 
 import * as dayService from '../../services/dayService'
 
-import edit from "../../assets/icons/edit.png"
-import save from "../../assets/icons/save.png"
+import edit from '../../assets/icons/edit.png'
+import save from '../../assets/icons/save.png'
 
 import styles from './NoteCard.module.css'
 
 const NoteCard = ({day}) => {
   const [editMode, setEditMode] = useState(false)
-  const [noteData, setNoteData] = useState("")
+  const [noteData, setNoteData] = useState('')
 
   const handleChange = (evt) => {
     const updatedNote = evt.target.value
@@ -38,7 +38,7 @@ const NoteCard = ({day}) => {
     <>
       <div className={styles.formHeadings}>
         <h2>Notes</h2>
-        <button className={styles.buttonSave} onClick={() => handleSave()}>
+        <button className={styles.buttonSave} onClick={handleSave}>
           <img src={save} height='25px'/>
         </button>
       </div>
@@ -48,7 +48,7 @@ const NoteCard = ({day}) => {
           name='content'
           value={noteData}
           onChange={handleChange}
-          autoComplete="off"
+          autoComplete='off'
         />
       </div>
     </>
@@ -58,7 +58,7 @@ const NoteCard = ({day}) => {
     <>
       <div className={styles.formHeadings}>
         <h2>Notes</h2>
-        <button className={styles.buttonEdit} onClick={() => handleEdit()}>
+        <button className={styles.buttonEdit} onClick={handleEdit}>
           <img src={edit} height='25px'/>
         </button>
       </div>

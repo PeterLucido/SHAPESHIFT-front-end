@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from 'react'
 
 import * as dayService from '../../services/dayService'
 
@@ -152,7 +152,7 @@ const NewDay = (props) => {
                 id='water-input'
                 value={dayFormData.meal.waterIntake}
                 onChange={handleMealChange}
-                autoComplete="off"
+                autoComplete='off'
               />
             </div>
             <div className={styles.inline}>
@@ -165,7 +165,7 @@ const NewDay = (props) => {
                 id='breakfast-input'
                 value={dayFormData.meal.breakfast}
                 onChange={handleMealChange}
-                autoComplete="off"
+                autoComplete='off'
               />
             </div>
             <div className={styles.inline}>
@@ -178,7 +178,7 @@ const NewDay = (props) => {
                 id='lunch-input'
                 value={dayFormData.meal.lunch}
                 onChange={handleMealChange}
-                autoComplete="off"
+                autoComplete='off'
               />
             </div>
             <div className={styles.inline}>
@@ -191,7 +191,7 @@ const NewDay = (props) => {
                 id='dinner-input'
                 value={dayFormData.meal.dinner}
                 onChange={handleMealChange}
-                autoComplete="off"
+                autoComplete='off'
               />
             </div>
             <div className={styles.inline}>
@@ -204,7 +204,7 @@ const NewDay = (props) => {
                 id='snacks-input'
                 value={dayFormData.meal.snacks}
                 onChange={handleMealChange}
-                autoComplete="off"
+                autoComplete='off'
               />
             </div>
           </div>
@@ -219,7 +219,7 @@ const NewDay = (props) => {
                 id='typeOfExercise-input'
                 value={dayFormData.exercise.typeOfExercise}
                 onChange={handleExerciseChange}
-                autoComplete="off"
+                autoComplete='off'
               />
             </div>
             <div className={styles.inline}>
@@ -248,7 +248,7 @@ const NewDay = (props) => {
               id='content-input'
               value={dayFormData.notes.content}
               onChange={handleNotesChange}
-              autoComplete="off"
+              autoComplete='off'
             />
           </div>
           <div className={styles.buttonSave}>

@@ -1,11 +1,10 @@
-import { useState } from "react"
-import { useEffect } from "react"
+import { useState, useEffect } from 'react'
 
 import * as dayService from '../../services/dayService'
 
-import DayCard from "../../components/DayCard/DayCard"
+import DayCard from '../../components/DayCard/DayCard'
 import QuoteCard from '../../components/QuoteCard/QuoteCard'
-import DropdownMenu from "../../components/DropdownMenu/DropdownMenu"
+import DropdownMenu from '../../components/DropdownMenu/DropdownMenu'
 
 import styles from './DayList.module.css'
 
@@ -25,7 +24,7 @@ const DayList = ({ user, getAverageRating }) => {
     if (user) fetchAllDays()
   }, [user, getAverageRating])
 
-  function handleIncrease() {
+  const handleIncrease = () => {
     let newIdx = currIdx
     newIdx = newIdx + displayCount
     if (newIdx > daysInList.length) {
@@ -34,7 +33,7 @@ const DayList = ({ user, getAverageRating }) => {
     setCurrIdx(newIdx)
   }
 
-  function handleDecrease() {
+  const handleDecrease = () => {
     let newIdx = currIdx
     newIdx = newIdx - displayCount
     if (newIdx < 0) {
@@ -50,7 +49,7 @@ const DayList = ({ user, getAverageRating }) => {
     .slice(currIdx, currIdx + displayCount)
     .map((day) => <DayCard key={day._id} day={day} />)
 
-  function handleDisplayCountChange(newDisplayCount) {
+  const handleDisplayCountChange = (newDisplayCount) => {
     setDisplayCount(newDisplayCount)
   }
 
@@ -62,9 +61,9 @@ const DayList = ({ user, getAverageRating }) => {
           <h1 className={styles.allDays}>
             <button className={styles.forwardBack} onClick={()=>handleDecrease()}>↞</button>
             DAYS
-            <button className={styles.forwardBack} onClick={()=>handleIncrease()}>↠</button>
+            <button className={styles.forwardBack} onClick={handleIncrease}>↠</button>
           </h1>
-          <div className="dropdown-container">
+          <div className='dropdown-container'>
             <DropdownMenu
               onDisplayCountChange={handleDisplayCountChange}
               daysInList={daysInList}
@@ -73,7 +72,7 @@ const DayList = ({ user, getAverageRating }) => {
         </div>
       </div>
       <div>
-        <div className="daylist-container">
+        <div className='daylist-container'>
           {filteredDays}
         </div>
       </div>

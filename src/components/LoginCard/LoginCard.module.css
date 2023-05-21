@@ -5,7 +5,7 @@ input {
   width: 300px;
 }
 
-input[type="file"] {
+input[type='file'] {
   padding: 0;
 }
 

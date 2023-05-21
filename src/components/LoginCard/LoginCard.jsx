@@ -14,12 +14,12 @@ const LoginCard = ({ handleAuthEvt }) => {
   
   const navigate = useNavigate()
 
-  const handleChange = evt => {
+  const handleChange = (evt) => {
     setMessage('')
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
-  const handleSubmit = async evt => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault()
     try {
       if (!import.meta.env.VITE_BACK_END_SERVER_URL) {
@@ -44,22 +44,22 @@ const LoginCard = ({ handleAuthEvt }) => {
     <main className={styles.logincontainer}>
       <h1>Log In</h1>
       <p className={styles.message}>{message}</p>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
+      <form autoComplete='off' onSubmit={handleSubmit} className={styles.form}>
         <label className={styles.label}>
           Email
           <input
-            type="text"
+            type='text'
             value={email}
-            name="email"
+            name='email'
             onChange={handleChange}
           />
         </label>
         <label className={styles.label}>
           Password
           <input
-            type="password"
+            type='password'
             value={password}
-            name="password"
+            name='password'
             onChange={handleChange}
           />
         </label>

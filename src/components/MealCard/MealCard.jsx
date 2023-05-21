@@ -1,20 +1,20 @@
-import { useState } from "react"
+import { useState } from 'react'
 
-import * as dayService from "../../services/dayService"
+import * as dayService from '../../services/dayService'
 
-import edit from "../../assets/icons/edit.png"
-import save from "../../assets/icons/save.png"
+import edit from '../../assets/icons/edit.png'
+import save from '../../assets/icons/save.png'
 
 import styles from './MealCard.module.css'
 
 const MealCard = ({ day }) => {
   const [editMode, setEditMode] = useState(false)
   const [mealData, setMealData] = useState({
-    waterIntake: "",
-    breakfast: "",
-    lunch: "",
-    dinner: "",
-    snacks: "",
+    waterIntake: '',
+    breakfast: '',
+    lunch: '',
+    dinner: '',
+    snacks: '',
   })
 
   const { waterIntake, breakfast, lunch, dinner, snacks, } = day.meal[0];
@@ -54,53 +54,53 @@ const MealCard = ({ day }) => {
     <>
       <div className={styles.formHeadings}>
         <h2>Meals</h2>
-        <button className={styles.buttonSave} onClick={() => handleSave()}>
+        <button className={styles.buttonSave} onClick={handleSave}>
           <img src={save} height='25px'/>
         </button>
       </div>
       <div className={styles.mealContainer}>
         <h4>Water Intake: </h4>
         <textarea
-          name="waterIntake" 
+          name='waterIntake'
           value={mealData.waterIntake}
           onChange={handleChange}
-          autoComplete="off"
+          autoComplete='off'
         />
       </div>
       <div className={styles.mealContainer}>
         <h4>Breakfast: </h4>
         <textarea 
-          name="breakfast" 
+          name='breakfast'
           value={mealData.breakfast}
           onChange={handleChange}
-          autoComplete="off"
+          autoComplete='off'
         />
       </div>
       <div className={styles.mealContainer}>
         <h4>Lunch: </h4>
         <textarea 
-          name="lunch" 
+          name='lunch'
           value={mealData.lunch}
           onChange={handleChange}
-          autoComplete="off"
+          autoComplete='off'
         />
       </div>
       <div className={styles.mealContainer}>
         <h4>Dinner: </h4>
         <textarea 
-          name="dinner" 
+          name='dinner'
           value={mealData.dinner}
           onChange={handleChange}
-          autoComplete="off"
+          autoComplete='off'
         />
       </div>
       <div className={styles.mealContainer}>
         <h4>Snacks: </h4>
         <textarea 
-          name="snacks" 
+          name='snacks'
           value={mealData.snacks}
           onChange={handleChange}
-          autoComplete="off"
+          autoComplete='off'
         />
       </div>
     </>
@@ -110,7 +110,7 @@ const MealCard = ({ day }) => {
     <>
       <div className={styles.formHeadings}>
         <h2>Meals</h2>
-        <button className={styles.buttonEdit} onClick={() => handleEdit()}>
+        <button className={styles.buttonEdit} onClick={handleEdit}>
           <img src={edit} height='25px'/>
         </button>
       </div>
