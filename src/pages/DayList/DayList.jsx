@@ -59,7 +59,7 @@ const DayList = ({ user, getAverageRating }) => {
       <QuoteCard />
       <div className={styles.pickDayContainer}>
         <div className={styles.pickDay}>
-          <h1 className="all-days">
+          <h1 className={styles.allDays}>
             <button className={styles.forwardBack} onClick={()=>handleDecrease()}>↞</button>
             DAYS
             <button className={styles.forwardBack} onClick={()=>handleIncrease()}>↠</button>

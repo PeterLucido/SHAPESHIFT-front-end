@@ -60,7 +60,6 @@
 .inline label {
   flex-basis: 50%;
   font-size: larger;
-  font-weight: bold;
 }
 
 .inline input {

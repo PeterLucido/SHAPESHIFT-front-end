@@ -46,7 +46,7 @@ const Landing = ({ handleAuthEvt, user }) => {
           <img src={logo} className={styles.shapeshift}/>
           <div className={styles.loginButtonsContainer}>
             <LoginCard handleAuthEvt={handleAuthEvt}/>
-            <button onClick={handleCancel} className={styles.cancelButton}>
+            <button onClick={handleCancel} className={styles.button} id={styles.cancelButton}>
               CANCEL
             </button>
           </div>
@@ -66,10 +66,12 @@ const Landing = ({ handleAuthEvt, user }) => {
         </div>
         <div className={styles.rightSide}>
           <img src={logo} className={styles.shapeshift}/>
-          <SignupCard handleAuthEvt={handleAuthEvt}/>
-          <button onClick={handleCancel} className={styles.cancelButton}>
-            CANCEL
-          </button>
+          <div className={styles.loginButtonsContainer}>
+            <SignupCard handleAuthEvt={handleAuthEvt}/>
+            <button onClick={handleCancel} className={styles.button} id={styles.cancelButton}>
+              CANCEL
+            </button>
+          </div>
         </div>
       </main>
     )
