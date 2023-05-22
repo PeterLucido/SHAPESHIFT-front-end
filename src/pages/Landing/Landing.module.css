@@ -21,7 +21,6 @@
 }
 
 .rightSide {
-  background-image: url(src/assets/imgs/corkboard.jpg);
   background-size: cover;
   position: relative;
   display: flex;
@@ -30,7 +29,6 @@
 }
 
 .rightSide::after {
-  background: url(src/assets/imgs/corkboard.jpg);
   opacity: 0.5;
   top: 0;
   left: 0;
